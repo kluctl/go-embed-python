@@ -64,6 +64,7 @@ var removePatterns = []glob.Glob{
 	glob.MustCompile("**.pdb"),
 	glob.MustCompile("**.pyc"),
 	glob.MustCompile("**/test_*.py"),
+	glob.MustCompile("**/*.dist-info"),
 }
 
 var keepNixPatterns = []glob.Glob{
@@ -124,14 +125,22 @@ func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob
 
 	extract(downloadPath, extractPath)
 
+	installPath := filepath.Join(extractPath, "python", "install")
+
+	var libPath string
+	if osName == "windows" {
+		libPath = filepath.Join(installPath, "Lib")
+	} else {
+		libPath = filepath.Join(installPath, "lib", fmt.Sprintf("python%s", pythonVersionBase))
+	}
+
+	pipInstallRequirements(libPath, "requirements.txt")
+
 	var removes []string
 
 	for _, lib := range removeLibs {
-		removes = append(removes, filepath.Join("lib", fmt.Sprintf("python%s", pythonVersionBase), lib))
-		removes = append(removes, filepath.Join("Lib", lib))
+		removes = append(removes, filepath.Join(libPath, lib))
 	}
-
-	installPath := filepath.Join(extractPath, "python", "install")
 
 	err = filepath.Walk(installPath, func(path string, info fs.FileInfo, err error) error {
 		relPath, err := filepath.Rel(installPath, path)
@@ -139,8 +148,8 @@ func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob
 			log.Panic(err)
 		}
 		for _, p := range removePatterns {
-			if p.Match(path) {
-				removes = append(removes, relPath)
+			if p.Match(relPath) {
+				removes = append(removes, path)
 			}
 		}
 		if !info.Mode().IsDir() {
@@ -152,7 +161,7 @@ func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob
 				}
 			}
 			if !keep {
-				removes = append(removes, relPath)
+				removes = append(removes, path)
 			}
 		}
 		return nil
@@ -162,7 +171,7 @@ func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob
 	}
 
 	for _, r := range removes {
-		_ = os.RemoveAll(filepath.Join(installPath, r))
+		_ = os.RemoveAll(r)
 	}
 
 	err = removeEmptyDirs(installPath)
