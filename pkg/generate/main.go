@@ -55,6 +55,7 @@ var removeLibs = []string{
 	"wsgiref",
 	"xml",
 	"xmlrpc",
+	"bin", // not really a library, but erroneously installed by jsonpath_ng
 }
 
 var removePatterns = []glob.Glob{

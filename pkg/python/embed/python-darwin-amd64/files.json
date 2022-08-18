@@ -1,5 +1,5 @@
 {
-  "contentHash": "0106cd03c9934a708505c3894c28a92f8dc8450053bf61834001a73763a4c878",
+  "contentHash": "7cdc3893ccdf650c642bac376c2771b4872bdcfe4c559616773af4d5dd23c5e4",
   "Files": [
     {
       "name": "bin",
@@ -237,16 +237,6 @@
       "name": "lib/python3.10/bdb.py",
       "size": 32227,
       "perm": 436
-    },
-    {
-      "name": "lib/python3.10/bin",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "lib/python3.10/bin/jsonpath_ng",
-      "size": 272,
-      "perm": 493
     },
     {
       "name": "lib/python3.10/binhex.py",
