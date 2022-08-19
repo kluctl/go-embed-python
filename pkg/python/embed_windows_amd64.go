@@ -1,6 +1,9 @@
 package python
 
-import "embed"
+import (
+	"embed"
+	"io/fs"
+)
 
 //go:embed all:embed/python-windows-amd64
 var _pythonLib embed.FS
