@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"fmt"
-	"github.com/kluctl/kluctl-python-deps/pkg/utils"
+	"github.com/kluctl/go-embed-python/internal"
 	"github.com/rogpeppe/go-internal/lockedfile"
 	"io"
 	"io/fs"
@@ -17,7 +17,7 @@ func ExtractEmbeddedToTmp(embedFs fs.FS, targetPrefix string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	flHash := utils.Sha256Bytes(flStr)
+	flHash := internal.Sha256Bytes(flStr)
 
 	fl, err := readFileList(string(flStr))
 	if err != nil {

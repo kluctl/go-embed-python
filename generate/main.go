@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/gobwas/glob"
 	"github.com/klauspost/compress/zstd"
-	"github.com/kluctl/kluctl-python-deps/pkg/embed_util"
-	"github.com/kluctl/kluctl-python-deps/pkg/utils"
+	"github.com/kluctl/go-embed-python/embed_util"
+	"github.com/kluctl/go-embed-python/internal"
 	log "github.com/sirupsen/logrus"
 	"io"
 	"io/fs"
@@ -93,11 +93,11 @@ func main() {
 		keepPatterns []glob.Glob
 	}
 	jobs := []job{
-		{"linux", "amd64", "pkg/python/embed/python-linux-amd64", keepNixPatterns},
-		{"linux", "arm64", "pkg/python/embed/python-linux-arm64", keepNixPatterns},
-		{"darwin", "amd64", "pkg/python/embed/python-darwin-amd64", keepNixPatterns},
-		{"darwin", "arm64", "pkg/python/embed/python-darwin-arm64", keepNixPatterns},
-		{"windows", "amd64", "pkg/python/embed/python-windows-amd64", keepWinPatterns},
+		{"linux", "amd64", "embed/data/python-linux-amd64", keepNixPatterns},
+		{"linux", "arm64", "embed/data/python-linux-arm64", keepNixPatterns},
+		{"darwin", "amd64", "embed/data/python-darwin-amd64", keepNixPatterns},
+		{"darwin", "arm64", "embed/data/python-darwin-arm64", keepNixPatterns},
+		{"windows", "amd64", "embed/data/python-windows-amd64", keepWinPatterns},
 	}
 	for _, j := range jobs {
 		j := j
@@ -224,7 +224,7 @@ func removeEmptyDirs2(dir string) (bool, error) {
 }
 
 func copyToEmbedDir(out string, dir string) {
-	if utils.Exists(out) {
+	if internal.Exists(out) {
 		err := os.RemoveAll(out)
 		if err != nil {
 			log.Panic(err)
@@ -251,7 +251,7 @@ func download(osName, arch, dist string) string {
 		os.Exit(1)
 	}
 	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.tar.zst", pythonVersionFull, pythonStandaloneVersion, pythonArch, dist)
-	downloadPath := filepath.Join(utils.GetTmpBaseDir(), "python-download", fname)
+	downloadPath := filepath.Join(internal.GetTmpBaseDir(), "python-download", fname)
 	downloadUrl := fmt.Sprintf("https://github.com/indygreg/python-build-standalone/releases/download/%s/%s", pythonStandaloneVersion, fname)
 
 	if _, err := os.Stat(downloadPath); err == nil {
@@ -305,7 +305,7 @@ func extract(archivePath string, targetPath string) string {
 	defer z.Close()
 
 	log.Infof("decompressing %s", archivePath)
-	err = utils.ExtractTarStream(z, targetPath)
+	err = internal.ExtractTarStream(z, targetPath)
 	if err != nil {
 		log.Errorf("decompression failed: %v", err)
 		os.Exit(1)

@@ -1,7 +1,7 @@
-package python
+package embed
 
 import (
-	"github.com/kluctl/kluctl-python-deps/pkg/utils"
+	"github.com/kluctl/go-embed-python/internal"
 	"github.com/stretchr/testify/assert"
 	"io"
 	"os/exec"
@@ -17,7 +17,7 @@ func TestEmbeddedPython(t *testing.T) {
 	if runtime.GOOS == "windows" {
 		pexe += ".exe"
 	}
-	assert.True(t, utils.Exists(pexe))
+	assert.True(t, internal.Exists(pexe))
 
 	cmd := exec.Command(pexe, "-c", "print('test')")
 	stdout, err := cmd.StdoutPipe()

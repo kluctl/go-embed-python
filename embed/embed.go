@@ -1,9 +1,9 @@
-package python
+package embed
 
 import (
 	"fmt"
-	"github.com/kluctl/kluctl-python-deps/pkg/embed_util"
-	"github.com/kluctl/kluctl-python-deps/pkg/utils"
+	"github.com/kluctl/go-embed-python/embed_util"
+	"github.com/kluctl/go-embed-python/internal"
 	"path/filepath"
 	"runtime"
 )
@@ -19,7 +19,7 @@ func GetEmbeddedPythonPath() string {
 }
 
 func decompressPython() string {
-	path := filepath.Join(utils.GetTmpBaseDir(), "python", fmt.Sprintf("python-%s", runtime.GOOS))
+	path := filepath.Join(internal.GetTmpBaseDir(), "python", fmt.Sprintf("python-%s", runtime.GOOS))
 	path, err := embed_util.ExtractEmbeddedToTmp(pythonLib, path)
 	if err != nil {
 		panic(err)

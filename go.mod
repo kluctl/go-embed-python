@@ -1,4 +1,4 @@
-module github.com/kluctl/kluctl-python-deps
+module github.com/kluctl/go-embed-python
 
 go 1.19
 

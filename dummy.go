@@ -1,3 +1,3 @@
-package kluctl_python_deps
+package go_embed_python
 
-//go:generate go run ./pkg/generate
+//go:generate go run ./generate
