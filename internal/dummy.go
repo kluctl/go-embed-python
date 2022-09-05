@@ -1,3 +1,3 @@
-package go_embed_python
+package internal
 
 //go:generate go run ./generate
