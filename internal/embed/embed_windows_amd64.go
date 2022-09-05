@@ -7,4 +7,4 @@ import (
 
 //go:embed all:./data/python-windows-amd64
 var _pythonLib embed.FS
-var pythonLib, _ = fs.Sub(_pythonLib, "data/python-windows-amd64")
+var PythonLib, _ = fs.Sub(_pythonLib, "data/python-windows-amd64")
