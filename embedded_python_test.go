@@ -1,9 +1,11 @@
 package go_embed_python
 
 import (
+	"fmt"
 	"github.com/kluctl/go-embed-python/internal"
 	"github.com/stretchr/testify/assert"
 	"io"
+	"math/rand"
 	"os/exec"
 	"path/filepath"
 	"runtime"
@@ -11,8 +13,10 @@ import (
 )
 
 func TestEmbeddedPython(t *testing.T) {
-	ep, err := NewEmbeddedPython("test")
+	rndName := fmt.Sprintf("test-%d", rand.Uint32())
+	ep, err := NewEmbeddedPython(rndName)
 	assert.NoError(t, err)
+	defer ep.Cleanup()
 	path := ep.GetExtractedPath()
 	assert.NotEqual(t, path, "")
 	pexe := filepath.Join(path, "bin/python3")

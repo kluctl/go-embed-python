@@ -33,6 +33,15 @@ func NewEmbeddedFilesWithTmpDir(embedFs fs.FS, tmpDir string) (*EmbeddedFiles, e
 	return e, nil
 }
 
+func (e *EmbeddedFiles) Cleanup() error {
+	if e.extractedPath == "" {
+		return nil
+	}
+	err := os.RemoveAll(e.extractedPath)
+	e.extractedPath = ""
+	return err
+}
+
 func (e *EmbeddedFiles) GetExtractedPath() string {
 	return e.extractedPath
 }

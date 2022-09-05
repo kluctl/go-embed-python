@@ -36,6 +36,10 @@ func NewEmbeddedPythonWithTmpDir(tmpDir string) (*EmbeddedPython, error) {
 	}, nil
 }
 
+func (ep *EmbeddedPython) Cleanup() error {
+	return ep.e.Cleanup()
+}
+
 func (ep *EmbeddedPython) GetExtractedPath() string {
 	return ep.e.GetExtractedPath()
 }
