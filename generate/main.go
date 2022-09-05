@@ -35,11 +35,7 @@ var archMapping = map[string]string{
 }
 
 var removeLibs = []string{
-	"asyncio",
-	"curses",
-	"dbm",
 	"distutils",
-	"email",
 	"ensurepip",
 	"idlelib",
 	"lib2to3",
@@ -48,13 +44,8 @@ var removeLibs = []string{
 	"site-packages",
 	"sqlite3",
 	"test",
-	"tkinter",
 	"turtledemo",
-	"unittest",
 	"venv",
-	"wsgiref",
-	"xml",
-	"xmlrpc",
 	"bin", // not really a library, but erroneously installed by jsonpath_ng
 }
 
