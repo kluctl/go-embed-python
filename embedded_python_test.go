@@ -11,7 +11,9 @@ import (
 )
 
 func TestEmbeddedPython(t *testing.T) {
-	path := GetEmbeddedPythonPath()
+	ep, err := NewEmbeddedPython("test")
+	assert.NoError(t, err)
+	path := ep.GetExtractedPath()
 	assert.NotEqual(t, path, "")
 	pexe := filepath.Join(path, "bin/python3")
 	if runtime.GOOS == "windows" {

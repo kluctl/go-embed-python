@@ -12,45 +12,70 @@ import (
 	"path/filepath"
 )
 
-func ExtractEmbeddedToTmp(embedFs fs.FS, targetPrefix string) (string, error) {
+type EmbeddedFiles struct {
+	tmpDir        string
+	extractedPath string
+}
+
+func NewEmbeddedFiles(embedFs fs.FS, name string) (*EmbeddedFiles, error) {
+	tmpDir := filepath.Join(os.TempDir(), fmt.Sprintf("go-embedded-%s", name))
+	return NewEmbeddedFilesWithTmpDir(embedFs, tmpDir)
+}
+
+func NewEmbeddedFilesWithTmpDir(embedFs fs.FS, tmpDir string) (*EmbeddedFiles, error) {
+	e := &EmbeddedFiles{
+		tmpDir: tmpDir,
+	}
+	err := e.extract(embedFs)
+	if err != nil {
+		return nil, err
+	}
+	return e, nil
+}
+
+func (e *EmbeddedFiles) GetExtractedPath() string {
+	return e.extractedPath
+}
+
+func (e *EmbeddedFiles) extract(embedFs fs.FS) error {
 	flStr, err := fs.ReadFile(embedFs, "files.json")
 	if err != nil {
-		return "", err
+		return err
 	}
 	flHash := internal.Sha256Bytes(flStr)
 
 	fl, err := readFileList(string(flStr))
 	if err != nil {
-		return "", err
+		return err
 	}
 
-	targetPath := fmt.Sprintf("%s-%s", targetPrefix, flHash[:16])
+	e.extractedPath = fmt.Sprintf("%s-%s", e.tmpDir, flHash[:16])
 
-	err = os.MkdirAll(filepath.Dir(targetPath), 0o755)
+	err = os.MkdirAll(filepath.Dir(e.extractedPath), 0o755)
 	if err != nil {
-		return "", err
+		return err
 	}
 
-	lock, err := lockedfile.Create(targetPath + ".lock")
+	lock, err := lockedfile.Create(e.extractedPath + ".lock")
 	if err != nil {
-		return "", err
+		return err
 	}
 	defer lock.Close()
 
-	err = os.MkdirAll(targetPath, 0o755)
+	err = os.MkdirAll(e.extractedPath, 0o755)
 	if err != nil {
-		return "", err
+		return err
 	}
 
-	err = copyEmbeddedFilesToTmp(embedFs, targetPath, fl)
+	err = e.copyEmbeddedFilesToTmp(embedFs, fl)
 	if err != nil {
-		return "", err
+		return err
 	}
 
-	return targetPath, nil
+	return nil
 }
 
-func copyEmbeddedFilesToTmp(embedFs fs.FS, targetPath string, fl *fileList) error {
+func (e *EmbeddedFiles) copyEmbeddedFilesToTmp(embedFs fs.FS, fl *fileList) error {
 	m := make(map[string]fileListEntry)
 
 	for _, fle := range fl.Files {
@@ -74,7 +99,7 @@ func copyEmbeddedFilesToTmp(embedFs fs.FS, targetPath string, fl *fileList) erro
 			}
 		}
 
-		path := filepath.Join(targetPath, fle.Name)
+		path := filepath.Join(e.extractedPath, fle.Name)
 		existingSt, err := os.Lstat(path)
 		if err == nil {
 			if resolvedFle.Mode.Type() == existingSt.Mode().Type() {
