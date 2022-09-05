@@ -84,11 +84,11 @@ func main() {
 		keepPatterns []glob.Glob
 	}
 	jobs := []job{
-		{"linux", "amd64", "embed/data/python-linux-amd64", keepNixPatterns},
-		{"linux", "arm64", "embed/data/python-linux-arm64", keepNixPatterns},
-		{"darwin", "amd64", "embed/data/python-darwin-amd64", keepNixPatterns},
-		{"darwin", "arm64", "embed/data/python-darwin-arm64", keepNixPatterns},
-		{"windows", "amd64", "embed/data/python-windows-amd64", keepWinPatterns},
+		{"linux", "amd64", "data/python-linux-amd64", keepNixPatterns},
+		{"linux", "arm64", "data/python-linux-arm64", keepNixPatterns},
+		{"darwin", "amd64", "data/python-darwin-amd64", keepNixPatterns},
+		{"darwin", "arm64", "data/python-darwin-arm64", keepNixPatterns},
+		{"windows", "amd64", "data/python-windows-amd64", keepWinPatterns},
 	}
 	for _, j := range jobs {
 		j := j
