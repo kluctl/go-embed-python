@@ -1,0 +1,2836 @@
+{
+  "contentHash": "6974ce396886ad3934233675e12b35cee9f971ce8d9a9d7f080b27e9e7538ca9",
+  "Files": [
+    {
+      "name": "bin",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "bin/pip",
+      "size": 324,
+      "perm": 493
+    },
+    {
+      "name": "bin/pip3",
+      "size": 324,
+      "perm": 493
+    },
+    {
+      "name": "bin/pip3.10",
+      "size": 324,
+      "perm": 493
+    },
+    {
+      "name": "pip",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip-22.2.2.dist-info",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip-22.2.2.dist-info/INSTALLER",
+      "size": 4,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/LICENSE.txt",
+      "size": 1093,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/METADATA",
+      "size": 4197,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/RECORD",
+      "size": 76107,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/REQUESTED",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/WHEEL",
+      "size": 92,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/entry_points.txt",
+      "size": 124,
+      "perm": 420
+    },
+    {
+      "name": "pip-22.2.2.dist-info/top_level.txt",
+      "size": 4,
+      "perm": 420
+    },
+    {
+      "name": "pip/__init__.py",
+      "size": 357,
+      "perm": 420
+    },
+    {
+      "name": "pip/__main__.py",
+      "size": 1198,
+      "perm": 420
+    },
+    {
+      "name": "pip/__pip-runner__.py",
+      "size": 1037,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/__init__.py",
+      "size": 573,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/build_env.py",
+      "size": 9535,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cache.py",
+      "size": 10623,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/cli/__init__.py",
+      "size": 132,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/autocompletion.py",
+      "size": 6676,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/base_command.py",
+      "size": 8146,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/cmdoptions.py",
+      "size": 29985,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/command_context.py",
+      "size": 774,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/main.py",
+      "size": 2472,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/main_parser.py",
+      "size": 2614,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/parser.py",
+      "size": 10817,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/progress_bars.py",
+      "size": 1968,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/req_command.py",
+      "size": 18172,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/spinners.py",
+      "size": 5098,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/cli/status_codes.py",
+      "size": 116,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/commands/__init__.py",
+      "size": 3882,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/cache.py",
+      "size": 7582,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/check.py",
+      "size": 1685,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/completion.py",
+      "size": 4129,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/configuration.py",
+      "size": 9500,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/debug.py",
+      "size": 6573,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/download.py",
+      "size": 5058,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/freeze.py",
+      "size": 2951,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/hash.py",
+      "size": 1703,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/help.py",
+      "size": 1132,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/index.py",
+      "size": 4762,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/inspect.py",
+      "size": 3374,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/install.py",
+      "size": 30315,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/list.py",
+      "size": 12148,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/search.py",
+      "size": 5697,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/show.py",
+      "size": 6129,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/uninstall.py",
+      "size": 3680,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/commands/wheel.py",
+      "size": 6307,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/configuration.py",
+      "size": 13529,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/distributions",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/distributions/__init__.py",
+      "size": 858,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/distributions/base.py",
+      "size": 1221,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/distributions/installed.py",
+      "size": 729,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/distributions/sdist.py",
+      "size": 6494,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/distributions/wheel.py",
+      "size": 1164,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/exceptions.py",
+      "size": 20912,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/index",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/index/__init__.py",
+      "size": 30,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/index/collector.py",
+      "size": 20316,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/index/package_finder.py",
+      "size": 37596,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/index/sources.py",
+      "size": 6557,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/locations",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/locations/__init__.py",
+      "size": 17552,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/locations/_distutils.py",
+      "size": 6272,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/locations/_sysconfig.py",
+      "size": 7867,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/locations/base.py",
+      "size": 2573,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/main.py",
+      "size": 340,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/metadata/__init__.py",
+      "size": 3535,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/_json.py",
+      "size": 2595,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/base.py",
+      "size": 24596,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/importlib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/metadata/importlib/__init__.py",
+      "size": 107,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/importlib/_compat.py",
+      "size": 1493,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/importlib/_dists.py",
+      "size": 7456,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/importlib/_envs.py",
+      "size": 7195,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/metadata/pkg_resources.py",
+      "size": 9289,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/models/__init__.py",
+      "size": 63,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/candidate.py",
+      "size": 990,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/direct_url.py",
+      "size": 5877,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/format_control.py",
+      "size": 2520,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/index.py",
+      "size": 1030,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/installation_report.py",
+      "size": 2617,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/link.py",
+      "size": 10490,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/scheme.py",
+      "size": 738,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/search_scope.py",
+      "size": 4520,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/selection_prefs.py",
+      "size": 1907,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/target_python.py",
+      "size": 3858,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/models/wheel.py",
+      "size": 3575,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/network/__init__.py",
+      "size": 50,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/auth.py",
+      "size": 12190,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/cache.py",
+      "size": 2145,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/download.py",
+      "size": 6096,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/lazy_wheel.py",
+      "size": 7637,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/session.py",
+      "size": 18443,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/utils.py",
+      "size": 4073,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/network/xmlrpc.py",
+      "size": 1791,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/operations/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/operations/build/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/build_tracker.py",
+      "size": 4133,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/metadata.py",
+      "size": 1404,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/metadata_editable.py",
+      "size": 1456,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/metadata_legacy.py",
+      "size": 2198,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/wheel.py",
+      "size": 1063,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/wheel_editable.py",
+      "size": 1405,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/build/wheel_legacy.py",
+      "size": 3064,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/check.py",
+      "size": 5109,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/freeze.py",
+      "size": 9784,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/install",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/operations/install/__init__.py",
+      "size": 51,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/install/editable_legacy.py",
+      "size": 1354,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/install/legacy.py",
+      "size": 4105,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/install/wheel.py",
+      "size": 27379,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/operations/prepare.py",
+      "size": 22962,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/pyproject.py",
+      "size": 7074,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/req",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/req/__init__.py",
+      "size": 2807,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/req/constructors.py",
+      "size": 16611,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/req/req_file.py",
+      "size": 17502,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/req/req_install.py",
+      "size": 33506,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/req/req_set.py",
+      "size": 2858,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/req/req_uninstall.py",
+      "size": 24045,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/resolution/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/base.py",
+      "size": 583,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/legacy",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/resolution/legacy/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/legacy/resolver.py",
+      "size": 24129,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/base.py",
+      "size": 5220,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/candidates.py",
+      "size": 18963,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/factory.py",
+      "size": 27878,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/found_candidates.py",
+      "size": 5705,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/provider.py",
+      "size": 9914,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/reporter.py",
+      "size": 2526,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/requirements.py",
+      "size": 5455,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/resolution/resolvelib/resolver.py",
+      "size": 11533,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/self_outdated_check.py",
+      "size": 8020,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/utils/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/_log.py",
+      "size": 1015,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/appdirs.py",
+      "size": 1665,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/compat.py",
+      "size": 1884,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/compatibility_tags.py",
+      "size": 5377,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/datetime.py",
+      "size": 242,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/deprecation.py",
+      "size": 3627,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/direct_url_helpers.py",
+      "size": 3206,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/distutils_args.py",
+      "size": 1115,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/egg_link.py",
+      "size": 2203,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/encoding.py",
+      "size": 1169,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/entrypoints.py",
+      "size": 2900,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/filesystem.py",
+      "size": 5122,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/filetypes.py",
+      "size": 716,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/glibc.py",
+      "size": 3110,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/hashes.py",
+      "size": 4811,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/inject_securetransport.py",
+      "size": 795,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/logging.py",
+      "size": 11632,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/misc.py",
+      "size": 21617,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/models.py",
+      "size": 1193,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/packaging.py",
+      "size": 2108,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/setuptools_build.py",
+      "size": 5652,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/subprocess.py",
+      "size": 9197,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/temp_dir.py",
+      "size": 7702,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/unpacking.py",
+      "size": 8821,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/urls.py",
+      "size": 1759,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/virtualenv.py",
+      "size": 3459,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/utils/wheel.py",
+      "size": 4549,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/vcs",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_internal/vcs/__init__.py",
+      "size": 596,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/vcs/bazaar.py",
+      "size": 3047,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/vcs/git.py",
+      "size": 18116,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/vcs/mercurial.py",
+      "size": 5238,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/vcs/subversion.py",
+      "size": 11718,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/vcs/versioncontrol.py",
+      "size": 22811,
+      "perm": 420
+    },
+    {
+      "name": "pip/_internal/wheel_builder.py",
+      "size": 12712,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/__init__.py",
+      "size": 4966,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/__init__.py",
+      "size": 465,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/_cmd.py",
+      "size": 1379,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/adapter.py",
+      "size": 5033,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/cache.py",
+      "size": 1535,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/caches",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/caches/__init__.py",
+      "size": 242,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/caches/file_cache.py",
+      "size": 5271,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/caches/redis_cache.py",
+      "size": 1033,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/compat.py",
+      "size": 778,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/controller.py",
+      "size": 16416,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/filewrapper.py",
+      "size": 3946,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/heuristics.py",
+      "size": 4154,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/serialize.py",
+      "size": 7105,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/cachecontrol/wrapper.py",
+      "size": 774,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/certifi",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/certifi/__init__.py",
+      "size": 94,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/certifi/__main__.py",
+      "size": 255,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/certifi/cacert.pem",
+      "size": 285222,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/certifi/core.py",
+      "size": 3052,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/chardet/__init__.py",
+      "size": 3705,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/big5freq.py",
+      "size": 31274,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/big5prober.py",
+      "size": 1741,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/chardistribution.py",
+      "size": 9608,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/charsetgroupprober.py",
+      "size": 3817,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/charsetprober.py",
+      "size": 4801,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/cli",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/chardet/cli/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/cli/chardetect.py",
+      "size": 2406,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/codingstatemachine.py",
+      "size": 3559,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/cp949prober.py",
+      "size": 1838,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/enums.py",
+      "size": 1619,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/escprober.py",
+      "size": 3864,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/escsm.py",
+      "size": 12021,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/eucjpprober.py",
+      "size": 3676,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/euckrfreq.py",
+      "size": 13566,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/euckrprober.py",
+      "size": 1731,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/euctwfreq.py",
+      "size": 36913,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/euctwprober.py",
+      "size": 1731,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/gb2312freq.py",
+      "size": 20735,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/gb2312prober.py",
+      "size": 1737,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/hebrewprober.py",
+      "size": 13919,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/jisfreq.py",
+      "size": 25796,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/johabfreq.py",
+      "size": 42498,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/johabprober.py",
+      "size": 1730,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/jpcntx.py",
+      "size": 26797,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langbulgarianmodel.py",
+      "size": 104562,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langgreekmodel.py",
+      "size": 98484,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langhebrewmodel.py",
+      "size": 98196,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langhungarianmodel.py",
+      "size": 101363,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langrussianmodel.py",
+      "size": 128035,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langthaimodel.py",
+      "size": 102774,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/langturkishmodel.py",
+      "size": 95372,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/latin1prober.py",
+      "size": 5260,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/mbcharsetprober.py",
+      "size": 3367,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/mbcsgroupprober.py",
+      "size": 2056,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/mbcssm.py",
+      "size": 30068,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/metadata",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/chardet/metadata/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/metadata/languages.py",
+      "size": 13280,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/sbcharsetprober.py",
+      "size": 6199,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/sbcsgroupprober.py",
+      "size": 4129,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/sjisprober.py",
+      "size": 3749,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/universaldetector.py",
+      "size": 13288,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/utf1632prober.py",
+      "size": 8289,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/utf8prober.py",
+      "size": 2709,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/chardet/version.py",
+      "size": 242,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/colorama",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/colorama/__init__.py",
+      "size": 239,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/colorama/ansi.py",
+      "size": 2522,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/colorama/ansitowin32.py",
+      "size": 10830,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/colorama/initialise.py",
+      "size": 1915,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/colorama/win32.py",
+      "size": 5404,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/colorama/winterm.py",
+      "size": 6438,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/distlib/__init__.py",
+      "size": 581,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/compat.py",
+      "size": 41259,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/database.py",
+      "size": 51697,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/index.py",
+      "size": 20834,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/locators.py",
+      "size": 51991,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/manifest.py",
+      "size": 14811,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/markers.py",
+      "size": 5058,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/metadata.py",
+      "size": 39801,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/resources.py",
+      "size": 10820,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/scripts.py",
+      "size": 18102,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/t32.exe",
+      "size": 97792,
+      "perm": 420,
+      "compressed": true
+    },
+    {
+      "name": "pip/_vendor/distlib/t64-arm.exe",
+      "size": 182784,
+      "perm": 420,
+      "compressed": true
+    },
+    {
+      "name": "pip/_vendor/distlib/t64.exe",
+      "size": 107520,
+      "perm": 420,
+      "compressed": true
+    },
+    {
+      "name": "pip/_vendor/distlib/util.py",
+      "size": 66262,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/version.py",
+      "size": 23513,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distlib/w32.exe",
+      "size": 91648,
+      "perm": 420,
+      "compressed": true
+    },
+    {
+      "name": "pip/_vendor/distlib/w64-arm.exe",
+      "size": 168448,
+      "perm": 420,
+      "compressed": true
+    },
+    {
+      "name": "pip/_vendor/distlib/w64.exe",
+      "size": 101888,
+      "perm": 420,
+      "compressed": true
+    },
+    {
+      "name": "pip/_vendor/distlib/wheel.py",
+      "size": 43898,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distro",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/distro/__init__.py",
+      "size": 981,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distro/__main__.py",
+      "size": 64,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/distro/distro.py",
+      "size": 48841,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/idna/__init__.py",
+      "size": 849,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/codec.py",
+      "size": 3374,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/compat.py",
+      "size": 321,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/core.py",
+      "size": 12795,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/idnadata.py",
+      "size": 44025,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/intranges.py",
+      "size": 1881,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/package_data.py",
+      "size": 21,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/idna/uts46data.py",
+      "size": 204400,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/msgpack",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/msgpack/__init__.py",
+      "size": 1132,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/msgpack/exceptions.py",
+      "size": 1081,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/msgpack/ext.py",
+      "size": 6080,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/msgpack/fallback.py",
+      "size": 34557,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/packaging/__about__.py",
+      "size": 661,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/__init__.py",
+      "size": 497,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/_manylinux.py",
+      "size": 11488,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/_musllinux.py",
+      "size": 4378,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/_structures.py",
+      "size": 1431,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/markers.py",
+      "size": 8487,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/requirements.py",
+      "size": 4676,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/specifiers.py",
+      "size": 30110,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/tags.py",
+      "size": 15699,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/utils.py",
+      "size": 4200,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/packaging/version.py",
+      "size": 14665,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pep517/__init__.py",
+      "size": 130,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/build.py",
+      "size": 3457,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/check.py",
+      "size": 6084,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/colorlog.py",
+      "size": 4098,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/compat.py",
+      "size": 1253,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/dirtools.py",
+      "size": 1129,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/envbuild.py",
+      "size": 6100,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/in_process",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pep517/in_process/__init__.py",
+      "size": 563,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/in_process/_in_process.py",
+      "size": 11201,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/meta.py",
+      "size": 2463,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pep517/wrappers.py",
+      "size": 13429,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pkg_resources",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pkg_resources/__init__.py",
+      "size": 108287,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pkg_resources/py31compat.py",
+      "size": 562,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/platformdirs/__init__.py",
+      "size": 12831,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/__main__.py",
+      "size": 1176,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/android.py",
+      "size": 4068,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/api.py",
+      "size": 4910,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/macos.py",
+      "size": 2655,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/unix.py",
+      "size": 6910,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/version.py",
+      "size": 78,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/platformdirs/windows.py",
+      "size": 6439,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pygments/__init__.py",
+      "size": 3002,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/__main__.py",
+      "size": 353,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/cmdline.py",
+      "size": 23408,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/console.py",
+      "size": 1697,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/filter.py",
+      "size": 1938,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/filters",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pygments/filters/__init__.py",
+      "size": 40292,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatter.py",
+      "size": 2917,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/__init__.py",
+      "size": 5119,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/_mapping.py",
+      "size": 6517,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/bbcode.py",
+      "size": 3314,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/groff.py",
+      "size": 5086,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/html.py",
+      "size": 35441,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/img.py",
+      "size": 21819,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/irc.py",
+      "size": 5871,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/latex.py",
+      "size": 19351,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/other.py",
+      "size": 5073,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/pangomarkup.py",
+      "size": 2212,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/rtf.py",
+      "size": 5014,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/svg.py",
+      "size": 7335,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/terminal.py",
+      "size": 4674,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/formatters/terminal256.py",
+      "size": 11753,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/lexer.py",
+      "size": 32005,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/lexers",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pygments/lexers/__init__.py",
+      "size": 11491,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/lexers/_mapping.py",
+      "size": 72083,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/lexers/python.py",
+      "size": 52792,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/modeline.py",
+      "size": 986,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/plugin.py",
+      "size": 1727,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/regexopt.py",
+      "size": 3072,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/scanner.py",
+      "size": 3092,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/sphinxext.py",
+      "size": 4630,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/style.py",
+      "size": 6257,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/styles",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pygments/styles/__init__.py",
+      "size": 3252,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/token.py",
+      "size": 6143,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/unistring.py",
+      "size": 63187,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pygments/util.py",
+      "size": 9110,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pyparsing/__init__.py",
+      "size": 9171,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/actions.py",
+      "size": 6426,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/common.py",
+      "size": 12936,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/core.py",
+      "size": 213344,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/diagram",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/pyparsing/diagram/__init__.py",
+      "size": 23685,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/exceptions.py",
+      "size": 9023,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/helpers.py",
+      "size": 39129,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/results.py",
+      "size": 25341,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/testing.py",
+      "size": 13402,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/unicode.py",
+      "size": 10787,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/pyparsing/util.py",
+      "size": 6805,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/requests/__init__.py",
+      "size": 5178,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/__version__.py",
+      "size": 440,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/_internal_utils.py",
+      "size": 1397,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/adapters.py",
+      "size": 21443,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/api.py",
+      "size": 6377,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/auth.py",
+      "size": 10187,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/certs.py",
+      "size": 441,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/compat.py",
+      "size": 1286,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/cookies.py",
+      "size": 18560,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/exceptions.py",
+      "size": 3823,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/help.py",
+      "size": 3879,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/hooks.py",
+      "size": 733,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/models.py",
+      "size": 35287,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/packages.py",
+      "size": 695,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/sessions.py",
+      "size": 30180,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/status_codes.py",
+      "size": 4235,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/structures.py",
+      "size": 2912,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/requests/utils.py",
+      "size": 33240,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/resolvelib/__init__.py",
+      "size": 537,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib/compat",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/resolvelib/compat/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib/compat/collections_abc.py",
+      "size": 156,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib/providers.py",
+      "size": 5872,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib/reporters.py",
+      "size": 1583,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib/resolvers.py",
+      "size": 17592,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/resolvelib/structs.py",
+      "size": 4794,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/rich/__init__.py",
+      "size": 5944,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/__main__.py",
+      "size": 8808,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_cell_widths.py",
+      "size": 10096,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_emoji_codes.py",
+      "size": 140235,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_emoji_replace.py",
+      "size": 1064,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_export_format.py",
+      "size": 2114,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_extension.py",
+      "size": 265,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_inspect.py",
+      "size": 9695,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_log_render.py",
+      "size": 3225,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_loop.py",
+      "size": 1236,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_palettes.py",
+      "size": 7063,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_pick.py",
+      "size": 423,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_ratio.py",
+      "size": 5472,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_spinners.py",
+      "size": 19919,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_stack.py",
+      "size": 351,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_timer.py",
+      "size": 417,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_win32_console.py",
+      "size": 22820,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_windows.py",
+      "size": 1926,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_windows_renderer.py",
+      "size": 2783,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/_wrap.py",
+      "size": 1840,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/abc.py",
+      "size": 890,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/align.py",
+      "size": 10368,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/ansi.py",
+      "size": 6820,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/bar.py",
+      "size": 3264,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/box.py",
+      "size": 9864,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/cells.py",
+      "size": 4503,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/color.py",
+      "size": 17957,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/color_triplet.py",
+      "size": 1054,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/columns.py",
+      "size": 7131,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/console.py",
+      "size": 95885,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/constrain.py",
+      "size": 1288,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/containers.py",
+      "size": 5497,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/control.py",
+      "size": 6630,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/default_styles.py",
+      "size": 7954,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/diagnose.py",
+      "size": 972,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/emoji.py",
+      "size": 2501,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/errors.py",
+      "size": 642,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/file_proxy.py",
+      "size": 1616,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/filesize.py",
+      "size": 2507,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/highlighter.py",
+      "size": 9585,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/json.py",
+      "size": 5051,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/jupyter.py",
+      "size": 3252,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/layout.py",
+      "size": 14074,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/live.py",
+      "size": 14172,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/live_render.py",
+      "size": 3667,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/logging.py",
+      "size": 11471,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/markup.py",
+      "size": 8198,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/measure.py",
+      "size": 5305,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/padding.py",
+      "size": 4970,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/pager.py",
+      "size": 828,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/palette.py",
+      "size": 3396,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/panel.py",
+      "size": 8744,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/pretty.py",
+      "size": 36576,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/progress.py",
+      "size": 59746,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/progress_bar.py",
+      "size": 8161,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/prompt.py",
+      "size": 11303,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/protocol.py",
+      "size": 1391,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/region.py",
+      "size": 166,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/repr.py",
+      "size": 4449,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/rule.py",
+      "size": 4773,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/scope.py",
+      "size": 2842,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/screen.py",
+      "size": 1591,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/segment.py",
+      "size": 24224,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/spinner.py",
+      "size": 4374,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/status.py",
+      "size": 4425,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/style.py",
+      "size": 26240,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/styled.py",
+      "size": 1258,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/syntax.py",
+      "size": 34697,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/table.py",
+      "size": 39515,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/terminal_theme.py",
+      "size": 3370,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/text.py",
+      "size": 44666,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/theme.py",
+      "size": 3627,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/themes.py",
+      "size": 102,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/traceback.py",
+      "size": 26060,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/rich/tree.py",
+      "size": 9169,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/six.py",
+      "size": 34549,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/tenacity/__init__.py",
+      "size": 18257,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/_asyncio.py",
+      "size": 3314,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/_utils.py",
+      "size": 1944,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/after.py",
+      "size": 1496,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/before.py",
+      "size": 1376,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/before_sleep.py",
+      "size": 1908,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/nap.py",
+      "size": 1383,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/retry.py",
+      "size": 6645,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/stop.py",
+      "size": 2790,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/tornadoweb.py",
+      "size": 2145,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tenacity/wait.py",
+      "size": 6691,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tomli",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/tomli/__init__.py",
+      "size": 396,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tomli/_parser.py",
+      "size": 22633,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tomli/_re.py",
+      "size": 2943,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/tomli/_types.py",
+      "size": 254,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/typing_extensions.py",
+      "size": 75420,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/urllib3/__init__.py",
+      "size": 2763,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/_collections.py",
+      "size": 10811,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/_version.py",
+      "size": 64,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/connection.py",
+      "size": 20070,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/connectionpool.py",
+      "size": 39093,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/_appengine_environ.py",
+      "size": 957,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/_securetransport",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/_securetransport/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/_securetransport/bindings.py",
+      "size": 17632,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/_securetransport/low_level.py",
+      "size": 13922,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/appengine.py",
+      "size": 11034,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/ntlmpool.py",
+      "size": 4538,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/pyopenssl.py",
+      "size": 16899,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/securetransport.py",
+      "size": 34448,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/contrib/socks.py",
+      "size": 7097,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/exceptions.py",
+      "size": 8217,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/fields.py",
+      "size": 8579,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/filepost.py",
+      "size": 2440,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/packages",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/urllib3/packages/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/packages/backports",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/urllib3/packages/backports/__init__.py",
+      "size": 0,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/packages/backports/makefile.py",
+      "size": 1417,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/packages/six.py",
+      "size": 34665,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/poolmanager.py",
+      "size": 19786,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/request.py",
+      "size": 5985,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/response.py",
+      "size": 28156,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/__init__.py",
+      "size": 1155,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/connection.py",
+      "size": 4901,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/proxy.py",
+      "size": 1605,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/queue.py",
+      "size": 498,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/request.py",
+      "size": 3997,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/response.py",
+      "size": 3510,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/retry.py",
+      "size": 22001,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/ssl_.py",
+      "size": 17177,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/ssl_match_hostname.py",
+      "size": 5758,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/ssltransport.py",
+      "size": 6895,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/timeout.py",
+      "size": 10003,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/url.py",
+      "size": 14287,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/urllib3/util/wait.py",
+      "size": 5403,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/vendor.txt",
+      "size": 469,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/webencodings",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "pip/_vendor/webencodings/__init__.py",
+      "size": 10579,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/webencodings/labels.py",
+      "size": 8979,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/webencodings/mklabels.py",
+      "size": 1305,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/webencodings/tests.py",
+      "size": 6563,
+      "perm": 420
+    },
+    {
+      "name": "pip/_vendor/webencodings/x_user_defined.py",
+      "size": 4307,
+      "perm": 420
+    },
+    {
+      "name": "pip/py.typed",
+      "size": 286,
+      "perm": 420
+    }
+  ]
+}

@@ -56,11 +56,17 @@ func (ep *EmbeddedPython) GetExePath() string {
 	suffix := ""
 	if runtime.GOOS == "windows" {
 		suffix = ".exe"
+	} else {
+		suffix = "3"
 	}
 	return filepath.Join(ep.GetBinPath(), "python"+suffix)
 }
 
-func (ep *EmbeddedPython) PythonCmd(args []string) *exec.Cmd {
+func (ep *EmbeddedPython) PythonCmd(args ...string) *exec.Cmd {
+	return ep.PythonCmd2(args)
+}
+
+func (ep *EmbeddedPython) PythonCmd2(args []string) *exec.Cmd {
 	exePath := ep.GetExePath()
 
 	cmd := exec.Command(exePath, args...)
