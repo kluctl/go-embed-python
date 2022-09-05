@@ -1,4 +1,4 @@
-package embed
+package go_embed_python
 
 import (
 	"github.com/kluctl/go-embed-python/internal"
