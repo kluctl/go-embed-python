@@ -126,8 +126,6 @@ func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob
 		libPath = filepath.Join(installPath, "lib", fmt.Sprintf("python%s", pythonVersionBase))
 	}
 
-	pipInstallRequirements(libPath, "requirements.txt")
-
 	var removes []string
 
 	for _, lib := range removeLibs {

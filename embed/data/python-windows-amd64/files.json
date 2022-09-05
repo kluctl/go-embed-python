@@ -1,5 +1,5 @@
 {
-  "contentHash": "5386d87e1e71f3fb9be67f2d7f7880b7748f37e3fae47c71d500f1107bfb0966",
+  "contentHash": "84755f6e2bb57d4fd5acfdc83218d26f8648edd71ebcfcdcd3c4306fa7efdcdf",
   "Files": [
     {
       "name": "DLLs",
@@ -296,16 +296,6 @@
       "perm": 438
     },
     {
-      "name": "Lib/_yaml",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/_yaml/__init__.py",
-      "size": 1402,
-      "perm": 420
-    },
-    {
       "name": "Lib/abc.py",
       "size": 6522,
       "perm": 438
@@ -511,16 +501,6 @@
       "perm": 438
     },
     {
-      "name": "Lib/bin",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/bin/jsonpath_ng",
-      "size": 272,
-      "perm": 493
-    },
-    {
       "name": "Lib/binhex.py",
       "size": 14784,
       "perm": 438
@@ -559,96 +539,6 @@
       "name": "Lib/chunk.py",
       "size": 5435,
       "perm": 438
-    },
-    {
-      "name": "Lib/click",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/click/__init__.py",
-      "size": 3138,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/_compat.py",
-      "size": 18810,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/_termui_impl.py",
-      "size": 23451,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/_textwrap.py",
-      "size": 1353,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/_winconsole.py",
-      "size": 7860,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/core.py",
-      "size": 112782,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/decorators.py",
-      "size": 16350,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/exceptions.py",
-      "size": 9167,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/formatting.py",
-      "size": 9706,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/globals.py",
-      "size": 1961,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/parser.py",
-      "size": 19044,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/py.typed",
-      "size": 0,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/shell_completion.py",
-      "size": 18018,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/termui.py",
-      "size": 28355,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/testing.py",
-      "size": 16063,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/types.py",
-      "size": 35805,
-      "perm": 420
-    },
-    {
-      "name": "Lib/click/utils.py",
-      "size": 18682,
-      "perm": 420
     },
     {
       "name": "Lib/cmd.py",
@@ -919,11 +809,6 @@
       "name": "Lib/decimal.py",
       "size": 320,
       "perm": 438
-    },
-    {
-      "name": "Lib/decorator.py",
-      "size": 16752,
-      "perm": 420
     },
     {
       "name": "Lib/difflib.py",
@@ -1981,141 +1866,6 @@
       "perm": 438
     },
     {
-      "name": "Lib/jinja2",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/jinja2/__init__.py",
-      "size": 1927,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/_identifier.py",
-      "size": 1958,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/async_utils.py",
-      "size": 2472,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/bccache.py",
-      "size": 14061,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/compiler.py",
-      "size": 72172,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/constants.py",
-      "size": 1433,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/debug.py",
-      "size": 6299,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/defaults.py",
-      "size": 1267,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/environment.py",
-      "size": 61349,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/exceptions.py",
-      "size": 5071,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/ext.py",
-      "size": 31502,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/filters.py",
-      "size": 53509,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/idtracking.py",
-      "size": 10704,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/lexer.py",
-      "size": 29726,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/loaders.py",
-      "size": 23207,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/meta.py",
-      "size": 4396,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/nativetypes.py",
-      "size": 4226,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/nodes.py",
-      "size": 34550,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/optimizer.py",
-      "size": 1650,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/parser.py",
-      "size": 39595,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/py.typed",
-      "size": 0,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/runtime.py",
-      "size": 33476,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/sandbox.py",
-      "size": 14584,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/tests.py",
-      "size": 5905,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/utils.py",
-      "size": 23965,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jinja2/visitor.py",
-      "size": 3568,
-      "perm": 420
-    },
-    {
       "name": "Lib/json",
       "size": 0,
       "perm": 2147484141
@@ -2144,86 +1894,6 @@
       "name": "Lib/json/tool.py",
       "size": 3339,
       "perm": 438
-    },
-    {
-      "name": "Lib/jsonpath_ng",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/jsonpath_ng/__init__.py",
-      "size": 116,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/bin",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/jsonpath_ng/bin/__init__.py",
-      "size": 0,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/bin/jsonpath.py",
-      "size": 2151,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/exceptions.py",
-      "size": 146,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext/__init__.py",
-      "size": 605,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext/arithmetic.py",
-      "size": 2381,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext/filter.py",
-      "size": 3935,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext/iterable.py",
-      "size": 2984,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext/parser.py",
-      "size": 5286,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/ext/string.py",
-      "size": 3258,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/jsonpath.py",
-      "size": 25078,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/lexer.py",
-      "size": 5333,
-      "perm": 420
-    },
-    {
-      "name": "Lib/jsonpath_ng/parser.py",
-      "size": 5842,
-      "perm": 420
     },
     {
       "name": "Lib/keyword.py",
@@ -2274,42 +1944,6 @@
       "name": "Lib/mailcap.py",
       "size": 8153,
       "perm": 438
-    },
-    {
-      "name": "Lib/markupsafe",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/markupsafe/__init__.py",
-      "size": 9284,
-      "perm": 420
-    },
-    {
-      "name": "Lib/markupsafe/_native.py",
-      "size": 1713,
-      "perm": 420
-    },
-    {
-      "name": "Lib/markupsafe/_speedups.c",
-      "size": 7083,
-      "perm": 420
-    },
-    {
-      "name": "Lib/markupsafe/_speedups.cpython-310-darwin.so",
-      "size": 117457,
-      "perm": 493,
-      "compressed": true
-    },
-    {
-      "name": "Lib/markupsafe/_speedups.pyi",
-      "size": 229,
-      "perm": 420
-    },
-    {
-      "name": "Lib/markupsafe/py.typed",
-      "size": 0,
-      "perm": 420
     },
     {
       "name": "Lib/mimetypes.py",
@@ -2432,41 +2066,6 @@
       "perm": 438
     },
     {
-      "name": "Lib/ply",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/ply/__init__.py",
-      "size": 103,
-      "perm": 420
-    },
-    {
-      "name": "Lib/ply/cpp.py",
-      "size": 33639,
-      "perm": 420
-    },
-    {
-      "name": "Lib/ply/ctokens.py",
-      "size": 3155,
-      "perm": 420
-    },
-    {
-      "name": "Lib/ply/lex.py",
-      "size": 42905,
-      "perm": 420
-    },
-    {
-      "name": "Lib/ply/yacc.py",
-      "size": 137736,
-      "perm": 420
-    },
-    {
-      "name": "Lib/ply/ygen.py",
-      "size": 2246,
-      "perm": 420
-    },
-    {
       "name": "Lib/poplib.py",
       "size": 15198,
       "perm": 438
@@ -2585,11 +2184,6 @@
       "name": "Lib/site.py",
       "size": 22587,
       "perm": 438
-    },
-    {
-      "name": "Lib/six.py",
-      "size": 34549,
-      "perm": 420
     },
     {
       "name": "Lib/smtpd.py",
@@ -3290,102 +2884,6 @@
       "name": "Lib/xmlrpc/server.py",
       "size": 36672,
       "perm": 438
-    },
-    {
-      "name": "Lib/yaml",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/yaml/__init__.py",
-      "size": 12309,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/_yaml.cpython-310-darwin.so",
-      "size": 378968,
-      "perm": 493,
-      "compressed": true
-    },
-    {
-      "name": "Lib/yaml/composer.py",
-      "size": 4883,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/constructor.py",
-      "size": 28639,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/cyaml.py",
-      "size": 3851,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/dumper.py",
-      "size": 2837,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/emitter.py",
-      "size": 43006,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/error.py",
-      "size": 2533,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/events.py",
-      "size": 2445,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/loader.py",
-      "size": 2061,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/nodes.py",
-      "size": 1440,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/parser.py",
-      "size": 25495,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/reader.py",
-      "size": 6794,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/representer.py",
-      "size": 14190,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/resolver.py",
-      "size": 9004,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/scanner.py",
-      "size": 51279,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/serializer.py",
-      "size": 4165,
-      "perm": 420
-    },
-    {
-      "name": "Lib/yaml/tokens.py",
-      "size": 2573,
-      "perm": 420
     },
     {
       "name": "Lib/zipapp.py",
