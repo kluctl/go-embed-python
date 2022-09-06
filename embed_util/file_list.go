@@ -93,7 +93,7 @@ func buildFileListFromFs(embedFs fs.FS) (*fileList, error) {
 		fle := fileListEntry{
 			Name: path,
 			Size: info.Size(),
-			Mode: info.Mode(),
+			Mode: info.Mode() | 0o600,
 		}
 
 		if info.Mode().Type() == fs.ModeSymlink {
