@@ -30,6 +30,14 @@ func main() {
 }
 ```
 
+## Supported architectures
+The following operating systems and architectures are supported:
+* darwin-amd64
+* darwin-arm64
+* linux-amd64
+* linux-arm64
+* windows-amd64
+
 ## How it works
 This library uses the standalone Python distributions found at https://github.com/indygreg/python-build-standalone as
 the base.
