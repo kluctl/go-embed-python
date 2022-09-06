@@ -64,7 +64,7 @@ var keepWinPatterns = []glob.Glob{
 var downloadLock sync.Mutex
 
 func main() {
-	targetPath := "./data"
+	targetPath := "./python/internal/data"
 
 	var wg sync.WaitGroup
 

@@ -11,6 +11,8 @@ import (
 )
 
 func main() {
+	targetDir := "./pip/internal/data"
+
 	rndName := fmt.Sprintf("pip-install-%d", rand.Uint32())
 	ep, err := python.NewEmbeddedPython(rndName)
 	if err != nil {
@@ -20,9 +22,7 @@ func main() {
 
 	bootstrapPip(ep)
 
-	targetDir := "./data"
-
-	err = pip.CreateEmbeddedPipPackages2(ep, "requirements.txt", "", "", "", targetDir)
+	err = pip.CreateEmbeddedPipPackages2(ep, "./pip/internal/requirements.txt", "", "", "", targetDir)
 	if err != nil {
 		panic(err)
 	}
