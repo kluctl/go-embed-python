@@ -18,7 +18,8 @@ type EmbeddedPython struct {
 }
 
 // NewEmbeddedPython creates a new EmbeddedPython instance. The embedded source code and python binaries are
-// extracted on demand using the given name as the base for the temporary directory.
+// extracted on demand using the given name as the base for the temporary directory. You should ensure that the chosen
+// name does collide with other consumers of this library.
 func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
 	e, err := embed_util.NewEmbeddedFiles(data.Data, fmt.Sprintf("python-%s", name))
 	if err != nil {
