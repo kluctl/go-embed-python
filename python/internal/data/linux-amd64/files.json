@@ -9,7 +9,7 @@
     {
       "name": "bin/2to3",
       "size": 9,
-      "perm": 134218221,
+      "perm": 134217728,
       "symlink": "2to3-3.10"
     },
     {
@@ -20,7 +20,7 @@
     {
       "name": "bin/idle3",
       "size": 8,
-      "perm": 134218221,
+      "perm": 134217728,
       "symlink": "idle3.10"
     },
     {
@@ -46,7 +46,7 @@
     {
       "name": "bin/pydoc3",
       "size": 9,
-      "perm": 134218221,
+      "perm": 134217728,
       "symlink": "pydoc3.10"
     },
     {
@@ -57,13 +57,13 @@
     {
       "name": "bin/python3",
       "size": 10,
-      "perm": 134218221,
+      "perm": 134217728,
       "symlink": "python3.10"
     },
     {
       "name": "bin/python3-config",
       "size": 17,
-      "perm": 134218221,
+      "perm": 134217728,
       "symlink": "python3.10-config"
     },
     {
@@ -85,7 +85,7 @@
     {
       "name": "lib/libpython3.10.so",
       "size": 20,
-      "perm": 134218221,
+      "perm": 134217728,
       "symlink": "libpython3.10.so.1.0"
     },
     {

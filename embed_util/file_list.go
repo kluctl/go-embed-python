@@ -59,6 +59,7 @@ func buildFileListFromDir(dir string) (*fileList, error) {
 				return err
 			}
 			fle.Symlink = sl
+			fle.Mode &= ^fs.ModePerm
 		} else if info.Mode().IsDir() {
 			fle.Size = 0
 		} else if info.Mode().IsRegular() {
