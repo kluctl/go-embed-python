@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/kluctl/go-embed-python/embed_util"
-	"github.com/kluctl/go-embed-python/internal"
+	"github.com/kluctl/go-embed-python/pip"
 	"github.com/kluctl/go-embed-python/python"
 	"io"
 	"math/rand"
@@ -21,28 +20,9 @@ func main() {
 
 	bootstrapPip(ep)
 
-	tmpDir, err := os.MkdirTemp("", "pip-")
-	if err != nil {
-		panic(err)
-	}
-	defer os.RemoveAll(tmpDir)
-
-	installPip(ep, tmpDir)
-
 	targetDir := "./data/pip"
-	if internal.Exists(targetDir) {
-		err = os.RemoveAll(targetDir)
-		if err != nil {
-			panic(err)
-		}
-	}
 
-	err = os.MkdirAll(targetDir, 0o755)
-	if err != nil {
-		panic(err)
-	}
-
-	err = embed_util.CopyForEmbed(targetDir, tmpDir)
+	err = pip.CreateEmbeddedPipPackages2(ep, "requirements.txt", targetDir)
 	if err != nil {
 		panic(err)
 	}
@@ -56,20 +36,6 @@ func bootstrapPip(ep *python.EmbeddedPython) {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err := cmd.Run()
-	if err != nil {
-		panic(err)
-	}
-}
-
-func installPip(ep *python.EmbeddedPython, targetDir string) {
-	cmd := ep.PythonCmd("-m", "pip", "install", "-r", "requirements.txt", "-t", targetDir)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	err := cmd.Run()
-	if err != nil {
-		panic(err)
-	}
-	err = internal.CleanupPythonDir(targetDir, nil)
 	if err != nil {
 		panic(err)
 	}
