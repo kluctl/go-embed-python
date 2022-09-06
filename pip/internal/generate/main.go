@@ -22,7 +22,7 @@ func main() {
 
 	targetDir := "./data/pip"
 
-	err = pip.CreateEmbeddedPipPackages2(ep, "requirements.txt", targetDir)
+	err = pip.CreateEmbeddedPipPackages2(ep, "requirements.txt", "", targetDir)
 	if err != nil {
 		panic(err)
 	}
