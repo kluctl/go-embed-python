@@ -30,8 +30,8 @@ func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
 	}, nil
 }
 
-func NewEmbeddedPythonWithTmpDir(tmpDir string) (*EmbeddedPython, error) {
-	e, err := embed_util.NewEmbeddedFilesWithTmpDir(data.Data, tmpDir)
+func NewEmbeddedPythonWithTmpDir(tmpDir string, withHashInDir bool) (*EmbeddedPython, error) {
+	e, err := embed_util.NewEmbeddedFilesWithTmpDir(data.Data, tmpDir, withHashInDir)
 	if err != nil {
 		return nil, err
 	}

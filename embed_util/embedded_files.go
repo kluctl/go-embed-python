@@ -18,14 +18,14 @@ type EmbeddedFiles struct {
 
 func NewEmbeddedFiles(embedFs fs.FS, name string) (*EmbeddedFiles, error) {
 	tmpDir := filepath.Join(os.TempDir(), fmt.Sprintf("go-embedded-%s", name))
-	return NewEmbeddedFilesWithTmpDir(embedFs, tmpDir)
+	return NewEmbeddedFilesWithTmpDir(embedFs, tmpDir, true)
 }
 
-func NewEmbeddedFilesWithTmpDir(embedFs fs.FS, tmpDir string) (*EmbeddedFiles, error) {
+func NewEmbeddedFilesWithTmpDir(embedFs fs.FS, tmpDir string, withHashInDir bool) (*EmbeddedFiles, error) {
 	e := &EmbeddedFiles{
 		tmpDir: tmpDir,
 	}
-	err := e.extract(embedFs)
+	err := e.extract(embedFs, withHashInDir)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (e *EmbeddedFiles) GetExtractedPath() string {
 	return e.extractedPath
 }
 
-func (e *EmbeddedFiles) extract(embedFs fs.FS) error {
+func (e *EmbeddedFiles) extract(embedFs fs.FS, withHashInDir bool) error {
 	fl, err := e.readOrBuildFileList(embedFs)
 	if err != nil {
 		return err
@@ -53,8 +53,11 @@ func (e *EmbeddedFiles) extract(embedFs fs.FS) error {
 
 	flHash := fl.Hash()
 
-	e.extractedPath = fmt.Sprintf("%s-%s", e.tmpDir, flHash[:16])
-
+	if withHashInDir {
+		e.extractedPath = fmt.Sprintf("%s-%s", e.tmpDir, flHash[:16])
+	} else {
+		e.extractedPath = e.tmpDir
+	}
 	err = os.MkdirAll(filepath.Dir(e.extractedPath), 0o755)
 	if err != nil {
 		return err

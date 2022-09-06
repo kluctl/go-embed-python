@@ -38,8 +38,9 @@ func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetD
 func CreateEmbeddedPipPackages(requirementsFile string, goOs string, goArch string, pipPlatform string, targetDir string) error {
 	name := fmt.Sprintf("pip-%d", rand.Uint32())
 
+	// ensure we have a stable extract path for the python distribution (otherwise shebangs won't be stable)
 	tmpDir := filepath.Join("/tmp", fmt.Sprintf("python-pip-%s-%s-%s", goOs, goArch, pipPlatform))
-	ep, err := python.NewEmbeddedPythonWithTmpDir(tmpDir)
+	ep, err := python.NewEmbeddedPythonWithTmpDir(tmpDir, false)
 	if err != nil {
 		return err
 	}

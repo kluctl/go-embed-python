@@ -13,8 +13,9 @@ import (
 func main() {
 	targetDir := "./pip/internal/data"
 
+	// ensure we have a stable extract path for the python distribution (otherwise shebangs won't be stable)
 	tmpDir := filepath.Join("/tmp", fmt.Sprintf("python-pip-bootstrap"))
-	ep, err := python.NewEmbeddedPythonWithTmpDir(tmpDir)
+	ep, err := python.NewEmbeddedPythonWithTmpDir(tmpDir, false)
 	if err != nil {
 		panic(err)
 	}

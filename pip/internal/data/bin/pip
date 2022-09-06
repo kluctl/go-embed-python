@@ -1,4 +1,4 @@
-#!/tmp/python-pip-bootstrap-5c6cf816674ccbfc/bin/python3
+#!/tmp/python-pip-bootstrap/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
