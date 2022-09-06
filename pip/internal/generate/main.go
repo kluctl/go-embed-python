@@ -5,16 +5,16 @@ import (
 	"github.com/kluctl/go-embed-python/pip"
 	"github.com/kluctl/go-embed-python/python"
 	"io"
-	"math/rand"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
 func main() {
 	targetDir := "./pip/internal/data"
 
-	rndName := fmt.Sprintf("pip-install-%d", rand.Uint32())
-	ep, err := python.NewEmbeddedPython(rndName)
+	tmpDir := filepath.Join("/tmp", fmt.Sprintf("python-pip-bootstrap"))
+	ep, err := python.NewEmbeddedPythonWithTmpDir(tmpDir)
 	if err != nil {
 		panic(err)
 	}
