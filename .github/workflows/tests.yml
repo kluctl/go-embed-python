@@ -41,10 +41,10 @@ jobs:
       - name: Verify nothing changed
         shell: bash
         run: |
-          P=$(git status --porcelain)
-          if [ ! -z "$P" ]; then 
+          if [ ! -z "$(git status --porcelain)" ]; then
             echo "working directory not clean:"
-            echo $P
+            git status
+            git diff
             exit 1
           fi
       - name: Run unit tests
