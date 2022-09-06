@@ -155,7 +155,7 @@ func download(osName, arch, dist string) string {
 		os.Exit(1)
 	}
 	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.tar.zst", pythonVersionFull, pythonStandaloneVersion, pythonArch, dist)
-	downloadPath := filepath.Join(internal.GetTmpBaseDir(), "python-download", fname)
+	downloadPath := filepath.Join(os.TempDir(), "python-download", fname)
 	downloadUrl := fmt.Sprintf("https://github.com/indygreg/python-build-standalone/releases/download/%s/%s", pythonStandaloneVersion, fname)
 
 	if _, err := os.Stat(downloadPath); err == nil {
