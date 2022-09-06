@@ -1,6 +1,7 @@
 package python
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/kluctl/go-embed-python/internal"
 	"github.com/stretchr/testify/assert"
@@ -19,7 +20,7 @@ func TestEmbeddedPython(t *testing.T) {
 	pexe := ep.GetExePath()
 	assert.True(t, internal.Exists(pexe))
 
-	cmd := ep.PythonCmd("-c", "print('test')")
+	cmd := ep.PythonCmd("-c", "print('test test')")
 	stdout, err := cmd.StdoutPipe()
 	assert.NoError(t, err)
 	defer stdout.Close()
@@ -33,5 +34,6 @@ func TestEmbeddedPython(t *testing.T) {
 	err = cmd.Wait()
 	assert.NoError(t, err)
 
-	assert.Equal(t, "test\n", string(stdoutStr))
+	stdoutStr = bytes.TrimSpace(stdoutStr)
+	assert.Equal(t, "test test", string(stdoutStr))
 }
