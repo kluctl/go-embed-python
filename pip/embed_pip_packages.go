@@ -119,9 +119,5 @@ func pipInstall(ep *python.EmbeddedPython, requirementsFile string, platform str
 	if err != nil {
 		return err
 	}
-	err = internal.ReplaceStrings(targetDir, ep.GetBinPath()+string(os.PathSeparator), "")
-	if err != nil {
-		return err
-	}
 	return nil
 }
