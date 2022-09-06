@@ -64,33 +64,34 @@ var keepWinPatterns = []glob.Glob{
 var downloadLock sync.Mutex
 
 func main() {
+	targetPath := "./data"
+
 	var wg sync.WaitGroup
 
 	type job struct {
 		os           string
 		arch         string
-		out          string
 		keepPatterns []glob.Glob
 	}
 	jobs := []job{
-		{"linux", "amd64", "data/python-linux-amd64", keepNixPatterns},
-		{"linux", "arm64", "data/python-linux-arm64", keepNixPatterns},
-		{"darwin", "amd64", "data/python-darwin-amd64", keepNixPatterns},
-		{"darwin", "arm64", "data/python-darwin-arm64", keepNixPatterns},
-		{"windows", "amd64", "data/python-windows-amd64", keepWinPatterns},
+		{"linux", "amd64", keepNixPatterns},
+		{"linux", "arm64", keepNixPatterns},
+		{"darwin", "amd64", keepNixPatterns},
+		{"darwin", "arm64", keepNixPatterns},
+		{"windows", "amd64", keepWinPatterns},
 	}
 	for _, j := range jobs {
 		j := j
 		wg.Add(1)
 		go func() {
-			downloadAndCopy(j.os, j.arch, j.out, j.keepPatterns)
+			downloadAndCopy(j.os, j.arch, j.keepPatterns, targetPath)
 			wg.Done()
 		}()
 	}
 	wg.Wait()
 }
 
-func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob.Glob) {
+func downloadAndCopy(osName string, arch string, keepPatterns []glob.Glob, targetPath string) {
 	dist, ok := pythonDists[osName]
 	if !ok {
 		log.Panicf("no dist for %s", osName)
@@ -124,24 +125,14 @@ func downloadAndCopy(osName string, arch string, out string, keepPatterns []glob
 		panic(err)
 	}
 
-	copyToEmbedDir(out, installPath)
-}
-
-func copyToEmbedDir(out string, dir string) {
-	if internal.Exists(out) {
-		err := os.RemoveAll(out)
-		if err != nil {
-			log.Panic(err)
-		}
-	}
-	err := os.Mkdir(out, 0o755)
+	err = embed_util.CopyForEmbed(filepath.Join(targetPath, fmt.Sprintf("%s-%s", osName, arch)), installPath)
 	if err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 
-	err = embed_util.CopyForEmbed(out, dir)
+	err = embed_util.WriteEmbedGoFile(targetPath, osName, arch)
 	if err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 }
 

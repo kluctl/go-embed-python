@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetDir string) error {
@@ -21,7 +22,9 @@ func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetD
 
 	for goPlatform, pipPlatforms := range platforms {
 		for i, pipPlatform := range pipPlatforms {
-			err := CreateEmbeddedPipPackages("requirements.txt", pipPlatform, filepath.Join(targetDir, goPlatform))
+			s := strings.Split(goPlatform, "-")
+			goOs, goArch := s[0], s[1]
+			err := CreateEmbeddedPipPackages("requirements.txt", goOs, goArch, pipPlatform, targetDir)
 			if err != nil {
 				if i == len(pipPlatforms)-1 {
 					return err
@@ -32,7 +35,7 @@ func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetD
 	return nil
 }
 
-func CreateEmbeddedPipPackages(requirementsFile string, platform string, targetDir string) error {
+func CreateEmbeddedPipPackages(requirementsFile string, goOs string, goArch string, pipPlatform string, targetDir string) error {
 	name := fmt.Sprintf("pip-%d", rand.Uint32())
 
 	ep, err := python.NewEmbeddedPython(name)
@@ -49,26 +52,19 @@ func CreateEmbeddedPipPackages(requirementsFile string, platform string, targetD
 
 	ep.AddPythonPath(pipLib.GetExtractedPath())
 
-	return CreateEmbeddedPipPackages2(ep, requirementsFile, platform, targetDir)
+	return CreateEmbeddedPipPackages2(ep, requirementsFile, goOs, goArch, pipPlatform, targetDir)
 }
 
-func CreateEmbeddedPipPackages2(ep *python.EmbeddedPython, requirementsFile string, platform string, targetDir string) error {
+func CreateEmbeddedPipPackages2(ep *python.EmbeddedPython, requirementsFile string, goOs string, goArch string, pipPlatform string, targetDir string) error {
 	tmpDir, err := os.MkdirTemp("", "pip-")
 	if err != nil {
 		return err
 	}
 	defer os.RemoveAll(tmpDir)
 
-	err = pipInstall(ep, requirementsFile, platform, tmpDir)
+	err = pipInstall(ep, requirementsFile, pipPlatform, tmpDir)
 	if err != nil {
 		return err
-	}
-
-	if internal.Exists(targetDir) {
-		err = os.RemoveAll(targetDir)
-		if err != nil {
-			return err
-		}
 	}
 
 	err = os.MkdirAll(targetDir, 0o755)
@@ -76,7 +72,29 @@ func CreateEmbeddedPipPackages2(ep *python.EmbeddedPython, requirementsFile stri
 		return err
 	}
 
-	err = embed_util.CopyForEmbed(targetDir, tmpDir)
+	platformTargetDir := targetDir
+	if goOs != "" {
+		platformTargetDir = filepath.Join(platformTargetDir, fmt.Sprintf("%s-%s", goOs, goArch))
+	}
+
+	if internal.Exists(platformTargetDir) {
+		err = os.RemoveAll(platformTargetDir)
+		if err != nil {
+			return err
+		}
+	}
+
+	err = os.Mkdir(platformTargetDir, 0o755)
+	if err != nil {
+		return err
+	}
+
+	err = embed_util.CopyForEmbed(platformTargetDir, tmpDir)
+	if err != nil {
+		return err
+	}
+
+	err = embed_util.WriteEmbedGoFile(targetDir, goOs, goArch)
 	if err != nil {
 		return err
 	}

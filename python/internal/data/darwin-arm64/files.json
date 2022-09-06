@@ -1,6 +1,6 @@
 {
-  "contentHash": "2beb2526b0ec7caa73e6fae64a8dbdc50c85fbce6a6e4b24ff579ade7420220d",
-  "Files": [
+  "contentHash": "b3e1c27a8b8a444e3035b0e6019a19d98bdd41a4a6a33cd16eb507187fd3f039",
+  "files": [
     {
       "name": "bin",
       "size": 0,
@@ -68,13 +68,13 @@
     },
     {
       "name": "bin/python3.10",
-      "size": 66136,
+      "size": 50216,
       "perm": 509,
       "compressed": true
     },
     {
       "name": "bin/python3.10-config",
-      "size": 3191,
+      "size": 2070,
       "perm": 509
     },
     {
@@ -83,20 +83,8 @@
       "perm": 2147484141
     },
     {
-      "name": "lib/libpython3.10.so",
-      "size": 20,
-      "perm": 134218221,
-      "symlink": "libpython3.10.so.1.0"
-    },
-    {
-      "name": "lib/libpython3.10.so.1.0",
-      "size": 41068224,
-      "perm": 509,
-      "compressed": true
-    },
-    {
-      "name": "lib/libpython3.so",
-      "size": 66328,
+      "name": "lib/libpython3.10.dylib",
+      "size": 15490592,
       "perm": 509,
       "compressed": true
     },
@@ -181,8 +169,8 @@
       "perm": 436
     },
     {
-      "name": "lib/python3.10/_sysconfigdata__linux_aarch64-linux-gnu.py",
-      "size": 31054,
+      "name": "lib/python3.10/_sysconfigdata__darwin_darwin.py",
+      "size": 42353,
       "perm": 436
     },
     {
@@ -521,53 +509,53 @@
       "perm": 436
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu",
+      "name": "lib/python3.10/config-3.10-darwin",
       "size": 0,
       "perm": 2147484141
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/Makefile",
-      "size": 106405,
+      "name": "lib/python3.10/config-3.10-darwin/Makefile",
+      "size": 109397,
       "perm": 436
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/Setup",
+      "name": "lib/python3.10/config-3.10-darwin/Setup",
       "size": 15518,
       "perm": 436
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/Setup.local",
-      "size": 3919,
+      "name": "lib/python3.10/config-3.10-darwin/Setup.local",
+      "size": 4075,
       "perm": 436
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/config.c",
-      "size": 8863,
+      "name": "lib/python3.10/config-3.10-darwin/config.c",
+      "size": 8791,
       "perm": 436
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/config.c.in",
+      "name": "lib/python3.10/config-3.10-darwin/config.c.in",
       "size": 1623,
       "perm": 436
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/install-sh",
+      "name": "lib/python3.10/config-3.10-darwin/install-sh",
       "size": 15368,
       "perm": 509
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/makesetup",
+      "name": "lib/python3.10/config-3.10-darwin/makesetup",
       "size": 7680,
       "perm": 509
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/python-config.py",
+      "name": "lib/python3.10/config-3.10-darwin/python-config.py",
       "size": 2042,
       "perm": 509
     },
     {
-      "name": "lib/python3.10/config-3.10-aarch64-linux-gnu/python.o",
-      "size": 36680,
+      "name": "lib/python3.10/config-3.10-darwin/python.o",
+      "size": 3424,
       "perm": 436,
       "compressed": true
     },
@@ -1860,24 +1848,6 @@
       "name": "lib/python3.10/lib-dynload/.empty",
       "size": 0,
       "perm": 436
-    },
-    {
-      "name": "lib/python3.10/lib-dynload/_testcapi.cpython-310-aarch64-linux-gnu.so",
-      "size": 476024,
-      "perm": 509,
-      "compressed": true
-    },
-    {
-      "name": "lib/python3.10/lib-dynload/xxlimited.cpython-310-aarch64-linux-gnu.so",
-      "size": 29104,
-      "perm": 509,
-      "compressed": true
-    },
-    {
-      "name": "lib/python3.10/lib-dynload/xxlimited_35.cpython-310-aarch64-linux-gnu.so",
-      "size": 27488,
-      "perm": 509,
-      "compressed": true
     },
     {
       "name": "lib/python3.10/linecache.py",

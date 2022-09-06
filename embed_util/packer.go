@@ -7,9 +7,11 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	log "github.com/sirupsen/logrus"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func CopyForEmbed(out string, dir string) error {
@@ -31,6 +33,37 @@ func CopyForEmbed(out string, dir string) error {
 
 	err = os.WriteFile(filepath.Join(out, "files.json"), b, 0o644)
 	return err
+}
+
+func WriteEmbedGoFile(targetDir string, goOs string, goArch string) error {
+	var embedSrc, fname string
+	if goOs == "" {
+		embedSrc = `
+package data
+
+import "embed"
+
+//go:embed all:*
+var Data embed.FS
+`
+		fname = "embed.go"
+	} else {
+		embedSrc = fmt.Sprintf(`
+package data
+
+import (
+	"embed"
+	"io/fs"
+)
+
+//go:embed all:%s-%s
+var _data embed.FS
+var Data, _ = fs.Sub(_data, "%s-%s")
+`, goOs, goArch, goOs, goArch)
+		fname = strings.ReplaceAll(fmt.Sprintf("embed_%s_%s.go", goOs, goArch), "-", "_")
+	}
+
+	return os.WriteFile(filepath.Join(targetDir, fname), []byte(embedSrc), 0o644)
 }
 
 func copyFiles(out string, dir string, fl *fileList) error {

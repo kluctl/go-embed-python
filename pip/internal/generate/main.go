@@ -20,9 +20,9 @@ func main() {
 
 	bootstrapPip(ep)
 
-	targetDir := "./data/pip"
+	targetDir := "./data"
 
-	err = pip.CreateEmbeddedPipPackages2(ep, "requirements.txt", "", targetDir)
+	err = pip.CreateEmbeddedPipPackages2(ep, "requirements.txt", "", "", "", targetDir)
 	if err != nil {
 		panic(err)
 	}

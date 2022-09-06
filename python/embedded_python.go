@@ -3,7 +3,7 @@ package python
 import (
 	"fmt"
 	"github.com/kluctl/go-embed-python/embed_util"
-	"github.com/kluctl/go-embed-python/python/internal"
+	"github.com/kluctl/go-embed-python/python/internal/data"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -20,7 +20,7 @@ type EmbeddedPython struct {
 // NewEmbeddedPython creates a new EmbeddedPython instance. The embedded source code and python binaries are
 // extracted on demand using the given name as the base for the temporary directory.
 func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
-	e, err := embed_util.NewEmbeddedFiles(internal.PythonLib, fmt.Sprintf("python-%s", name))
+	e, err := embed_util.NewEmbeddedFiles(data.Data, fmt.Sprintf("python-%s", name))
 	if err != nil {
 		return nil, err
 	}
@@ -30,7 +30,7 @@ func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
 }
 
 func NewEmbeddedPythonWithTmpDir(tmpDir string) (*EmbeddedPython, error) {
-	e, err := embed_util.NewEmbeddedFilesWithTmpDir(internal.PythonLib, tmpDir)
+	e, err := embed_util.NewEmbeddedFilesWithTmpDir(data.Data, tmpDir)
 	if err != nil {
 		return nil, err
 	}
