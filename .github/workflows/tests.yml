@@ -35,10 +35,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-embed-python-
       - name: Go generate
+        if: runner.os != 'Windows'
         shell: bash
         run: |
           go generate ./...
       - name: Verify nothing changed
+        if: runner.os != 'Windows'
         shell: bash
         run: |
           if [ ! -z "$(git status --porcelain)" ]; then
