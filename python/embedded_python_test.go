@@ -6,9 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 	"io"
 	"math/rand"
-	"os/exec"
-	"path/filepath"
-	"runtime"
 	"testing"
 )
 
@@ -19,13 +16,10 @@ func TestEmbeddedPython(t *testing.T) {
 	defer ep.Cleanup()
 	path := ep.GetExtractedPath()
 	assert.NotEqual(t, path, "")
-	pexe := filepath.Join(path, "bin/python3")
-	if runtime.GOOS == "windows" {
-		pexe += ".exe"
-	}
+	pexe := ep.GetExePath()
 	assert.True(t, internal.Exists(pexe))
 
-	cmd := exec.Command(pexe, "-c", "print('test')")
+	cmd := ep.PythonCmd("-c", "print('test')")
 	stdout, err := cmd.StdoutPipe()
 	assert.NoError(t, err)
 	defer stdout.Close()
