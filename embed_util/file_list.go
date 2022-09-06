@@ -1,7 +1,10 @@
 package embed_util
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"io/fs"
 	"net/http"
 	"os"
@@ -10,8 +13,8 @@ import (
 )
 
 type fileList struct {
-	ContentHash string `json:"contentHash"`
-	Files       []fileListEntry
+	ContentHash string          `json:"contentHash"`
+	Files       []fileListEntry `json:"files"`
 }
 
 type fileListEntry struct {
@@ -31,7 +34,7 @@ func readFileList(fileListStr string) (*fileList, error) {
 	return &fl, err
 }
 
-func buildFileList(dir string) (*fileList, error) {
+func buildFileListFromDir(dir string) (*fileList, error) {
 	var fl fileList
 
 	err := filepath.Walk(dir, func(path string, info fs.FileInfo, err error) error {
@@ -74,6 +77,43 @@ func buildFileList(dir string) (*fileList, error) {
 	return &fl, nil
 }
 
+func buildFileListFromFs(embedFs fs.FS) (*fileList, error) {
+	var fl fileList
+
+	err := fs.WalkDir(embedFs, ".", func(path string, d fs.DirEntry, err error) error {
+		if path == "." {
+			return nil
+		}
+
+		info, err := d.Info()
+		if err != nil {
+			return err
+		}
+
+		fle := fileListEntry{
+			Name: path,
+			Size: info.Size(),
+			Mode: info.Mode(),
+		}
+
+		if info.Mode().Type() == fs.ModeSymlink {
+			return fmt.Errorf("symlink not supported in buildFileListFromFs")
+		} else if info.Mode().IsDir() {
+			fle.Size = 0
+		}
+
+		fl.Files = append(fl.Files, fle)
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	sort.Slice(fl.Files, func(i, j int) bool {
+		return fl.Files[i].Name < fl.Files[j].Name
+	})
+	return &fl, nil
+}
+
 func shouldCompress(path string) bool {
 	f, err := os.Open(path)
 	if err != nil {
@@ -97,4 +137,14 @@ func (fl *fileList) toMap() map[string]fileListEntry {
 		m[e.Name] = e
 	}
 	return m
+}
+
+func (fl *fileList) Hash() string {
+	h := sha256.New()
+	e := json.NewEncoder(h)
+	err := e.Encode(fl)
+	if err != nil {
+		panic(err)
+	}
+	return hex.EncodeToString(h.Sum(nil))
 }

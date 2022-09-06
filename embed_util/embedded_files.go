@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"compress/gzip"
 	"fmt"
-	"github.com/kluctl/go-embed-python/internal"
 	"github.com/rogpeppe/go-internal/lockedfile"
 	"io"
 	"io/fs"
@@ -47,16 +46,12 @@ func (e *EmbeddedFiles) GetExtractedPath() string {
 }
 
 func (e *EmbeddedFiles) extract(embedFs fs.FS) error {
-	flStr, err := fs.ReadFile(embedFs, "files.json")
+	fl, err := e.readOrBuildFileList(embedFs)
 	if err != nil {
 		return err
 	}
-	flHash := internal.Sha256Bytes(flStr)
 
-	fl, err := readFileList(string(flStr))
-	if err != nil {
-		return err
-	}
+	flHash := fl.Hash()
 
 	e.extractedPath = fmt.Sprintf("%s-%s", e.tmpDir, flHash[:16])
 
@@ -82,6 +77,22 @@ func (e *EmbeddedFiles) extract(embedFs fs.FS) error {
 	}
 
 	return nil
+}
+
+func (e *EmbeddedFiles) readOrBuildFileList(embedFs fs.FS) (*fileList, error) {
+	flStr, err := fs.ReadFile(embedFs, "files.json")
+	if err != nil {
+		if os.IsNotExist(err) {
+			return buildFileListFromFs(embedFs)
+		}
+		return nil, err
+	}
+
+	fl, err := readFileList(string(flStr))
+	if err != nil {
+		return nil, err
+	}
+	return fl, nil
 }
 
 func (e *EmbeddedFiles) copyEmbeddedFilesToTmp(embedFs fs.FS, fl *fileList) error {

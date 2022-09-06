@@ -1,8 +1,6 @@
 package internal
 
 import (
-	"crypto/sha256"
-	"encoding/hex"
 	"os"
 	"path/filepath"
 	"sync"
@@ -19,9 +17,4 @@ func GetTmpBaseDir() string {
 		}
 	})
 	return dir
-}
-
-func Sha256Bytes(data []byte) string {
-	h := sha256.Sum256(data)
-	return hex.EncodeToString(h[:])
 }

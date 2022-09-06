@@ -13,7 +13,7 @@ import (
 )
 
 func CopyForEmbed(out string, dir string) error {
-	fl, err := buildFileList(dir)
+	fl, err := buildFileListFromDir(dir)
 	if err != nil {
 		return err
 	}
