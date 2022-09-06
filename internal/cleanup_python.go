@@ -1,10 +1,13 @@
 package internal
 
 import (
+	"bytes"
 	"github.com/gobwas/glob"
 	"io/fs"
+	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 var DefaultPythonRemovePatterns = []glob.Glob{
@@ -56,6 +59,33 @@ func CleanupPythonDir(dir string, keepPatterns []glob.Glob) error {
 		return err
 	}
 
+	return err
+}
+
+func ReplaceStrings(dir string, old string, new string) error {
+	err := filepath.Walk(dir, func(path string, info fs.FileInfo, err error) error {
+		if !info.Mode().IsRegular() {
+			return nil
+		}
+
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+
+		if !strings.HasPrefix(http.DetectContentType(data), "text/") {
+			return nil
+		}
+
+		newData := bytes.ReplaceAll(data, []byte(old), []byte(new))
+		if !bytes.Equal(data, newData) {
+			err = os.WriteFile(path, newData, info.Mode().Perm())
+			if err != nil {
+				return err
+			}
+		}
+		return nil
+	})
 	return err
 }
 
