@@ -81,7 +81,7 @@ func (ep *EmbeddedPython) PythonCmd2(args []string) *exec.Cmd {
 	cmd.Env = append(cmd.Env, fmt.Sprintf("PYTHONHOME=%s", ep.GetExtractedPath()))
 
 	if len(ep.pythonPath) != 0 {
-		pythonPathEnv := strings.Join(ep.pythonPath, string(os.PathListSeparator))
+		pythonPathEnv := fmt.Sprintf("PYTHONPATH=%s", strings.Join(ep.pythonPath, string(os.PathListSeparator)))
 		cmd.Env = append(cmd.Env, pythonPathEnv)
 	}
 
