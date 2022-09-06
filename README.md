@@ -89,3 +89,17 @@ The path returned by `EmbeddedFiles.GetExtractedPath()` can then be added to the
 `AddPythonPath` on it.
 
 An example of all this can be found in https://github.com/kluctl/go-jinja2
+
+# Why another go+python solution?
+There are already multiple implementations of go-bindings for Python, which however all rely on CGO and/or dynamic
+linking. I experimented a lot with these and was not able to make it stable enough so that I could use it without fear
+of the process crashing after some time. I even got to the point where I implemented my own dynamic library loader that
+was not depending on CGO, but ultimately gave up when I realized that it would not work on all platforms.
+
+The only solution that was left was to spawn a Python process and use some kind of inter-process communication. For this
+to work reliably, without any dependencies on the host system, it was required to embed a fully working Python
+distribution into my Go binaries. I managed to make this flexible enough to put into a library so that others might
+benefit as well.
+
+Initially, this approach/code was part of https://github.com/kluctl/kluctl to allow Jinja2 templates in Go. The Jinja2
+part can now be found in https://github.com/kluctl/go-jinja2.
