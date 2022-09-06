@@ -4,7 +4,7 @@ This library provides an embedded distribution of Python, which should work out-
 architectures and operating systems.
 
 This library does not require CGO and solely relies on executing Python inside another process. It does not rely
-on CPython binding to work. There is also no need to have Pyton pre-installed on the target host.
+on CPython binding to work. There is also no need to have Python pre-installed on the target host.
 
 You really only have to depend on this library and invoke it as follows:
 
