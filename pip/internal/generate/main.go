@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	go_embed_python "github.com/kluctl/go-embed-python"
 	"github.com/kluctl/go-embed-python/embed_util"
 	"github.com/kluctl/go-embed-python/internal"
+	"github.com/kluctl/go-embed-python/python"
 	"io"
 	"math/rand"
 	"net/http"
@@ -13,7 +13,7 @@ import (
 
 func main() {
 	rndName := fmt.Sprintf("pip-install-%d", rand.Uint32())
-	ep, err := go_embed_python.NewEmbeddedPython(rndName)
+	ep, err := python.NewEmbeddedPython(rndName)
 	if err != nil {
 		panic(err)
 	}
@@ -48,7 +48,7 @@ func main() {
 	}
 }
 
-func bootstrapPip(ep *go_embed_python.EmbeddedPython) {
+func bootstrapPip(ep *python.EmbeddedPython) {
 	getPip := downloadGetPip()
 	defer os.Remove(getPip)
 
@@ -61,7 +61,7 @@ func bootstrapPip(ep *go_embed_python.EmbeddedPython) {
 	}
 }
 
-func installPip(ep *go_embed_python.EmbeddedPython, targetDir string) {
+func installPip(ep *python.EmbeddedPython, targetDir string) {
 	cmd := ep.PythonCmd("-m", "pip", "install", "-r", "requirements.txt", "-t", targetDir)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr

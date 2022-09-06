@@ -1,3 +1,3 @@
-package embed
+package internal
 
 //go:generate go run ./generate

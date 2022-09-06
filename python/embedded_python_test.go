@@ -1,4 +1,4 @@
-package go_embed_python
+package python
 
 import (
 	"fmt"

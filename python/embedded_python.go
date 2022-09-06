@@ -1,23 +1,26 @@
-package go_embed_python
+package python
 
 import (
 	"fmt"
 	"github.com/kluctl/go-embed-python/embed_util"
-	"github.com/kluctl/go-embed-python/internal/embed"
+	"github.com/kluctl/go-embed-python/python/internal"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"strings"
 )
 
 type EmbeddedPython struct {
 	e *embed_util.EmbeddedFiles
+
+	pythonPath []string
 }
 
 // NewEmbeddedPython creates a new EmbeddedPython instance. The embedded source code and python binaries are
 // extracted on demand using the given name as the base for the temporary directory.
 func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
-	e, err := embed_util.NewEmbeddedFiles(embed.PythonLib, fmt.Sprintf("python-%s", name))
+	e, err := embed_util.NewEmbeddedFiles(internal.PythonLib, fmt.Sprintf("python-%s", name))
 	if err != nil {
 		return nil, err
 	}
@@ -27,7 +30,7 @@ func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
 }
 
 func NewEmbeddedPythonWithTmpDir(tmpDir string) (*EmbeddedPython, error) {
-	e, err := embed_util.NewEmbeddedFilesWithTmpDir(embed.PythonLib, tmpDir)
+	e, err := embed_util.NewEmbeddedFilesWithTmpDir(internal.PythonLib, tmpDir)
 	if err != nil {
 		return nil, err
 	}
@@ -62,6 +65,10 @@ func (ep *EmbeddedPython) GetExePath() string {
 	return filepath.Join(ep.GetBinPath(), "python"+suffix)
 }
 
+func (ep *EmbeddedPython) AddPythonPath(p string) {
+	ep.pythonPath = append(ep.pythonPath, p)
+}
+
 func (ep *EmbeddedPython) PythonCmd(args ...string) *exec.Cmd {
 	return ep.PythonCmd2(args)
 }
@@ -72,6 +79,11 @@ func (ep *EmbeddedPython) PythonCmd2(args []string) *exec.Cmd {
 	cmd := exec.Command(exePath, args...)
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, fmt.Sprintf("PYTHONHOME=%s", ep.GetExtractedPath()))
+
+	if len(ep.pythonPath) != 0 {
+		pythonPathEnv := strings.Join(ep.pythonPath, string(os.PathListSeparator))
+		cmd.Env = append(cmd.Env, pythonPathEnv)
+	}
 
 	return cmd
 }
