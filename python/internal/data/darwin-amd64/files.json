@@ -1,5 +1,5 @@
 {
-  "contentHash": "0c81d82678413c87db8cee8645ce817af9fb8dd59e6c36b23d325f7a7ebd3a12",
+  "contentHash": "78f8caba88f5222e7436bc66ba2dc6c54363486a462139afb9997794b9e52e26",
   "files": [
     {
       "name": "bin",
@@ -84,7 +84,7 @@
     },
     {
       "name": "lib/libpython3.10.dylib",
-      "size": 15801864,
+      "size": 15802672,
       "perm": 509,
       "compressed": true
     },
@@ -385,7 +385,7 @@
     },
     {
       "name": "lib/python3.10/bdb.py",
-      "size": 32227,
+      "size": 32353,
       "perm": 436
     },
     {
@@ -586,7 +586,7 @@
     },
     {
       "name": "lib/python3.10/crypt.py",
-      "size": 3819,
+      "size": 3848,
       "perm": 436
     },
     {
@@ -1884,17 +1884,17 @@
     },
     {
       "name": "lib/python3.10/logging/__init__.py",
-      "size": 80205,
+      "size": 80232,
       "perm": 436
     },
     {
       "name": "lib/python3.10/logging/config.py",
-      "size": 36463,
+      "size": 36495,
       "perm": 436
     },
     {
       "name": "lib/python3.10/logging/handlers.py",
-      "size": 60674,
+      "size": 61416,
       "perm": 436
     },
     {
@@ -1944,7 +1944,7 @@
     },
     {
       "name": "lib/python3.10/numbers.py",
-      "size": 10338,
+      "size": 10348,
       "perm": 436
     },
     {
@@ -2014,7 +2014,7 @@
     },
     {
       "name": "lib/python3.10/posixpath.py",
-      "size": 16222,
+      "size": 16223,
       "perm": 436
     },
     {
@@ -2249,7 +2249,7 @@
     },
     {
       "name": "lib/python3.10/threading.py",
-      "size": 57204,
+      "size": 57200,
       "perm": 436
     },
     {
@@ -2714,7 +2714,7 @@
     },
     {
       "name": "lib/python3.10/xml/dom/minidom.py",
-      "size": 68066,
+      "size": 68140,
       "perm": 436
     },
     {

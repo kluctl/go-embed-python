@@ -1,5 +1,5 @@
 {
-  "contentHash": "84755f6e2bb57d4fd5acfdc83218d26f8648edd71ebcfcdcd3c4306fa7efdcdf",
+  "contentHash": "98a4d2811f833873c8dd1c5e705b81006d73adc924a2a9c012554d3f1f7fa134",
   "files": [
     {
       "name": "DLLs",
@@ -32,7 +32,7 @@
     },
     {
       "name": "DLLs/_decimal.pyd",
-      "size": 240640,
+      "size": 241152,
       "perm": 438,
       "compressed": true
     },
@@ -182,7 +182,7 @@
     },
     {
       "name": "DLLs/sqlite3.dll",
-      "size": 1517568,
+      "size": 1514496,
       "perm": 438,
       "compressed": true
     },
@@ -497,7 +497,7 @@
     },
     {
       "name": "Lib/bdb.py",
-      "size": 32227,
+      "size": 32353,
       "perm": 438
     },
     {
@@ -647,7 +647,7 @@
     },
     {
       "name": "Lib/crypt.py",
-      "size": 3819,
+      "size": 3848,
       "perm": 438
     },
     {
@@ -1917,17 +1917,17 @@
     },
     {
       "name": "Lib/logging/__init__.py",
-      "size": 80205,
+      "size": 80232,
       "perm": 438
     },
     {
       "name": "Lib/logging/config.py",
-      "size": 36463,
+      "size": 36495,
       "perm": 438
     },
     {
       "name": "Lib/logging/handlers.py",
-      "size": 60674,
+      "size": 61416,
       "perm": 438
     },
     {
@@ -2002,7 +2002,7 @@
     },
     {
       "name": "Lib/numbers.py",
-      "size": 10338,
+      "size": 10348,
       "perm": 438
     },
     {
@@ -2072,7 +2072,7 @@
     },
     {
       "name": "Lib/posixpath.py",
-      "size": 16222,
+      "size": 16223,
       "perm": 438
     },
     {
@@ -2307,7 +2307,7 @@
     },
     {
       "name": "Lib/threading.py",
-      "size": 57204,
+      "size": 57200,
       "perm": 438
     },
     {
@@ -2772,7 +2772,7 @@
     },
     {
       "name": "Lib/xml/dom/minidom.py",
-      "size": 68066,
+      "size": 68140,
       "perm": 438
     },
     {
@@ -2939,7 +2939,7 @@
     },
     {
       "name": "python310.dll",
-      "size": 4459520,
+      "size": 4463104,
       "perm": 438,
       "compressed": true
     },

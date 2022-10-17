@@ -30,8 +30,8 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	3.10
 srcdir=		.
 
-abs_srcdir=	/build/Python-3.10.6
-abs_builddir=	/build/Python-3.10.6
+abs_srcdir=	/build/Python-3.10.7
+abs_builddir=	/build/Python-3.10.7
 
 
 CC=		clang -pthread
@@ -196,7 +196,7 @@ LIPO_INTEL64_FLAGS=
 OTHER_LIBTOOL_OPT=
 
 # Environment to run shared python without installed libraries
-RUNSHARED=       LD_LIBRARY_PATH=/build/Python-3.10.6
+RUNSHARED=       LD_LIBRARY_PATH=/build/Python-3.10.7
 
 # ensurepip options
 ENSUREPIP=      no

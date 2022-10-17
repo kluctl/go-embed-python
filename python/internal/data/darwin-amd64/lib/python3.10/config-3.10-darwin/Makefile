@@ -30,15 +30,15 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	3.10
 srcdir=		.
 
-abs_srcdir=	/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/Python-3.10.6
-abs_builddir=	/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/Python-3.10.6
+abs_srcdir=	/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/Python-3.10.7
+abs_builddir=	/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/Python-3.10.7
 
 
 CC=		clang
 CXX=		clang++
 MAINCC=		$(CC)
 LINKCC=		$(PURIFY) $(MAINCC)
-AR=		/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/llvm/bin/llvm-ar
+AR=		/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/llvm/bin/llvm-ar
 READELF=	:
 SOABI=		cpython-310-darwin
 LDVERSION=	$(VERSION)$(ABIFLAGS)
@@ -48,7 +48,7 @@ GITTAG=
 GITBRANCH=	
 PGO_PROF_GEN_FLAG=-fprofile-instr-generate
 PGO_PROF_USE_FLAG=-fprofile-instr-use=code.profclangd
-LLVM_PROF_MERGER=/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/llvm/bin/llvm-profdata merge -output=code.profclangd *.profclangr
+LLVM_PROF_MERGER=/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/llvm/bin/llvm-profdata merge -output=code.profclangd *.profclangr
 LLVM_PROF_FILE=LLVM_PROFILE_FILE="code-%p.profclangr"
 LLVM_PROF_ERR=no
 DTRACE=         
@@ -81,7 +81,7 @@ MAKESETUP=      $(srcdir)/Modules/makesetup
 OPT=		-DNDEBUG -g -fwrapv -O3 -Wall
 BASECFLAGS=	 -Wno-unused-result -Wsign-compare -Wunreachable-code
 BASECPPFLAGS=	
-CONFIGURE_CFLAGS=	-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/uuid -Werror=unguarded-availability-new
+CONFIGURE_CFLAGS=	-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/uuid -Werror=unguarded-availability-new
 # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
 # Use it when a compiler flag should _not_ be part of the distutils CFLAGS
 # once Python is installed (Issue #21121).
@@ -90,8 +90,8 @@ CONFIGURE_CFLAGS_NODIST= -flto -std=c99 -Wextra -Wno-unused-result -Wno-unused-p
 # Use it when a linker flag should _not_ be part of the distutils LDFLAGS
 # once Python is installed (bpo-35257)
 CONFIGURE_LDFLAGS_NODIST= -flto -Wl,-export_dynamic -g
-CONFIGURE_CPPFLAGS=	-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/uuid -Werror=unguarded-availability-new
-CONFIGURE_LDFLAGS=	-arch x86_64 -mmacosx-version-min=10.9 -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -L/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/lib
+CONFIGURE_CPPFLAGS=	-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/uuid -Werror=unguarded-availability-new
+CONFIGURE_LDFLAGS=	-arch x86_64 -mmacosx-version-min=10.9 -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -L/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/lib
 # Avoid assigning CFLAGS, LDFLAGS, etc. so users can use them on the
 # command line to append to these values without stomping the pre-set
 # values.
@@ -196,15 +196,15 @@ LIPO_INTEL64_FLAGS=
 OTHER_LIBTOOL_OPT=
 
 # Environment to run shared python without installed libraries
-RUNSHARED=       DYLD_LIBRARY_PATH=/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/Python-3.10.6
+RUNSHARED=       DYLD_LIBRARY_PATH=/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/Python-3.10.7
 
 # ensurepip options
 ENSUREPIP=      no
 
 # OpenSSL options for setup.py so sysconfig can pick up AC_SUBST() vars.
-OPENSSL_INCLUDES=-I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include
+OPENSSL_INCLUDES=-I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include
 OPENSSL_LIBS=-lssl -lcrypto
-OPENSSL_LDFLAGS=-L/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/lib
+OPENSSL_LDFLAGS=-L/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/lib
 OPENSSL_RPATH=
 
 # Default zoneinfo.TZPATH. Added here to expose it in sysconfig.get_config_var
@@ -217,7 +217,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--build=x86_64-apple-darwin' '--host=x86_64-apple-darwin' '--prefix=/install' '--with-openssl=/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps' '--without-ensurepip' '--enable-shared' '--with-lto' 'ac_cv_lib_intl_textdomain=no' 'build_alias=x86_64-apple-darwin' 'host_alias=x86_64-apple-darwin' 'CC=clang' 'CFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/uuid -Werror=unguarded-availability-new' 'LDFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -L/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/lib' 'CPPFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpnpi2ccmx/tools/deps/include/uuid -Werror=unguarded-availability-new'
+CONFIG_ARGS=	 '--build=x86_64-apple-darwin' '--host=x86_64-apple-darwin' '--prefix=/install' '--with-openssl=/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps' '--without-ensurepip' '--enable-shared' '--with-lto' 'ac_cv_lib_intl_textdomain=no' 'build_alias=x86_64-apple-darwin' 'host_alias=x86_64-apple-darwin' 'CC=clang' 'CFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/uuid -Werror=unguarded-availability-new' 'LDFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -L/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/lib' 'CPPFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-undef-prefix  -isysroot /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fPIC -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/ncursesw -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmpa4_rxueh/tools/deps/include/uuid -Werror=unguarded-availability-new'
 
 
 # Subdirectories with code
