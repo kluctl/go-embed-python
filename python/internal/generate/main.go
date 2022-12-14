@@ -17,8 +17,8 @@ import (
 // versions taken from https://github.com/indygreg/python-build-standalone/releases/
 const (
 	pythonVersionBase       = "3.10"
-	pythonVersionFull       = "3.10.7"
-	pythonStandaloneVersion = "20221002"
+	pythonVersionFull       = "3.10.8"
+	pythonStandaloneVersion = "20221106"
 )
 
 var pythonDists = map[string]string{
