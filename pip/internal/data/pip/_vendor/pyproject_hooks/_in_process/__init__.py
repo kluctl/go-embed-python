@@ -3,15 +3,16 @@
 The subpackage should stay as empty as possible to avoid shadowing modules that
 the backend might import.
 """
-from os.path import dirname, abspath, join as pjoin
-from contextlib import contextmanager
+
+import importlib.resources as resources
 
 try:
-    import importlib.resources as resources
-
+    resources.files
+except AttributeError:
+    # Python 3.8 compatibility
     def _in_proc_script_path():
         return resources.path(__package__, '_in_process.py')
-except ImportError:
-    @contextmanager
+else:
     def _in_proc_script_path():
-        yield pjoin(dirname(abspath(__file__)), '_in_process.py')
+        return resources.as_file(
+            resources.files(__package__).joinpath('_in_process.py'))

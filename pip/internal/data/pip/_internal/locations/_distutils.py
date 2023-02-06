@@ -35,10 +35,10 @@ logger = logging.getLogger(__name__)
 def distutils_scheme(
     dist_name: str,
     user: bool = False,
-    home: str = None,
-    root: str = None,
+    home: Optional[str] = None,
+    root: Optional[str] = None,
     isolated: bool = False,
-    prefix: str = None,
+    prefix: Optional[str] = None,
     *,
     ignore_config_files: bool = False,
 ) -> Dict[str, str]:
@@ -173,7 +173,7 @@ def get_platlib() -> str:
     return get_python_lib(plat_specific=True)
 
 
-def get_prefixed_libs(prefix: str) -> Tuple[str, str]:
+def get_isolated_environment_lib_paths(prefix: str) -> Tuple[str, str]:
     return (
         get_python_lib(plat_specific=False, prefix=prefix),
         get_python_lib(plat_specific=True, prefix=prefix),
