@@ -21,17 +21,17 @@
 
 # === Variables set by makesetup ===
 
-MODBUILT_NAMES=      array  cmath  math  _contextvars  _struct  _weakref  _testinternalcapi  _random  _pickle  _datetime  _zoneinfo  _bisect  _heapq  _asyncio  _statistics  unicodedata  fcntl  spwd  grp  select  mmap  _csv  _socket  termios  resource  _posixsubprocess  audioop  _md5  _sha1  _sha256  _sha512  _sha3  _blake2  syslog  binascii  zlib  _multibytecodec  _codecs_cn  _codecs_hk  _codecs_iso2022  _codecs_jp  _codecs_kr  _codecs_tw  _bz2  _crypt  _ctypes  _ctypes_test  _curses  _curses_panel  _dbm  _decimal  _elementtree  _hashlib  _json  _lsprof  _lzma  _multiprocessing  _opcode  _posixshmem  _queue  _sqlite3  _ssl  _testbuffer  _testimportmultiple  _testinternalcapi  _testmultiphase  _tkinter  _uuid  _xxsubinterpreters  _xxtestfuzz  ossaudiodev  pyexpat  readline  posix  errno  pwd  _sre  _codecs  _weakref  _functools  _operator  _collections  _abc  itertools  atexit  _signal  _stat  time  _thread  _locale  _io  faulthandler  _tracemalloc  _symtable  xxsubtype
-MODDISABLED_NAMES=   _gdbm  nis
-MODOBJS=           Modules/_abc.o Modules/_asynciomodule.o Modules/_bisectmodule.o Modules/_bz2module.o Modules/_codecs_cn.o Modules/_codecs_hk.o Modules/_codecs_iso2022.o Modules/_codecs_jp.o Modules/_codecs_kr.o Modules/_codecs_tw.o Modules/_codecsmodule.o Modules/_collectionsmodule.o Modules/_contextvarsmodule.o Modules/_cryptmodule.o Modules/_csv.o Modules/_ctypes.o Modules/_ctypes_test.o Modules/_curses_panel.o Modules/_cursesmodule.o Modules/_datetimemodule.o Modules/_dbmmodule.o Modules/_decimal.o Modules/_elementtree.o Modules/_functoolsmodule.o Modules/_hashopenssl.o Modules/_heapqmodule.o Modules/_iomodule.o Modules/_json.o Modules/_localemodule.o Modules/_lsprof.o Modules/_lzmamodule.o Modules/_math.o Modules/_opcode.o Modules/_operator.o Modules/_pickle.o Modules/_posixsubprocess.o Modules/_queuemodule.o Modules/_randommodule.o Modules/_sre.o Modules/_ssl.o Modules/_stat.o Modules/_statisticsmodule.o Modules/_struct.o Modules/_testbuffer.o Modules/_testimportmultiple.o Modules/_testinternalcapi.o Modules/_testmultiphase.o Modules/_threadmodule.o Modules/_tkinter.o Modules/_tracemalloc.o Modules/_uuidmodule.o Modules/_weakref.o Modules/_xxsubinterpretersmodule.o Modules/_xxtestfuzz.o Modules/_zoneinfo.o Modules/arraymodule.o Modules/atexitmodule.o Modules/audioop.o Modules/basearith.o Modules/binascii.o Modules/blake2b_impl.o Modules/blake2module.o Modules/blake2s_impl.o Modules/bufferedio.o Modules/bytesio.o Modules/cache.o Modules/callbacks.o Modules/callproc.o Modules/cfield.o Modules/cmathmodule.o Modules/connection.o Modules/constants.o Modules/context.o Modules/convolute.o Modules/crt.o Modules/cursor.o Modules/difradix2.o Modules/errnomodule.o Modules/faulthandler.o Modules/fcntlmodule.o Modules/fileio.o Modules/fnt.o Modules/fourstep.o Modules/fuzzer.o Modules/grpmodule.o Modules/io.o Modules/iobase.o Modules/itertoolsmodule.o Modules/mathmodule.o Modules/md5module.o Modules/microprotocols.o Modules/mmapmodule.o Modules/module.o Modules/mpalloc.o Modules/mpdecimal.o Modules/multibytecodec.o Modules/multiprocessing.o Modules/numbertheory.o Modules/ossaudiodev.o Modules/posixmodule.o Modules/posixshmem.o Modules/prepare_protocol.o Modules/pwdmodule.o Modules/pyexpat.o Modules/readline.o Modules/resource.o Modules/rotatingtree.o Modules/row.o Modules/selectmodule.o Modules/semaphore.o Modules/sha1module.o Modules/sha256module.o Modules/sha3module.o Modules/sha512module.o Modules/signalmodule.o Modules/sixstep.o Modules/socketmodule.o Modules/spwdmodule.o Modules/statement.o Modules/stgdict.o Modules/stringio.o Modules/symtablemodule.o Modules/syslogmodule.o Modules/termios.o Modules/textio.o Modules/timemodule.o Modules/tkappinit.o Modules/transpose.o Modules/unicodedata.o Modules/util.o Modules/xmlparse.o Modules/xmlrole.o Modules/xmltok.o Modules/xxsubtype.o Modules/zlibmodule.o
+MODBUILT_NAMES=      _asyncio  _bisect  _blake2  _bz2  _codecs_cn  _codecs_hk  _codecs_iso2022  _codecs_jp  _codecs_kr  _codecs_tw  _contextvars  _crypt  _csv  _ctypes  _ctypes_test  _curses  _curses_panel  _datetime  _dbm  _decimal  _elementtree  _hashlib  _heapq  _json  _lsprof  _lzma  _md5  _multibytecodec  _multiprocessing  _opcode  _pickle  _posixshmem  _posixsubprocess  _queue  _random  _sha1  _sha256  _sha3  _sha512  _socket  _sqlite3  _ssl  _statistics  _struct  _testbuffer  _testimportmultiple  _testinternalcapi  _testmultiphase  _tkinter  _uuid  _xxsubinterpreters  _xxtestfuzz  _zoneinfo  array  audioop  binascii  cmath  fcntl  grp  math  mmap  ossaudiodev  pyexpat  readline  resource  select  spwd  syslog  termios  unicodedata  zlib  posix  errno  pwd  _sre  _codecs  _weakref  _functools  _operator  _collections  _abc  itertools  atexit  _signal  _stat  time  _thread  _locale  _io  faulthandler  _tracemalloc  _symtable  xxsubtype
+MODDISABLED_NAMES=   _gdbm  _scproxy  _testcapi  nis  xxlimited  xxlimited_35
+MODOBJS=           Modules/_abc.o Modules/_asynciomodule.o Modules/_bisectmodule.o Modules/_bz2module.o Modules/_codecs_cn.o Modules/_codecs_hk.o Modules/_codecs_iso2022.o Modules/_codecs_jp.o Modules/_codecs_kr.o Modules/_codecs_tw.o Modules/_codecsmodule.o Modules/_collectionsmodule.o Modules/_contextvarsmodule.o Modules/_cryptmodule.o Modules/_csv.o Modules/_ctypes.o Modules/_ctypes_test.o Modules/_curses_panel.o Modules/_cursesmodule.o Modules/_datetimemodule.o Modules/_dbmmodule.o Modules/_decimal.o Modules/_elementtree.o Modules/_functoolsmodule.o Modules/_hashopenssl.o Modules/_heapqmodule.o Modules/_iomodule.o Modules/_json.o Modules/_localemodule.o Modules/_lsprof.o Modules/_lzmamodule.o Modules/_math.o Modules/_opcode.o Modules/_operator.o Modules/_pickle.o Modules/_posixsubprocess.o Modules/_queuemodule.o Modules/_randommodule.o Modules/_sre.o Modules/_ssl.o Modules/_stat.o Modules/_statisticsmodule.o Modules/_struct.o Modules/_testbuffer.o Modules/_testimportmultiple.o Modules/_testinternalcapi.o Modules/_testmultiphase.o Modules/_threadmodule.o Modules/_tkinter.o Modules/_tracemalloc.o Modules/_uuidmodule.o Modules/_weakref.o Modules/_xxsubinterpretersmodule.o Modules/_xxtestfuzz.o Modules/_zoneinfo.o Modules/arraymodule.o Modules/atexitmodule.o Modules/audioop.o Modules/binascii.o Modules/blake2b_impl.o Modules/blake2module.o Modules/blake2s_impl.o Modules/bufferedio.o Modules/bytesio.o Modules/cache.o Modules/callbacks.o Modules/callproc.o Modules/cfield.o Modules/cmathmodule.o Modules/connection.o Modules/cursor.o Modules/errnomodule.o Modules/faulthandler.o Modules/fcntlmodule.o Modules/fileio.o Modules/fuzzer.o Modules/grpmodule.o Modules/iobase.o Modules/itertoolsmodule.o Modules/mathmodule.o Modules/md5module.o Modules/microprotocols.o Modules/mmapmodule.o Modules/module.o Modules/multibytecodec.o Modules/multiprocessing.o Modules/ossaudiodev.o Modules/posixmodule.o Modules/posixshmem.o Modules/prepare_protocol.o Modules/pwdmodule.o Modules/pyexpat.o Modules/readline.o Modules/resource.o Modules/rotatingtree.o Modules/row.o Modules/selectmodule.o Modules/semaphore.o Modules/sha1module.o Modules/sha256module.o Modules/sha3module.o Modules/sha512module.o Modules/signalmodule.o Modules/socketmodule.o Modules/spwdmodule.o Modules/statement.o Modules/stgdict.o Modules/stringio.o Modules/symtablemodule.o Modules/syslogmodule.o Modules/termios.o Modules/textio.o Modules/timemodule.o Modules/tkappinit.o Modules/unicodedata.o Modules/util.o Modules/xxsubtype.o Modules/zlibmodule.o
 MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	3.10
 srcdir=		.
 
-abs_srcdir=	/build/Python-3.10.8
-abs_builddir=	/build/Python-3.10.8
+abs_srcdir=	/build/Python-3.10.9
+abs_builddir=	/build/Python-3.10.9
 
 
 CC=		/usr/bin/aarch64-linux-gnu-gcc
@@ -196,7 +196,7 @@ LIPO_INTEL64_FLAGS=
 OTHER_LIBTOOL_OPT=
 
 # Environment to run shared python without installed libraries
-RUNSHARED=       LD_LIBRARY_PATH=/build/Python-3.10.8
+RUNSHARED=       LD_LIBRARY_PATH=/build/Python-3.10.9
 
 # ensurepip options
 ENSUREPIP=      no
@@ -217,7 +217,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--build=x86_64-unknown-linux-gnu' '--host=aarch64-unknown-linux-gnu' '--prefix=/install' '--with-openssl=/tools/deps' '--without-ensurepip' '--with-readline=editline' '--enable-shared' '--with-lto' 'ac_cv_buggy_getaddrinfo=no' 'ac_cv_file__dev_ptc=no' 'ac_cv_file__dev_ptmx=no' 'build_alias=x86_64-unknown-linux-gnu' 'host_alias=aarch64-unknown-linux-gnu' 'CC=/usr/bin/aarch64-linux-gnu-gcc' 'CFLAGS= -fPIC -I/tools/deps/include -I/tools/deps/include/ncursesw -I/tools/deps/libedit/include' 'LDFLAGS= -L/tools/deps/lib -Wl,--exclude-libs,ALL -L/tools/deps/libedit/lib' 'CPPFLAGS= -fPIC -I/tools/deps/include -I/tools/deps/include/ncursesw -I/tools/deps/libedit/include'
+CONFIG_ARGS=	 '--build=x86_64-unknown-linux-gnu' '--host=aarch64-unknown-linux-gnu' '--prefix=/install' '--with-openssl=/tools/deps' '--with-system-expat' '--with-system-libmpdec' '--without-ensurepip' '--with-readline=editline' '--enable-shared' '--with-lto' '--with-dbmliborder=bdb' 'ac_cv_buggy_getaddrinfo=no' 'ac_cv_file__dev_ptc=no' 'ac_cv_file__dev_ptmx=no' 'build_alias=x86_64-unknown-linux-gnu' 'host_alias=aarch64-unknown-linux-gnu' 'CC=/usr/bin/aarch64-linux-gnu-gcc' 'CFLAGS= -fPIC -I/tools/deps/include -I/tools/deps/include/ncursesw -I/tools/deps/libedit/include' 'LDFLAGS= -L/tools/deps/lib -Wl,--exclude-libs,ALL -L/tools/deps/libedit/lib' 'CPPFLAGS= -fPIC -I/tools/deps/include -I/tools/deps/include/ncursesw -I/tools/deps/libedit/include'
 
 
 # Subdirectories with code
@@ -285,7 +285,7 @@ COVERAGE_REPORT_OPTIONS=--no-branch-coverage --title "CPython lcov report"
 
 # === Definitions added by makesetup ===
 
-LOCALMODLIBS=                                     -L$(exec_prefix)/lib -lz         -lbz2  -lcrypt  -L/tools/deps/lib -lffi -ldl  -lm  -L/tools/deps/lib -lncursesw  -L/tools/deps/lib -lpanelw -lncursesw  -L/tools/deps/lib -ldb    -L/tools/deps/lib -lcrypto    -L/tools/deps/lib -llzma    -lrt   -L/tools/deps/lib -lsqlite3  -lssl -lcrypto      -L/tools/deps/lib -ltcl8.6 -ltk8.6 -lX11 -lxcb -lXau  -luuid      -ledit -lncursesw                      
+LOCALMODLIBS=     -lbz2         -lcrypt   -lffi -ldl  -lm  -lncursesw  -lpanelw -lncursesw   -ldb  -lmpdec  -lexpat  -lcrypto     -llzma       -lrt          -lsqlite3  -lssl -lcrypto        -ltcl8.6 -ltk8.6 -lX11 -lxcb -lXau  -luuid        -lm    -lm    -lexpat  -ledit -lncursesw        -lz                      
 BASEMODLIBS=
 PYTHONPATH=$(COREPYTHONPATH)
 COREPYTHONPATH=$(DESTPATH)$(SITEPATH)$(TESTPATH)
@@ -537,12 +537,16 @@ run_profile_task:
 build_all_merge_profile:
 	$(LLVM_PROF_MERGER)
 
-# Compile Python binary with profile guided optimization.
-# To force re-running of the profile task, remove the profile-run-stamp file.
-profile-opt: profile-run-stamp
+profile-rebuild-stamp: profile-run-stamp
 	@echo "Rebuilding with profile guided optimizations:"
 	-rm -f profile-clean-stamp
 	$(MAKE) all CFLAGS_NODIST="$(CFLAGS_NODIST) $(PGO_PROF_USE_FLAG)" LDFLAGS_NODIST="$(LDFLAGS_NODIST)"
+	touch $@
+
+# Compile Python binary with profile guided optimization.
+# To force re-running of the profile task, remove the profile-run-stamp file.
+.PHONY: profile-opt
+profile-opt: profile-rebuild-stamp
 
 # Compile and run with gcov
 .PHONY=coverage coverage-lcov coverage-report
@@ -1910,7 +1914,7 @@ rmtestturds:
 	-rm -f gb-18030-2000.xml
 
 docclean:
-	$(MAKE) -C Doc clean
+	$(MAKE) -C $(srcdir)/Doc clean
 
 # like the 'clean' target but retain the profile guided optimization (PGO)
 # data.  The PGO data is only valid if source code remains unchanged.
@@ -2049,55 +2053,21 @@ write-python-for-build:
 
 # Rules appended by makesetup
 
-Modules/arraymodule.o: $(srcdir)/Modules/arraymodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/arraymodule.c -o Modules/arraymodule.o
-Modules/cmathmodule.o: $(srcdir)/Modules/cmathmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/cmathmodule.c -o Modules/cmathmodule.o
-Modules/_math.o: $(srcdir)/Modules/_math.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_math.c -o Modules/_math.o
-Modules/mathmodule.o: $(srcdir)/Modules/mathmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/mathmodule.c -o Modules/mathmodule.o
-Modules/_math.o: $(srcdir)/Modules/_math.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_math.c -o Modules/_math.o
-Modules/_contextvarsmodule.o: $(srcdir)/Modules/_contextvarsmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_contextvarsmodule.c -o Modules/_contextvarsmodule.o
-Modules/_struct.o: $(srcdir)/Modules/_struct.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_struct.c -o Modules/_struct.o
-Modules/_weakref.o: $(srcdir)/Modules/_weakref.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_weakref.c -o Modules/_weakref.o
-Modules/_testinternalcapi.o: $(srcdir)/Modules/_testinternalcapi.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I$(srcdir)/Include/internal -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_testinternalcapi.c -o Modules/_testinternalcapi.o
-Modules/_randommodule.o: $(srcdir)/Modules/_randommodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_randommodule.c -o Modules/_randommodule.o
-Modules/_pickle.o: $(srcdir)/Modules/_pickle.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_pickle.c -o Modules/_pickle.o
-Modules/_datetimemodule.o: $(srcdir)/Modules/_datetimemodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_datetimemodule.c -o Modules/_datetimemodule.o
-Modules/_zoneinfo.o: $(srcdir)/Modules/_zoneinfo.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_zoneinfo.c -o Modules/_zoneinfo.o
-Modules/_bisectmodule.o: $(srcdir)/Modules/_bisectmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_bisectmodule.c -o Modules/_bisectmodule.o
-Modules/_heapqmodule.o: $(srcdir)/Modules/_heapqmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_heapqmodule.c -o Modules/_heapqmodule.o
 Modules/_asynciomodule.o: $(srcdir)/Modules/_asynciomodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_asynciomodule.c -o Modules/_asynciomodule.o
-Modules/_statisticsmodule.o: $(srcdir)/Modules/_statisticsmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_statisticsmodule.c -o Modules/_statisticsmodule.o
-Modules/unicodedata.o: $(srcdir)/Modules/unicodedata.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_BUILTIN -c $(srcdir)/Modules/unicodedata.c -o Modules/unicodedata.o
-Modules/fcntlmodule.o: $(srcdir)/Modules/fcntlmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/fcntlmodule.c -o Modules/fcntlmodule.o
-Modules/spwdmodule.o: $(srcdir)/Modules/spwdmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/spwdmodule.c -o Modules/spwdmodule.o
-Modules/grpmodule.o: $(srcdir)/Modules/grpmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/grpmodule.c -o Modules/grpmodule.o
-Modules/selectmodule.o: $(srcdir)/Modules/selectmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/selectmodule.c -o Modules/selectmodule.o
-Modules/mmapmodule.o: $(srcdir)/Modules/mmapmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/mmapmodule.c -o Modules/mmapmodule.o
-Modules/_csv.o: $(srcdir)/Modules/_csv.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_csv.c -o Modules/_csv.o
-Modules/socketmodule.o: $(srcdir)/Modules/socketmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/socketmodule.c -o Modules/socketmodule.o
-Modules/termios.o: $(srcdir)/Modules/termios.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/termios.c -o Modules/termios.o
-Modules/resource.o: $(srcdir)/Modules/resource.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/resource.c -o Modules/resource.o
-Modules/_posixsubprocess.o: $(srcdir)/Modules/_posixsubprocess.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_BUILTIN -c $(srcdir)/Modules/_posixsubprocess.c -o Modules/_posixsubprocess.o
-Modules/audioop.o: $(srcdir)/Modules/audioop.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/audioop.c -o Modules/audioop.o
-Modules/md5module.o: $(srcdir)/Modules/md5module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/md5module.c -o Modules/md5module.o
-Modules/sha1module.o: $(srcdir)/Modules/sha1module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/sha1module.c -o Modules/sha1module.o
-Modules/sha256module.o: $(srcdir)/Modules/sha256module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_BUILTIN -c $(srcdir)/Modules/sha256module.c -o Modules/sha256module.o
-Modules/sha512module.o: $(srcdir)/Modules/sha512module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_BUILTIN -c $(srcdir)/Modules/sha512module.c -o Modules/sha512module.o
-Modules/sha3module.o: $(srcdir)/Modules/_sha3/sha3module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_sha3/sha3module.c -o Modules/sha3module.o
+Modules/_bisectmodule.o: $(srcdir)/Modules/_bisectmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_bisectmodule.c -o Modules/_bisectmodule.o
 Modules/blake2module.o: $(srcdir)/Modules/_blake2/blake2module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_blake2/blake2module.c -o Modules/blake2module.o
 Modules/blake2b_impl.o: $(srcdir)/Modules/_blake2/blake2b_impl.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_blake2/blake2b_impl.c -o Modules/blake2b_impl.o
 Modules/blake2s_impl.o: $(srcdir)/Modules/_blake2/blake2s_impl.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_blake2/blake2s_impl.c -o Modules/blake2s_impl.o
-Modules/syslogmodule.o: $(srcdir)/Modules/syslogmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/syslogmodule.c -o Modules/syslogmodule.o
-Modules/binascii.o: $(srcdir)/Modules/binascii.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/binascii.c -o Modules/binascii.o
-Modules/zlibmodule.o: $(srcdir)/Modules/zlibmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I$(prefix)/include -c $(srcdir)/Modules/zlibmodule.c -o Modules/zlibmodule.o
-Modules/multibytecodec.o: $(srcdir)/Modules/cjkcodecs/multibytecodec.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/multibytecodec.c -o Modules/multibytecodec.o
+Modules/_bz2module.o: $(srcdir)/Modules/_bz2module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_bz2module.c -o Modules/_bz2module.o
 Modules/_codecs_cn.o: $(srcdir)/Modules/cjkcodecs/_codecs_cn.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/_codecs_cn.c -o Modules/_codecs_cn.o
 Modules/_codecs_hk.o: $(srcdir)/Modules/cjkcodecs/_codecs_hk.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/_codecs_hk.c -o Modules/_codecs_hk.o
 Modules/_codecs_iso2022.o: $(srcdir)/Modules/cjkcodecs/_codecs_iso2022.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/_codecs_iso2022.c -o Modules/_codecs_iso2022.o
 Modules/_codecs_jp.o: $(srcdir)/Modules/cjkcodecs/_codecs_jp.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/_codecs_jp.c -o Modules/_codecs_jp.o
 Modules/_codecs_kr.o: $(srcdir)/Modules/cjkcodecs/_codecs_kr.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/_codecs_kr.c -o Modules/_codecs_kr.o
 Modules/_codecs_tw.o: $(srcdir)/Modules/cjkcodecs/_codecs_tw.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/_codecs_tw.c -o Modules/_codecs_tw.o
-Modules/_bz2module.o: $(srcdir)/Modules/_bz2module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_bz2module.c -o Modules/_bz2module.o
+Modules/_contextvarsmodule.o: $(srcdir)/Modules/_contextvarsmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_contextvarsmodule.c -o Modules/_contextvarsmodule.o
 Modules/_cryptmodule.o: $(srcdir)/Modules/_cryptmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_cryptmodule.c -o Modules/_cryptmodule.o
+Modules/_csv.o: $(srcdir)/Modules/_csv.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_csv.c -o Modules/_csv.o
 Modules/_ctypes.o: $(srcdir)/Modules/_ctypes/_ctypes.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_ctypes/_ctypes.c -o Modules/_ctypes.o
 Modules/callbacks.o: $(srcdir)/Modules/_ctypes/callbacks.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_ctypes/callbacks.c -o Modules/callbacks.o
 Modules/callproc.o: $(srcdir)/Modules/_ctypes/callproc.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_ctypes/callproc.c -o Modules/callproc.o
@@ -2106,46 +2076,46 @@ Modules/cfield.o: $(srcdir)/Modules/_ctypes/cfield.c; $(CC) $(PY_BUILTIN_MODULE_
 Modules/_ctypes_test.o: $(srcdir)/Modules/_ctypes/_ctypes_test.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_ctypes/_ctypes_test.c -o Modules/_ctypes_test.o
 Modules/_cursesmodule.o: $(srcdir)/Modules/_cursesmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include/ncursesw -c $(srcdir)/Modules/_cursesmodule.c -o Modules/_cursesmodule.o
 Modules/_curses_panel.o: $(srcdir)/Modules/_curses_panel.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include/ncursesw -c $(srcdir)/Modules/_curses_panel.c -o Modules/_curses_panel.o
+Modules/_datetimemodule.o: $(srcdir)/Modules/_datetimemodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_datetimemodule.c -o Modules/_datetimemodule.o
 Modules/_dbmmodule.o: $(srcdir)/Modules/_dbmmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DHAVE_BERKDB_H -DDB_DBM_HSEARCH -I/tools/deps/include -c $(srcdir)/Modules/_dbmmodule.c -o Modules/_dbmmodule.o
-Modules/_decimal.o: $(srcdir)/Modules/_decimal/_decimal.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/_decimal.c -o Modules/_decimal.o
-Modules/basearith.o: $(srcdir)/Modules/_decimal/libmpdec/basearith.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/basearith.c -o Modules/basearith.o
-Modules/constants.o: $(srcdir)/Modules/_decimal/libmpdec/constants.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/constants.c -o Modules/constants.o
-Modules/context.o: $(srcdir)/Modules/_decimal/libmpdec/context.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/context.c -o Modules/context.o
-Modules/convolute.o: $(srcdir)/Modules/_decimal/libmpdec/convolute.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/convolute.c -o Modules/convolute.o
-Modules/crt.o: $(srcdir)/Modules/_decimal/libmpdec/crt.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/crt.c -o Modules/crt.o
-Modules/difradix2.o: $(srcdir)/Modules/_decimal/libmpdec/difradix2.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/difradix2.c -o Modules/difradix2.o
-Modules/fnt.o: $(srcdir)/Modules/_decimal/libmpdec/fnt.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/fnt.c -o Modules/fnt.o
-Modules/fourstep.o: $(srcdir)/Modules/_decimal/libmpdec/fourstep.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/fourstep.c -o Modules/fourstep.o
-Modules/io.o: $(srcdir)/Modules/_decimal/libmpdec/io.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/io.c -o Modules/io.o
-Modules/mpalloc.o: $(srcdir)/Modules/_decimal/libmpdec/mpalloc.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/mpalloc.c -o Modules/mpalloc.o
-Modules/mpdecimal.o: $(srcdir)/Modules/_decimal/libmpdec/mpdecimal.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/mpdecimal.c -o Modules/mpdecimal.o
-Modules/numbertheory.o: $(srcdir)/Modules/_decimal/libmpdec/numbertheory.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/numbertheory.c -o Modules/numbertheory.o
-Modules/sixstep.o: $(srcdir)/Modules/_decimal/libmpdec/sixstep.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/sixstep.c -o Modules/sixstep.o
-Modules/transpose.o: $(srcdir)/Modules/_decimal/libmpdec/transpose.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_decimal/libmpdec -c $(srcdir)/Modules/_decimal/libmpdec/transpose.c -o Modules/transpose.o
-Modules/_elementtree.o: $(srcdir)/Modules/_elementtree.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DUSE_PYEXPAT_CAPI -IModules/expat -c $(srcdir)/Modules/_elementtree.c -o Modules/_elementtree.o
+Modules/_decimal.o: $(srcdir)/Modules/_decimal/_decimal.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_decimal/_decimal.c -o Modules/_decimal.o
+Modules/_elementtree.o: $(srcdir)/Modules/_elementtree.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_elementtree.c -o Modules/_elementtree.o
 Modules/_hashopenssl.o: $(srcdir)/Modules/_hashopenssl.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_hashopenssl.c -o Modules/_hashopenssl.o
+Modules/_heapqmodule.o: $(srcdir)/Modules/_heapqmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_heapqmodule.c -o Modules/_heapqmodule.o
 Modules/_json.o: $(srcdir)/Modules/_json.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_json.c -o Modules/_json.o
 Modules/_lsprof.o: $(srcdir)/Modules/_lsprof.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_lsprof.c -o Modules/_lsprof.o
 Modules/rotatingtree.o: $(srcdir)/Modules/rotatingtree.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/rotatingtree.c -o Modules/rotatingtree.o
 Modules/_lzmamodule.o: $(srcdir)/Modules/_lzmamodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_lzmamodule.c -o Modules/_lzmamodule.o
+Modules/md5module.o: $(srcdir)/Modules/md5module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/md5module.c -o Modules/md5module.o
+Modules/multibytecodec.o: $(srcdir)/Modules/cjkcodecs/multibytecodec.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cjkcodecs/multibytecodec.c -o Modules/multibytecodec.o
 Modules/multiprocessing.o: $(srcdir)/Modules/_multiprocessing/multiprocessing.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_multiprocessing/multiprocessing.c -o Modules/multiprocessing.o
 Modules/semaphore.o: $(srcdir)/Modules/_multiprocessing/semaphore.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_multiprocessing/semaphore.c -o Modules/semaphore.o
 Modules/_opcode.o: $(srcdir)/Modules/_opcode.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_opcode.c -o Modules/_opcode.o
+Modules/_pickle.o: $(srcdir)/Modules/_pickle.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_pickle.c -o Modules/_pickle.o
 Modules/posixshmem.o: $(srcdir)/Modules/_multiprocessing/posixshmem.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_multiprocessing -c $(srcdir)/Modules/_multiprocessing/posixshmem.c -o Modules/posixshmem.o
+Modules/_posixsubprocess.o: $(srcdir)/Modules/_posixsubprocess.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_posixsubprocess.c -o Modules/_posixsubprocess.o
 Modules/_queuemodule.o: $(srcdir)/Modules/_queuemodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_queuemodule.c -o Modules/_queuemodule.o
-Modules/cache.o: $(srcdir)/Modules/_sqlite/cache.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/cache.c -o Modules/cache.o
-Modules/connection.o: $(srcdir)/Modules/_sqlite/connection.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/connection.c -o Modules/connection.o
-Modules/cursor.o: $(srcdir)/Modules/_sqlite/cursor.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/cursor.c -o Modules/cursor.o
-Modules/microprotocols.o: $(srcdir)/Modules/_sqlite/microprotocols.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/microprotocols.c -o Modules/microprotocols.o
-Modules/module.o: $(srcdir)/Modules/_sqlite/module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/module.c -o Modules/module.o
-Modules/prepare_protocol.o: $(srcdir)/Modules/_sqlite/prepare_protocol.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/prepare_protocol.c -o Modules/prepare_protocol.o
-Modules/row.o: $(srcdir)/Modules/_sqlite/row.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/row.c -o Modules/row.o
-Modules/statement.o: $(srcdir)/Modules/_sqlite/statement.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/statement.c -o Modules/statement.o
-Modules/util.o: $(srcdir)/Modules/_sqlite/util.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -IModules/_sqlite -c $(srcdir)/Modules/_sqlite/util.c -o Modules/util.o
+Modules/_randommodule.o: $(srcdir)/Modules/_randommodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_randommodule.c -o Modules/_randommodule.o
+Modules/sha1module.o: $(srcdir)/Modules/sha1module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/sha1module.c -o Modules/sha1module.o
+Modules/sha256module.o: $(srcdir)/Modules/sha256module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/sha256module.c -o Modules/sha256module.o
+Modules/sha3module.o: $(srcdir)/Modules/_sha3/sha3module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_sha3/sha3module.c -o Modules/sha3module.o
+Modules/sha512module.o: $(srcdir)/Modules/sha512module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/sha512module.c -o Modules/sha512module.o
+Modules/socketmodule.o: $(srcdir)/Modules/socketmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/socketmodule.c -o Modules/socketmodule.o
+Modules/connection.o: $(srcdir)/Modules/_sqlite/connection.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/connection.c -o Modules/connection.o
+Modules/cursor.o: $(srcdir)/Modules/_sqlite/cursor.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/cursor.c -o Modules/cursor.o
+Modules/microprotocols.o: $(srcdir)/Modules/_sqlite/microprotocols.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/microprotocols.c -o Modules/microprotocols.o
+Modules/module.o: $(srcdir)/Modules/_sqlite/module.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/module.c -o Modules/module.o
+Modules/prepare_protocol.o: $(srcdir)/Modules/_sqlite/prepare_protocol.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/prepare_protocol.c -o Modules/prepare_protocol.o
+Modules/row.o: $(srcdir)/Modules/_sqlite/row.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/row.c -o Modules/row.o
+Modules/statement.o: $(srcdir)/Modules/_sqlite/statement.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/statement.c -o Modules/statement.o
+Modules/util.o: $(srcdir)/Modules/_sqlite/util.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/util.c -o Modules/util.o
+Modules/cache.o: $(srcdir)/Modules/_sqlite/cache.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IModules/_sqlite -I/tools/deps/include -c $(srcdir)/Modules/_sqlite/cache.c -o Modules/cache.o
 Modules/_ssl.o: $(srcdir)/Modules/_ssl.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/_ssl.c -o Modules/_ssl.o
+Modules/_statisticsmodule.o: $(srcdir)/Modules/_statisticsmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_statisticsmodule.c -o Modules/_statisticsmodule.o
+Modules/_struct.o: $(srcdir)/Modules/_struct.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_struct.c -o Modules/_struct.o
 Modules/_testbuffer.o: $(srcdir)/Modules/_testbuffer.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_testbuffer.c -o Modules/_testbuffer.o
 Modules/_testimportmultiple.o: $(srcdir)/Modules/_testimportmultiple.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_testimportmultiple.c -o Modules/_testimportmultiple.o
-Modules/_testinternalcapi.o: $(srcdir)/Modules/_testinternalcapi.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_MODULE -c $(srcdir)/Modules/_testinternalcapi.c -o Modules/_testinternalcapi.o
+Modules/_testinternalcapi.o: $(srcdir)/Modules/_testinternalcapi.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -IInclude/internal -c $(srcdir)/Modules/_testinternalcapi.c -o Modules/_testinternalcapi.o
 Modules/_testmultiphase.o: $(srcdir)/Modules/_testmultiphase.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_testmultiphase.c -o Modules/_testmultiphase.o
 Modules/_tkinter.o: $(srcdir)/Modules/_tkinter.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DWITH_APPINIT -I/tools/deps/include/X11 -c $(srcdir)/Modules/_tkinter.c -o Modules/_tkinter.o
 Modules/tkappinit.o: $(srcdir)/Modules/tkappinit.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DWITH_APPINIT -I/tools/deps/include/X11 -c $(srcdir)/Modules/tkappinit.c -o Modules/tkappinit.o
@@ -2153,12 +2123,27 @@ Modules/_uuidmodule.o: $(srcdir)/Modules/_uuidmodule.c; $(CC) $(PY_BUILTIN_MODUL
 Modules/_xxsubinterpretersmodule.o: $(srcdir)/Modules/_xxsubinterpretersmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_xxsubinterpretersmodule.c -o Modules/_xxsubinterpretersmodule.o
 Modules/_xxtestfuzz.o: $(srcdir)/Modules/_xxtestfuzz/_xxtestfuzz.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_xxtestfuzz/_xxtestfuzz.c -o Modules/_xxtestfuzz.o
 Modules/fuzzer.o: $(srcdir)/Modules/_xxtestfuzz/fuzzer.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_xxtestfuzz/fuzzer.c -o Modules/fuzzer.o
+Modules/_zoneinfo.o: $(srcdir)/Modules/_zoneinfo.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_zoneinfo.c -o Modules/_zoneinfo.o
+Modules/arraymodule.o: $(srcdir)/Modules/arraymodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/arraymodule.c -o Modules/arraymodule.o
+Modules/audioop.o: $(srcdir)/Modules/audioop.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/audioop.c -o Modules/audioop.o
+Modules/binascii.o: $(srcdir)/Modules/binascii.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/binascii.c -o Modules/binascii.o
+Modules/cmathmodule.o: $(srcdir)/Modules/cmathmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/cmathmodule.c -o Modules/cmathmodule.o
+Modules/_math.o: $(srcdir)/Modules/_math.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_math.c -o Modules/_math.o
+Modules/fcntlmodule.o: $(srcdir)/Modules/fcntlmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/fcntlmodule.c -o Modules/fcntlmodule.o
+Modules/grpmodule.o: $(srcdir)/Modules/grpmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/grpmodule.c -o Modules/grpmodule.o
+Modules/mathmodule.o: $(srcdir)/Modules/mathmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/mathmodule.c -o Modules/mathmodule.o
+Modules/_math.o: $(srcdir)/Modules/_math.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/_math.c -o Modules/_math.o
+Modules/mmapmodule.o: $(srcdir)/Modules/mmapmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/mmapmodule.c -o Modules/mmapmodule.o
 Modules/ossaudiodev.o: $(srcdir)/Modules/ossaudiodev.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/ossaudiodev.c -o Modules/ossaudiodev.o
-Modules/pyexpat.o: $(srcdir)/Modules/pyexpat.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DUSE_PYEXPAT_CAPI -IModules/expat -c $(srcdir)/Modules/pyexpat.c -o Modules/pyexpat.o
-Modules/xmlparse.o: $(srcdir)/Modules/expat/xmlparse.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DUSE_PYEXPAT_CAPI -IModules/expat -c $(srcdir)/Modules/expat/xmlparse.c -o Modules/xmlparse.o
-Modules/xmlrole.o: $(srcdir)/Modules/expat/xmlrole.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DUSE_PYEXPAT_CAPI -IModules/expat -c $(srcdir)/Modules/expat/xmlrole.c -o Modules/xmlrole.o
-Modules/xmltok.o: $(srcdir)/Modules/expat/xmltok.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DUSE_PYEXPAT_CAPI -IModules/expat -c $(srcdir)/Modules/expat/xmltok.c -o Modules/xmltok.o
-Modules/readline.o: $(srcdir)/Modules/readline.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/readline.c -o Modules/readline.o
+Modules/pyexpat.o: $(srcdir)/Modules/pyexpat.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/pyexpat.c -o Modules/pyexpat.o
+Modules/readline.o: $(srcdir)/Modules/readline.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/libedit/include -I/tools/deps/libedit/include/ncursesw -c $(srcdir)/Modules/readline.c -o Modules/readline.o
+Modules/resource.o: $(srcdir)/Modules/resource.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/resource.c -o Modules/resource.o
+Modules/selectmodule.o: $(srcdir)/Modules/selectmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/selectmodule.c -o Modules/selectmodule.o
+Modules/spwdmodule.o: $(srcdir)/Modules/spwdmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/spwdmodule.c -o Modules/spwdmodule.o
+Modules/syslogmodule.o: $(srcdir)/Modules/syslogmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/syslogmodule.c -o Modules/syslogmodule.o
+Modules/termios.o: $(srcdir)/Modules/termios.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/termios.c -o Modules/termios.o
+Modules/unicodedata.o: $(srcdir)/Modules/unicodedata.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/unicodedata.c -o Modules/unicodedata.o
+Modules/zlibmodule.o: $(srcdir)/Modules/zlibmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -I/tools/deps/include -c $(srcdir)/Modules/zlibmodule.c -o Modules/zlibmodule.o
 Modules/posixmodule.o: $(srcdir)/Modules/posixmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -DPy_BUILD_CORE_BUILTIN -I$(srcdir)/Include/internal -c $(srcdir)/Modules/posixmodule.c -o Modules/posixmodule.o
 Modules/errnomodule.o: $(srcdir)/Modules/errnomodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/errnomodule.c -o Modules/errnomodule.o
 Modules/pwdmodule.o: $(srcdir)/Modules/pwdmodule.c; $(CC) $(PY_BUILTIN_MODULE_CFLAGS)  -c $(srcdir)/Modules/pwdmodule.c -o Modules/pwdmodule.o
@@ -2190,36 +2175,18 @@ Modules/xxsubtype.o: $(srcdir)/Modules/xxsubtype.c; $(CC) $(PY_BUILTIN_MODULE_CF
 Modules/_ctypes.o: PY_STDMODULE_CFLAGS += -DHAVE_FFI_PREP_CIF_VAR=1 -DHAVE_FFI_PREP_CLOSURE_LOC=1 -DHAVE_FFI_CLOSURE_ALLOC=1
 Modules/_curses_panel.o: PY_STDMODULE_CFLAGS += -DHAVE_NCURSESW=1
 Modules/_cursesmodule.o: PY_STDMODULE_CFLAGS += -DHAVE_NCURSESW=1
-Modules/_decimal.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/_elementtree.o: PY_STDMODULE_CFLAGS += -DHAVE_EXPAT_CONFIG_H=1 -DXML_POOR_ENTROPY=1
-Modules/basearith.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/cache.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
+Modules/_decimal.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1
+Modules/cache.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
 Modules/callbacks.o: PY_STDMODULE_CFLAGS += -DHAVE_FFI_PREP_CIF_VAR=1 -DHAVE_FFI_PREP_CLOSURE_LOC=1 -DHAVE_FFI_CLOSURE_ALLOC=1
 Modules/callproc.o: PY_STDMODULE_CFLAGS += -DHAVE_FFI_PREP_CIF_VAR=1 -DHAVE_FFI_PREP_CLOSURE_LOC=1 -DHAVE_FFI_CLOSURE_ALLOC=1
 Modules/cfield.o: PY_STDMODULE_CFLAGS += -DHAVE_FFI_PREP_CIF_VAR=1 -DHAVE_FFI_PREP_CLOSURE_LOC=1 -DHAVE_FFI_CLOSURE_ALLOC=1
-Modules/connection.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/constants.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/context.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/convolute.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/crt.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/cursor.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/difradix2.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/fnt.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/fourstep.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/io.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/microprotocols.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/module.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/mpalloc.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/mpdecimal.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/numbertheory.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/prepare_protocol.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/pyexpat.o: PY_STDMODULE_CFLAGS += -DHAVE_EXPAT_CONFIG_H=1 -DXML_POOR_ENTROPY=1
-Modules/row.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/sixstep.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/statement.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
+Modules/connection.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
+Modules/cursor.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
+Modules/microprotocols.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
+Modules/module.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
+Modules/prepare_protocol.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
+Modules/readline.o: PY_STDMODULE_CFLAGS += -DUSE_LIBEDIT=1
+Modules/row.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
+Modules/statement.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1
 Modules/stgdict.o: PY_STDMODULE_CFLAGS += -DHAVE_FFI_PREP_CIF_VAR=1 -DHAVE_FFI_PREP_CLOSURE_LOC=1 -DHAVE_FFI_CLOSURE_ALLOC=1
-Modules/transpose.o: PY_STDMODULE_CFLAGS += -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
-Modules/util.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\"
-Modules/xmlparse.o: PY_STDMODULE_CFLAGS += -DHAVE_EXPAT_CONFIG_H=1 -DXML_POOR_ENTROPY=1
-Modules/xmlrole.o: PY_STDMODULE_CFLAGS += -DHAVE_EXPAT_CONFIG_H=1 -DXML_POOR_ENTROPY=1
-Modules/xmltok.o: PY_STDMODULE_CFLAGS += -DHAVE_EXPAT_CONFIG_H=1 -DXML_POOR_ENTROPY=1
+Modules/util.o: PY_STDMODULE_CFLAGS += -DMODULE_NAME=\"sqlite3\" -DPY_SQLITE_ENABLE_LOAD_EXTENSION=1

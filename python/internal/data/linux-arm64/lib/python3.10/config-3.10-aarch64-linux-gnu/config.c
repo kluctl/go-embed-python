@@ -23,68 +23,50 @@ extern "C" {
 #endif
 
 
-extern PyObject* PyInit_array(void);
-extern PyObject* PyInit_cmath(void);
-extern PyObject* PyInit_math(void);
-extern PyObject* PyInit__contextvars(void);
-extern PyObject* PyInit__struct(void);
-extern PyObject* PyInit__weakref(void);
-extern PyObject* PyInit__testinternalcapi(void);
-extern PyObject* PyInit__random(void);
-extern PyObject* PyInit__pickle(void);
-extern PyObject* PyInit__datetime(void);
-extern PyObject* PyInit__zoneinfo(void);
-extern PyObject* PyInit__bisect(void);
-extern PyObject* PyInit__heapq(void);
 extern PyObject* PyInit__asyncio(void);
-extern PyObject* PyInit__statistics(void);
-extern PyObject* PyInit_unicodedata(void);
-extern PyObject* PyInit_fcntl(void);
-extern PyObject* PyInit_spwd(void);
-extern PyObject* PyInit_grp(void);
-extern PyObject* PyInit_select(void);
-extern PyObject* PyInit_mmap(void);
-extern PyObject* PyInit__csv(void);
-extern PyObject* PyInit__socket(void);
-extern PyObject* PyInit_termios(void);
-extern PyObject* PyInit_resource(void);
-extern PyObject* PyInit__posixsubprocess(void);
-extern PyObject* PyInit_audioop(void);
-extern PyObject* PyInit__md5(void);
-extern PyObject* PyInit__sha1(void);
-extern PyObject* PyInit__sha256(void);
-extern PyObject* PyInit__sha512(void);
-extern PyObject* PyInit__sha3(void);
+extern PyObject* PyInit__bisect(void);
 extern PyObject* PyInit__blake2(void);
-extern PyObject* PyInit_syslog(void);
-extern PyObject* PyInit_binascii(void);
-extern PyObject* PyInit_zlib(void);
-extern PyObject* PyInit__multibytecodec(void);
+extern PyObject* PyInit__bz2(void);
 extern PyObject* PyInit__codecs_cn(void);
 extern PyObject* PyInit__codecs_hk(void);
 extern PyObject* PyInit__codecs_iso2022(void);
 extern PyObject* PyInit__codecs_jp(void);
 extern PyObject* PyInit__codecs_kr(void);
 extern PyObject* PyInit__codecs_tw(void);
-extern PyObject* PyInit__bz2(void);
+extern PyObject* PyInit__contextvars(void);
 extern PyObject* PyInit__crypt(void);
+extern PyObject* PyInit__csv(void);
 extern PyObject* PyInit__ctypes(void);
 extern PyObject* PyInit__ctypes_test(void);
 extern PyObject* PyInit__curses(void);
 extern PyObject* PyInit__curses_panel(void);
+extern PyObject* PyInit__datetime(void);
 extern PyObject* PyInit__dbm(void);
 extern PyObject* PyInit__decimal(void);
 extern PyObject* PyInit__elementtree(void);
 extern PyObject* PyInit__hashlib(void);
+extern PyObject* PyInit__heapq(void);
 extern PyObject* PyInit__json(void);
 extern PyObject* PyInit__lsprof(void);
 extern PyObject* PyInit__lzma(void);
+extern PyObject* PyInit__md5(void);
+extern PyObject* PyInit__multibytecodec(void);
 extern PyObject* PyInit__multiprocessing(void);
 extern PyObject* PyInit__opcode(void);
+extern PyObject* PyInit__pickle(void);
 extern PyObject* PyInit__posixshmem(void);
+extern PyObject* PyInit__posixsubprocess(void);
 extern PyObject* PyInit__queue(void);
+extern PyObject* PyInit__random(void);
+extern PyObject* PyInit__sha1(void);
+extern PyObject* PyInit__sha256(void);
+extern PyObject* PyInit__sha3(void);
+extern PyObject* PyInit__sha512(void);
+extern PyObject* PyInit__socket(void);
 extern PyObject* PyInit__sqlite3(void);
 extern PyObject* PyInit__ssl(void);
+extern PyObject* PyInit__statistics(void);
+extern PyObject* PyInit__struct(void);
 extern PyObject* PyInit__testbuffer(void);
 extern PyObject* PyInit__testimportmultiple(void);
 extern PyObject* PyInit__testinternalcapi(void);
@@ -93,9 +75,25 @@ extern PyObject* PyInit__tkinter(void);
 extern PyObject* PyInit__uuid(void);
 extern PyObject* PyInit__xxsubinterpreters(void);
 extern PyObject* PyInit__xxtestfuzz(void);
+extern PyObject* PyInit__zoneinfo(void);
+extern PyObject* PyInit_array(void);
+extern PyObject* PyInit_audioop(void);
+extern PyObject* PyInit_binascii(void);
+extern PyObject* PyInit_cmath(void);
+extern PyObject* PyInit_fcntl(void);
+extern PyObject* PyInit_grp(void);
+extern PyObject* PyInit_math(void);
+extern PyObject* PyInit_mmap(void);
 extern PyObject* PyInit_ossaudiodev(void);
 extern PyObject* PyInit_pyexpat(void);
 extern PyObject* PyInit_readline(void);
+extern PyObject* PyInit_resource(void);
+extern PyObject* PyInit_select(void);
+extern PyObject* PyInit_spwd(void);
+extern PyObject* PyInit_syslog(void);
+extern PyObject* PyInit_termios(void);
+extern PyObject* PyInit_unicodedata(void);
+extern PyObject* PyInit_zlib(void);
 extern PyObject* PyInit_posix(void);
 extern PyObject* PyInit_errno(void);
 extern PyObject* PyInit_pwd(void);
@@ -130,68 +128,50 @@ extern PyObject* PyInit__string(void);
 
 struct _inittab _PyImport_Inittab[] = {
 
-    {"array", PyInit_array},
-    {"cmath", PyInit_cmath},
-    {"math", PyInit_math},
-    {"_contextvars", PyInit__contextvars},
-    {"_struct", PyInit__struct},
-    {"_weakref", PyInit__weakref},
-    {"_testinternalcapi", PyInit__testinternalcapi},
-    {"_random", PyInit__random},
-    {"_pickle", PyInit__pickle},
-    {"_datetime", PyInit__datetime},
-    {"_zoneinfo", PyInit__zoneinfo},
-    {"_bisect", PyInit__bisect},
-    {"_heapq", PyInit__heapq},
     {"_asyncio", PyInit__asyncio},
-    {"_statistics", PyInit__statistics},
-    {"unicodedata", PyInit_unicodedata},
-    {"fcntl", PyInit_fcntl},
-    {"spwd", PyInit_spwd},
-    {"grp", PyInit_grp},
-    {"select", PyInit_select},
-    {"mmap", PyInit_mmap},
-    {"_csv", PyInit__csv},
-    {"_socket", PyInit__socket},
-    {"termios", PyInit_termios},
-    {"resource", PyInit_resource},
-    {"_posixsubprocess", PyInit__posixsubprocess},
-    {"audioop", PyInit_audioop},
-    {"_md5", PyInit__md5},
-    {"_sha1", PyInit__sha1},
-    {"_sha256", PyInit__sha256},
-    {"_sha512", PyInit__sha512},
-    {"_sha3", PyInit__sha3},
+    {"_bisect", PyInit__bisect},
     {"_blake2", PyInit__blake2},
-    {"syslog", PyInit_syslog},
-    {"binascii", PyInit_binascii},
-    {"zlib", PyInit_zlib},
-    {"_multibytecodec", PyInit__multibytecodec},
+    {"_bz2", PyInit__bz2},
     {"_codecs_cn", PyInit__codecs_cn},
     {"_codecs_hk", PyInit__codecs_hk},
     {"_codecs_iso2022", PyInit__codecs_iso2022},
     {"_codecs_jp", PyInit__codecs_jp},
     {"_codecs_kr", PyInit__codecs_kr},
     {"_codecs_tw", PyInit__codecs_tw},
-    {"_bz2", PyInit__bz2},
+    {"_contextvars", PyInit__contextvars},
     {"_crypt", PyInit__crypt},
+    {"_csv", PyInit__csv},
     {"_ctypes", PyInit__ctypes},
     {"_ctypes_test", PyInit__ctypes_test},
     {"_curses", PyInit__curses},
     {"_curses_panel", PyInit__curses_panel},
+    {"_datetime", PyInit__datetime},
     {"_dbm", PyInit__dbm},
     {"_decimal", PyInit__decimal},
     {"_elementtree", PyInit__elementtree},
     {"_hashlib", PyInit__hashlib},
+    {"_heapq", PyInit__heapq},
     {"_json", PyInit__json},
     {"_lsprof", PyInit__lsprof},
     {"_lzma", PyInit__lzma},
+    {"_md5", PyInit__md5},
+    {"_multibytecodec", PyInit__multibytecodec},
     {"_multiprocessing", PyInit__multiprocessing},
     {"_opcode", PyInit__opcode},
+    {"_pickle", PyInit__pickle},
     {"_posixshmem", PyInit__posixshmem},
+    {"_posixsubprocess", PyInit__posixsubprocess},
     {"_queue", PyInit__queue},
+    {"_random", PyInit__random},
+    {"_sha1", PyInit__sha1},
+    {"_sha256", PyInit__sha256},
+    {"_sha3", PyInit__sha3},
+    {"_sha512", PyInit__sha512},
+    {"_socket", PyInit__socket},
     {"_sqlite3", PyInit__sqlite3},
     {"_ssl", PyInit__ssl},
+    {"_statistics", PyInit__statistics},
+    {"_struct", PyInit__struct},
     {"_testbuffer", PyInit__testbuffer},
     {"_testimportmultiple", PyInit__testimportmultiple},
     {"_testinternalcapi", PyInit__testinternalcapi},
@@ -200,9 +180,25 @@ struct _inittab _PyImport_Inittab[] = {
     {"_uuid", PyInit__uuid},
     {"_xxsubinterpreters", PyInit__xxsubinterpreters},
     {"_xxtestfuzz", PyInit__xxtestfuzz},
+    {"_zoneinfo", PyInit__zoneinfo},
+    {"array", PyInit_array},
+    {"audioop", PyInit_audioop},
+    {"binascii", PyInit_binascii},
+    {"cmath", PyInit_cmath},
+    {"fcntl", PyInit_fcntl},
+    {"grp", PyInit_grp},
+    {"math", PyInit_math},
+    {"mmap", PyInit_mmap},
     {"ossaudiodev", PyInit_ossaudiodev},
     {"pyexpat", PyInit_pyexpat},
     {"readline", PyInit_readline},
+    {"resource", PyInit_resource},
+    {"select", PyInit_select},
+    {"spwd", PyInit_spwd},
+    {"syslog", PyInit_syslog},
+    {"termios", PyInit_termios},
+    {"unicodedata", PyInit_unicodedata},
+    {"zlib", PyInit_zlib},
     {"posix", PyInit_posix},
     {"errno", PyInit_errno},
     {"pwd", PyInit_pwd},

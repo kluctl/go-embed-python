@@ -49,10 +49,11 @@ build_time_vars = {'ABIFLAGS': '',
                              '-flto-partition=none -g',
  'CONFIG_ARGS': "'--build=x86_64-unknown-linux-gnu' "
                 "'--host=aarch64-unknown-linux-gnu' '--prefix=/install' "
-                "'--with-openssl=/tools/deps' '--without-ensurepip' "
+                "'--with-openssl=/tools/deps' '--with-system-expat' "
+                "'--with-system-libmpdec' '--without-ensurepip' "
                 "'--with-readline=editline' '--enable-shared' '--with-lto' "
-                "'ac_cv_buggy_getaddrinfo=no' 'ac_cv_file__dev_ptc=no' "
-                "'ac_cv_file__dev_ptmx=no' "
+                "'--with-dbmliborder=bdb' 'ac_cv_buggy_getaddrinfo=no' "
+                "'ac_cv_file__dev_ptc=no' 'ac_cv_file__dev_ptmx=no' "
                 "'build_alias=x86_64-unknown-linux-gnu' "
                 "'host_alias=aarch64-unknown-linux-gnu' "
                 "'CC=/usr/bin/aarch64-linux-gnu-gcc' 'CFLAGS= -fPIC "
@@ -64,8 +65,8 @@ build_time_vars = {'ABIFLAGS': '',
  'CONFINCLUDEDIR': '/install/include',
  'CONFINCLUDEPY': '/install/include/python3.10',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/build/Python-3.10.8/coverage.info',
- 'COVERAGE_REPORT': '/build/Python-3.10.8/lcov-report',
+ 'COVERAGE_INFO': '/build/Python-3.10.9/coverage.info',
+ 'COVERAGE_REPORT': '/build/Python-3.10.9/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--no-branch-coverage --title "CPython lcov '
                             'report"',
  'CPPFLAGS': '-I. -I./Include -fPIC -I/tools/deps/include '
@@ -588,13 +589,11 @@ build_time_vars = {'ABIFLAGS': '',
  'LLVM_PROF_FILE': '',
  'LLVM_PROF_MERGER': 'true',
  'LN': 'ln',
- 'LOCALMODLIBS': '-L/install/lib -lz         -lbz2  -lcrypt  -L/tools/deps/lib '
-                 '-lffi -ldl  -lm  -L/tools/deps/lib -lncursesw  '
-                 '-L/tools/deps/lib -lpanelw -lncursesw  -L/tools/deps/lib '
-                 '-ldb    -L/tools/deps/lib -lcrypto    -L/tools/deps/lib '
-                 '-llzma    -lrt   -L/tools/deps/lib -lsqlite3  -lssl '
-                 '-lcrypto      -L/tools/deps/lib -ltcl8.6 -ltk8.6 -lX11 -lxcb '
-                 '-lXau  -luuid      -ledit -lncursesw',
+ 'LOCALMODLIBS': '-lbz2         -lcrypt   -lffi -ldl  -lm  -lncursesw  '
+                 '-lpanelw -lncursesw   -ldb  -lmpdec  -lexpat  -lcrypto     '
+                 '-llzma       -lrt          -lsqlite3  -lssl -lcrypto        '
+                 '-ltcl8.6 -ltk8.6 -lX11 -lxcb -lXau  -luuid        -lm    '
+                 '-lm    -lexpat  -ledit -lncursesw        -lz',
  'MACHDEP': 'linux',
  'MACHDEP_OBJS': '',
  'MACHDESTLIB': '/install/lib/python3.10',
@@ -605,31 +604,31 @@ build_time_vars = {'ABIFLAGS': '',
  'MAKESETUP': './Modules/makesetup',
  'MANDIR': '/install/share/man',
  'MKDIR_P': '/bin/mkdir -p',
- 'MODBUILT_NAMES': 'array  cmath  math  _contextvars  _struct  _weakref  '
-                   '_testinternalcapi  _random  _pickle  _datetime  _zoneinfo  '
-                   '_bisect  _heapq  _asyncio  _statistics  unicodedata  '
-                   'fcntl  spwd  grp  select  mmap  _csv  _socket  termios  '
-                   'resource  _posixsubprocess  audioop  _md5  _sha1  _sha256  '
-                   '_sha512  _sha3  _blake2  syslog  binascii  zlib  '
-                   '_multibytecodec  _codecs_cn  _codecs_hk  _codecs_iso2022  '
-                   '_codecs_jp  _codecs_kr  _codecs_tw  _bz2  _crypt  _ctypes  '
-                   '_ctypes_test  _curses  _curses_panel  _dbm  _decimal  '
-                   '_elementtree  _hashlib  _json  _lsprof  _lzma  '
-                   '_multiprocessing  _opcode  _posixshmem  _queue  _sqlite3  '
-                   '_ssl  _testbuffer  _testimportmultiple  _testinternalcapi  '
-                   '_testmultiphase  _tkinter  _uuid  _xxsubinterpreters  '
-                   '_xxtestfuzz  ossaudiodev  pyexpat  readline  posix  errno  '
-                   'pwd  _sre  _codecs  _weakref  _functools  _operator  '
+ 'MODBUILT_NAMES': '_asyncio  _bisect  _blake2  _bz2  _codecs_cn  _codecs_hk  '
+                   '_codecs_iso2022  _codecs_jp  _codecs_kr  _codecs_tw  '
+                   '_contextvars  _crypt  _csv  _ctypes  _ctypes_test  '
+                   '_curses  _curses_panel  _datetime  _dbm  _decimal  '
+                   '_elementtree  _hashlib  _heapq  _json  _lsprof  _lzma  '
+                   '_md5  _multibytecodec  _multiprocessing  _opcode  _pickle  '
+                   '_posixshmem  _posixsubprocess  _queue  _random  _sha1  '
+                   '_sha256  _sha3  _sha512  _socket  _sqlite3  _ssl  '
+                   '_statistics  _struct  _testbuffer  _testimportmultiple  '
+                   '_testinternalcapi  _testmultiphase  _tkinter  _uuid  '
+                   '_xxsubinterpreters  _xxtestfuzz  _zoneinfo  array  '
+                   'audioop  binascii  cmath  fcntl  grp  math  mmap  '
+                   'ossaudiodev  pyexpat  readline  resource  select  spwd  '
+                   'syslog  termios  unicodedata  zlib  posix  errno  pwd  '
+                   '_sre  _codecs  _weakref  _functools  _operator  '
                    '_collections  _abc  itertools  atexit  _signal  _stat  '
                    'time  _thread  _locale  _io  faulthandler  _tracemalloc  '
                    '_symtable  xxsubtype',
- 'MODDISABLED_NAMES': '_gdbm  nis',
- 'MODLIBS': '-L/install/lib -lz         -lbz2  -lcrypt  -L/tools/deps/lib '
-            '-lffi -ldl  -lm  -L/tools/deps/lib -lncursesw  -L/tools/deps/lib '
-            '-lpanelw -lncursesw  -L/tools/deps/lib -ldb    -L/tools/deps/lib '
-            '-lcrypto    -L/tools/deps/lib -llzma    -lrt   -L/tools/deps/lib '
-            '-lsqlite3  -lssl -lcrypto      -L/tools/deps/lib -ltcl8.6 -ltk8.6 '
-            '-lX11 -lxcb -lXau  -luuid      -ledit -lncursesw',
+ 'MODDISABLED_NAMES': '_gdbm  _scproxy  _testcapi  nis  xxlimited  '
+                      'xxlimited_35',
+ 'MODLIBS': '-lbz2         -lcrypt   -lffi -ldl  -lm  -lncursesw  -lpanelw '
+            '-lncursesw   -ldb  -lmpdec  -lexpat  -lcrypto     -llzma       '
+            '-lrt          -lsqlite3  -lssl -lcrypto        -ltcl8.6 -ltk8.6 '
+            '-lX11 -lxcb -lXau  -luuid        -lm    -lm    -lexpat  -ledit '
+            '-lncursesw        -lz',
  'MODOBJS': 'Modules/_abc.o Modules/_asynciomodule.o Modules/_bisectmodule.o '
             'Modules/_bz2module.o Modules/_codecs_cn.o Modules/_codecs_hk.o '
             'Modules/_codecs_iso2022.o Modules/_codecs_jp.o '
@@ -652,34 +651,28 @@ build_time_vars = {'ABIFLAGS': '',
             'Modules/_tkinter.o Modules/_tracemalloc.o Modules/_uuidmodule.o '
             'Modules/_weakref.o Modules/_xxsubinterpretersmodule.o '
             'Modules/_xxtestfuzz.o Modules/_zoneinfo.o Modules/arraymodule.o '
-            'Modules/atexitmodule.o Modules/audioop.o Modules/basearith.o '
-            'Modules/binascii.o Modules/blake2b_impl.o Modules/blake2module.o '
+            'Modules/atexitmodule.o Modules/audioop.o Modules/binascii.o '
+            'Modules/blake2b_impl.o Modules/blake2module.o '
             'Modules/blake2s_impl.o Modules/bufferedio.o Modules/bytesio.o '
             'Modules/cache.o Modules/callbacks.o Modules/callproc.o '
             'Modules/cfield.o Modules/cmathmodule.o Modules/connection.o '
-            'Modules/constants.o Modules/context.o Modules/convolute.o '
-            'Modules/crt.o Modules/cursor.o Modules/difradix2.o '
-            'Modules/errnomodule.o Modules/faulthandler.o '
-            'Modules/fcntlmodule.o Modules/fileio.o Modules/fnt.o '
-            'Modules/fourstep.o Modules/fuzzer.o Modules/grpmodule.o '
-            'Modules/io.o Modules/iobase.o Modules/itertoolsmodule.o '
+            'Modules/cursor.o Modules/errnomodule.o Modules/faulthandler.o '
+            'Modules/fcntlmodule.o Modules/fileio.o Modules/fuzzer.o '
+            'Modules/grpmodule.o Modules/iobase.o Modules/itertoolsmodule.o '
             'Modules/mathmodule.o Modules/md5module.o Modules/microprotocols.o '
-            'Modules/mmapmodule.o Modules/module.o Modules/mpalloc.o '
-            'Modules/mpdecimal.o Modules/multibytecodec.o '
-            'Modules/multiprocessing.o Modules/numbertheory.o '
-            'Modules/ossaudiodev.o Modules/posixmodule.o Modules/posixshmem.o '
+            'Modules/mmapmodule.o Modules/module.o Modules/multibytecodec.o '
+            'Modules/multiprocessing.o Modules/ossaudiodev.o '
+            'Modules/posixmodule.o Modules/posixshmem.o '
             'Modules/prepare_protocol.o Modules/pwdmodule.o Modules/pyexpat.o '
             'Modules/readline.o Modules/resource.o Modules/rotatingtree.o '
             'Modules/row.o Modules/selectmodule.o Modules/semaphore.o '
             'Modules/sha1module.o Modules/sha256module.o Modules/sha3module.o '
-            'Modules/sha512module.o Modules/signalmodule.o Modules/sixstep.o '
+            'Modules/sha512module.o Modules/signalmodule.o '
             'Modules/socketmodule.o Modules/spwdmodule.o Modules/statement.o '
             'Modules/stgdict.o Modules/stringio.o Modules/symtablemodule.o '
             'Modules/syslogmodule.o Modules/termios.o Modules/textio.o '
-            'Modules/timemodule.o Modules/tkappinit.o Modules/transpose.o '
-            'Modules/unicodedata.o Modules/util.o Modules/xmlparse.o '
-            'Modules/xmlrole.o Modules/xmltok.o Modules/xxsubtype.o '
-            'Modules/zlibmodule.o',
+            'Modules/timemodule.o Modules/tkappinit.o Modules/unicodedata.o '
+            'Modules/util.o Modules/xxsubtype.o Modules/zlibmodule.o',
  'MODULE_OBJS': '\\',
  'MULTIARCH': 'aarch64-linux-gnu',
  'MULTIARCH_CPPFLAGS': '-DMULTIARCH=\\"aarch64-linux-gnu\\"',
@@ -719,10 +712,10 @@ build_time_vars = {'ABIFLAGS': '',
  'PYTHONFRAMEWORKINSTALLDIR': '',
  'PYTHONFRAMEWORKPREFIX': '',
  'PYTHONPATH': '',
- 'PYTHON_FOR_BUILD': '_PYTHON_PROJECT_BASE=/build/Python-3.10.8 '
+ 'PYTHON_FOR_BUILD': '_PYTHON_PROJECT_BASE=/build/Python-3.10.9 '
                      '_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) '
                      'PYTHONPATH=$(shell test -f pybuilddir.txt && echo '
-                     '/build/Python-3.10.8/`cat pybuilddir.txt`:)./Lib '
+                     '/build/Python-3.10.9/`cat pybuilddir.txt`:)./Lib '
                      '_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__linux_aarch64-linux-gnu '
                      'python3.10',
  'PYTHON_FOR_REGEN': '',
@@ -798,7 +791,7 @@ build_time_vars = {'ABIFLAGS': '',
  'READELF': 'readelf',
  'RESSRCDIR': 'Mac/Resources/framework',
  'RETSIGTYPE': 'void',
- 'RUNSHARED': 'LD_LIBRARY_PATH=/build/Python-3.10.8',
+ 'RUNSHARED': 'LD_LIBRARY_PATH=/build/Python-3.10.9',
  'SCRIPTDIR': '/install/lib',
  'SETPGRP_HAVE_ARG': 0,
  'SHELL': '/bin/sh',
@@ -840,9 +833,9 @@ build_time_vars = {'ABIFLAGS': '',
  'TCLTK_LIBS': '',
  'TESTOPTS': '',
  'TESTPATH': '',
- 'TESTPYTHON': 'LD_LIBRARY_PATH=/build/Python-3.10.8 ./python',
+ 'TESTPYTHON': 'LD_LIBRARY_PATH=/build/Python-3.10.9 ./python',
  'TESTPYTHONOPTS': '',
- 'TESTRUNNER': 'LD_LIBRARY_PATH=/build/Python-3.10.8 ./python '
+ 'TESTRUNNER': 'LD_LIBRARY_PATH=/build/Python-3.10.9 ./python '
                './Tools/scripts/run_tests.py',
  'TESTSUBDIRS': 'ctypes/test \\',
  'TESTTIMEOUT': 1200,
@@ -870,8 +863,8 @@ build_time_vars = {'ABIFLAGS': '',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 0,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/build/Python-3.10.8',
- 'abs_srcdir': '/build/Python-3.10.8',
+ 'abs_builddir': '/build/Python-3.10.9',
+ 'abs_srcdir': '/build/Python-3.10.9',
  'datarootdir': '/install/share',
  'exec_prefix': '/install',
  'prefix': '/install',

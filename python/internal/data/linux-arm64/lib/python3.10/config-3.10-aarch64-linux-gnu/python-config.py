@@ -1,4 +1,5 @@
-#!/install/bin/python3.10
+#!/bin/sh
+"exec" "$(dirname $0)/python3.10" "$0" "$@"
 # -*- python -*-
 
 # Keep this script in sync with python-config.sh.in

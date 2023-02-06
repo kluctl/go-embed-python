@@ -9,64 +9,67 @@ build_time_vars = {'ABIFLAGS': '',
  'ANDROID_API_LEVEL': 0,
  'AR': '/tools/llvm/bin/llvm-ar',
  'ARFLAGS': 'rcs',
- 'BASECFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code',
+ 'BASECFLAGS': '-fno-strict-aliasing -Wsign-compare -Wunreachable-code',
  'BASECPPFLAGS': '',
  'BASEMODLIBS': '',
  'BINDIR': '/install/bin',
  'BINLIBDEST': '/install/lib/python3.10',
- 'BLDLIBRARY': '-L. -lpython3.10',
- 'BLDSHARED': 'clang -pthread -shared -L/tools/deps/lib -Wl,--exclude-libs,ALL '
-              '-L/tools/deps/libedit/lib',
+ 'BLDLIBRARY': 'libpython3.10.a',
+ 'BLDSHARED': 'musl-clang -shared -L/tools/deps/lib -Wl,--exclude-libs,ALL '
+              '-L/tools/deps/libedit/lib -static',
  'BUILDEXE': '',
  'BUILDPYTHON': 'python',
  'BUILD_GNU_TYPE': 'x86_64-unknown-linux-gnu',
  'BYTESTR_DEPS': '\\',
- 'CC': 'clang -pthread',
+ 'CC': 'musl-clang',
  'CCSHARED': '-fPIC',
- 'CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g '
+ 'CFLAGS': '-fno-strict-aliasing -Wsign-compare -Wunreachable-code -DNDEBUG -g '
            '-fwrapv -O3 -Wall -fPIC -I/tools/deps/include '
-           '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include',
- 'CFLAGSFORSHARED': '-fPIC',
+           '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include '
+           '-static',
+ 'CFLAGSFORSHARED': '',
  'CFLAGS_ALIASING': '-fno-strict-aliasing',
  'CFLAGS_NODIST': '',
  'CONFIGFILES': 'configure configure.ac acconfig.h pyconfig.h.in '
                 'Makefile.pre.in',
  'CONFIGURE_CFLAGS': '-fPIC -I/tools/deps/include '
                      '-I/tools/deps/include/ncursesw '
-                     '-I/tools/deps/libedit/include',
- 'CONFIGURE_CFLAGS_NODIST': '-flto -g -std=c99 -Wextra -Wno-unused-result '
-                            '-Wno-unused-parameter '
-                            '-Wno-missing-field-initializers '
-                            '-Wstrict-prototypes '
+                     '-I/tools/deps/libedit/include -static',
+ 'CONFIGURE_CFLAGS_NODIST': '-flto -g -std=c99 '
                             '-Werror=implicit-function-declaration '
                             '-fvisibility=hidden',
  'CONFIGURE_CPPFLAGS': '-fPIC -I/tools/deps/include '
                        '-I/tools/deps/include/ncursesw '
-                       '-I/tools/deps/libedit/include',
+                       '-I/tools/deps/libedit/include -static',
  'CONFIGURE_LDFLAGS': '-L/tools/deps/lib -Wl,--exclude-libs,ALL '
-                      '-L/tools/deps/libedit/lib',
+                      '-L/tools/deps/libedit/lib -static',
  'CONFIGURE_LDFLAGS_NODIST': '-flto -g',
  'CONFIG_ARGS': "'--build=x86_64-unknown-linux-gnu' "
                 "'--host=x86_64-unknown-linux-gnu' '--prefix=/install' "
-                "'--with-openssl=/tools/deps' '--without-ensurepip' "
-                "'--with-readline=editline' '--enable-shared' '--with-lto' "
+                "'--with-openssl=/tools/deps' '--with-system-expat' "
+                "'--with-system-libmpdec' '--without-ensurepip' "
+                "'--with-readline=editline' '--with-lto' "
+                "'--with-dbmliborder=bdb' 'ac_cv_buggy_getaddrinfo=no' "
+                "'ac_cv_file__dev_ptc=no' 'ac_cv_file__dev_ptmx=no' "
                 "'build_alias=x86_64-unknown-linux-gnu' "
-                "'host_alias=x86_64-unknown-linux-gnu' 'CC=clang' 'CFLAGS= "
-                '-fPIC -I/tools/deps/include -I/tools/deps/include/ncursesw '
-                "-I/tools/deps/libedit/include' 'LDFLAGS= -L/tools/deps/lib "
-                "-Wl,--exclude-libs,ALL -L/tools/deps/libedit/lib' 'CPPFLAGS= "
-                '-fPIC -I/tools/deps/include -I/tools/deps/include/ncursesw '
-                "-I/tools/deps/libedit/include'",
+                "'host_alias=x86_64-unknown-linux-gnu' 'CC=musl-clang' "
+                "'CFLAGS= -fPIC -I/tools/deps/include "
+                '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include '
+                "-static' 'LDFLAGS= -L/tools/deps/lib -Wl,--exclude-libs,ALL "
+                "-L/tools/deps/libedit/lib -static' 'CPPFLAGS= -fPIC "
+                '-I/tools/deps/include -I/tools/deps/include/ncursesw '
+                "-I/tools/deps/libedit/include -static'",
  'CONFINCLUDEDIR': '/install/include',
  'CONFINCLUDEPY': '/install/include/python3.10',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/build/Python-3.10.8/coverage.info',
- 'COVERAGE_REPORT': '/build/Python-3.10.8/lcov-report',
+ 'COVERAGE_INFO': '/build/Python-3.10.9/coverage.info',
+ 'COVERAGE_REPORT': '/build/Python-3.10.9/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--no-branch-coverage --title "CPython lcov '
                             'report"',
  'CPPFLAGS': '-I. -I./Include -fPIC -I/tools/deps/include '
-             '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include',
- 'CXX': 'clang++ -pthread',
+             '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include '
+             '-static',
+ 'CXX': '',
  'DESTDIRS': '/install /install/lib /install/lib/python3.10 '
              '/install/lib/python3.10/lib-dynload',
  'DESTLIB': '/install/lib/python3.10',
@@ -111,11 +114,11 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_ACOSH': 1,
  'HAVE_ADDRINFO': 1,
  'HAVE_ALARM': 1,
- 'HAVE_ALIGNED_REQUIRED': 0,
+ 'HAVE_ALIGNED_REQUIRED': 1,
  'HAVE_ALLOCA_H': 1,
  'HAVE_ALTZONE': 0,
  'HAVE_ASINH': 1,
- 'HAVE_ASM_TYPES_H': 1,
+ 'HAVE_ASM_TYPES_H': 0,
  'HAVE_ATANH': 1,
  'HAVE_BIND_TEXTDOMAIN_CODESET': 1,
  'HAVE_BLUETOOTH_BLUETOOTH_H': 0,
@@ -126,7 +129,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_BROKEN_POLL': 0,
  'HAVE_BROKEN_POSIX_SEMAPHORES': 0,
  'HAVE_BROKEN_PTHREAD_SIGMASK': 0,
- 'HAVE_BROKEN_SEM_GETVALUE': 0,
+ 'HAVE_BROKEN_SEM_GETVALUE': 1,
  'HAVE_BROKEN_UNSETENV': 0,
  'HAVE_BUILTIN_ATOMIC': 1,
  'HAVE_CHFLAGS': 0,
@@ -137,11 +140,11 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_CLOCK_GETTIME': 1,
  'HAVE_CLOCK_SETTIME': 1,
  'HAVE_CLOSE_RANGE': 0,
- 'HAVE_COMPUTED_GOTOS': 1,
+ 'HAVE_COMPUTED_GOTOS': 0,
  'HAVE_CONFSTR': 1,
  'HAVE_CONIO_H': 0,
  'HAVE_COPYSIGN': 1,
- 'HAVE_COPY_FILE_RANGE': 0,
+ 'HAVE_COPY_FILE_RANGE': 1,
  'HAVE_CRYPT_H': 1,
  'HAVE_CRYPT_R': 1,
  'HAVE_CTERMID': 1,
@@ -161,7 +164,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_DECL_ISFINITE': 1,
  'HAVE_DECL_ISINF': 1,
  'HAVE_DECL_ISNAN': 1,
- 'HAVE_DECL_RTLD_DEEPBIND': 1,
+ 'HAVE_DECL_RTLD_DEEPBIND': 0,
  'HAVE_DECL_RTLD_GLOBAL': 1,
  'HAVE_DECL_RTLD_LAZY': 1,
  'HAVE_DECL_RTLD_LOCAL': 1,
@@ -172,7 +175,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_DECL_TZNAME': 0,
  'HAVE_DEVICE_MACROS': 1,
  'HAVE_DEV_PTC': 0,
- 'HAVE_DEV_PTMX': 1,
+ 'HAVE_DEV_PTMX': 0,
  'HAVE_DIRECT_H': 0,
  'HAVE_DIRENT_D_TYPE': 1,
  'HAVE_DIRENT_H': 1,
@@ -191,7 +194,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_ERRNO_H': 1,
  'HAVE_EVENTFD': 1,
  'HAVE_EXECV': 1,
- 'HAVE_EXPLICIT_BZERO': 0,
+ 'HAVE_EXPLICIT_BZERO': 1,
  'HAVE_EXPLICIT_MEMSET': 0,
  'HAVE_EXPM1': 1,
  'HAVE_FACCESSAT': 1,
@@ -223,14 +226,14 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_FUTIMES': 1,
  'HAVE_FUTIMESAT': 1,
  'HAVE_GAI_STRERROR': 1,
- 'HAVE_GAMMA': 1,
+ 'HAVE_GAMMA': 0,
  'HAVE_GCC_ASM_FOR_MC68881': 0,
  'HAVE_GCC_ASM_FOR_X64': 1,
  'HAVE_GCC_ASM_FOR_X87': 1,
  'HAVE_GCC_UINT128_T': 1,
  'HAVE_GETADDRINFO': 1,
  'HAVE_GETC_UNLOCKED': 1,
- 'HAVE_GETENTROPY': 0,
+ 'HAVE_GETENTROPY': 1,
  'HAVE_GETGRGID_R': 1,
  'HAVE_GETGRNAM_R': 1,
  'HAVE_GETGROUPLIST': 1,
@@ -253,14 +256,14 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_GETPWENT': 1,
  'HAVE_GETPWNAM_R': 1,
  'HAVE_GETPWUID_R': 1,
- 'HAVE_GETRANDOM': 0,
+ 'HAVE_GETRANDOM': 1,
  'HAVE_GETRANDOM_SYSCALL': 0,
  'HAVE_GETRESGID': 1,
  'HAVE_GETRESUID': 1,
  'HAVE_GETSID': 1,
  'HAVE_GETSPENT': 1,
  'HAVE_GETSPNAM': 1,
- 'HAVE_GETWD': 1,
+ 'HAVE_GETWD': 0,
  'HAVE_GLIBC_MEMMOVE_BUG': 0,
  'HAVE_GRP_H': 1,
  'HAVE_HSTRERROR': 1,
@@ -294,20 +297,20 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_LIBUUID': 1,
  'HAVE_LINK': 1,
  'HAVE_LINKAT': 1,
- 'HAVE_LINUX_AUXVEC_H': 1,
- 'HAVE_LINUX_CAN_BCM_H': 1,
- 'HAVE_LINUX_CAN_H': 1,
+ 'HAVE_LINUX_AUXVEC_H': 0,
+ 'HAVE_LINUX_CAN_BCM_H': 0,
+ 'HAVE_LINUX_CAN_H': 0,
  'HAVE_LINUX_CAN_J1939_H': 0,
- 'HAVE_LINUX_CAN_RAW_FD_FRAMES': 1,
- 'HAVE_LINUX_CAN_RAW_H': 1,
+ 'HAVE_LINUX_CAN_RAW_FD_FRAMES': 0,
+ 'HAVE_LINUX_CAN_RAW_H': 0,
  'HAVE_LINUX_CAN_RAW_JOIN_FILTERS': 0,
- 'HAVE_LINUX_MEMFD_H': 1,
- 'HAVE_LINUX_NETLINK_H': 1,
+ 'HAVE_LINUX_MEMFD_H': 0,
+ 'HAVE_LINUX_NETLINK_H': 0,
  'HAVE_LINUX_QRTR_H': 0,
- 'HAVE_LINUX_RANDOM_H': 1,
- 'HAVE_LINUX_TIPC_H': 1,
+ 'HAVE_LINUX_RANDOM_H': 0,
+ 'HAVE_LINUX_TIPC_H': 0,
  'HAVE_LINUX_VM_SOCKETS_H': 0,
- 'HAVE_LINUX_WAIT_H': 1,
+ 'HAVE_LINUX_WAIT_H': 0,
  'HAVE_LOCKF': 1,
  'HAVE_LOG1P': 1,
  'HAVE_LOG2': 1,
@@ -317,7 +320,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_MADVISE': 1,
  'HAVE_MAKEDEV': 1,
  'HAVE_MBRTOWC': 1,
- 'HAVE_MEMFD_CREATE': 0,
+ 'HAVE_MEMFD_CREATE': 1,
  'HAVE_MEMORY_H': 1,
  'HAVE_MEMRCHR': 1,
  'HAVE_MKDIRAT': 1,
@@ -422,7 +425,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SIGWAIT': 1,
  'HAVE_SIGWAITINFO': 1,
  'HAVE_SNPRINTF': 1,
- 'HAVE_SOCKADDR_ALG': 1,
+ 'HAVE_SOCKADDR_ALG': 0,
  'HAVE_SOCKADDR_SA_LEN': 0,
  'HAVE_SOCKADDR_STORAGE': 1,
  'HAVE_SOCKETPAIR': 1,
@@ -435,11 +438,11 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_STDARG_PROTOTYPES': 1,
  'HAVE_STDINT_H': 1,
  'HAVE_STDLIB_H': 1,
- 'HAVE_STD_ATOMIC': 1,
+ 'HAVE_STD_ATOMIC': 0,
  'HAVE_STRFTIME': 1,
  'HAVE_STRINGS_H': 1,
  'HAVE_STRING_H': 1,
- 'HAVE_STRLCPY': 0,
+ 'HAVE_STRLCPY': 1,
  'HAVE_STROPTS_H': 1,
  'HAVE_STRSIGNAL': 1,
  'HAVE_STRUCT_PASSWD_PW_GECOS': 1,
@@ -477,7 +480,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SYS_NDIR_H': 0,
  'HAVE_SYS_PARAM_H': 1,
  'HAVE_SYS_POLL_H': 1,
- 'HAVE_SYS_RANDOM_H': 0,
+ 'HAVE_SYS_RANDOM_H': 1,
  'HAVE_SYS_RESOURCE_H': 1,
  'HAVE_SYS_SELECT_H': 1,
  'HAVE_SYS_SENDFILE_H': 1,
@@ -506,7 +509,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_TIMES': 1,
  'HAVE_TMPFILE': 1,
  'HAVE_TMPNAM': 1,
- 'HAVE_TMPNAM_R': 1,
+ 'HAVE_TMPNAM_R': 0,
  'HAVE_TM_ZONE': 1,
  'HAVE_TRUNCATE': 1,
  'HAVE_TZNAME': 0,
@@ -534,7 +537,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_WCSFTIME': 1,
  'HAVE_WCSXFRM': 1,
  'HAVE_WMEMCMP': 1,
- 'HAVE_WORKING_TZSET': 1,
+ 'HAVE_WORKING_TZSET': 0,
  'HAVE_WRITEV': 1,
  'HAVE_ZLIB_COPY': 1,
  'HAVE__GETPTY': 0,
@@ -548,17 +551,17 @@ build_time_vars = {'ABIFLAGS': '',
  'INSTALL_PROGRAM': '/usr/bin/install -c',
  'INSTALL_SCRIPT': '/usr/bin/install -c',
  'INSTALL_SHARED': '/usr/bin/install -c -m 755',
- 'INSTSONAME': 'libpython3.10.so.1.0',
+ 'INSTSONAME': 'libpython3.10.a',
  'IO_H': 'Modules/_io/_iomodule.h',
  'IO_OBJS': '\\',
- 'LDCXXSHARED': 'clang++ -pthread -shared',
+ 'LDCXXSHARED': '-shared',
  'LDFLAGS': '-L/tools/deps/lib -Wl,--exclude-libs,ALL '
-            '-L/tools/deps/libedit/lib',
+            '-L/tools/deps/libedit/lib -static',
  'LDFLAGS_NODIST': '',
- 'LDLIBRARY': 'libpython3.10.so',
+ 'LDLIBRARY': 'libpython3.10.a',
  'LDLIBRARYDIR': '',
- 'LDSHARED': 'clang -pthread -shared -L/tools/deps/lib -Wl,--exclude-libs,ALL '
-             '-L/tools/deps/libedit/lib',
+ 'LDSHARED': 'musl-clang -shared -L/tools/deps/lib -Wl,--exclude-libs,ALL '
+             '-L/tools/deps/libedit/lib -static',
  'LDVERSION': '3.10',
  'LIBC': '',
  'LIBDEST': '/install/lib/python3.10',
@@ -571,12 +574,12 @@ build_time_vars = {'ABIFLAGS': '',
  'LIBPL': '/install/lib/python3.10/config-3.10-x86_64-linux-gnu',
  'LIBPYTHON': '',
  'LIBRARY': 'libpython3.10.a',
- 'LIBRARY_DEPS': 'libpython3.10.a libpython3.10.so libpython3.so',
+ 'LIBRARY_DEPS': 'libpython3.10.a',
  'LIBRARY_OBJS': '\\',
  'LIBRARY_OBJS_OMIT_FROZEN': '\\',
- 'LIBS': '-lcrypt -lpthread -ldl  -lutil -lm',
+ 'LIBS': '-ldl  -lpthread -lm',
  'LIBSUBDIRS': 'asyncio \\',
- 'LINKCC': 'clang -pthread',
+ 'LINKCC': 'musl-clang',
  'LINKFORSHARED': '-Xlinker -export-dynamic',
  'LIPO_32BIT_FLAGS': '',
  'LIPO_INTEL64_FLAGS': '',
@@ -585,48 +588,45 @@ build_time_vars = {'ABIFLAGS': '',
  'LLVM_PROF_MERGER': '/tools/llvm/bin/llvm-profdata merge '
                      '-output=code.profclangd *.profclangr',
  'LN': 'ln',
- 'LOCALMODLIBS': '-L/install/lib -lz         -lbz2  -lcrypt  -L/tools/deps/lib '
-                 '-lffi -ldl  -lm  -L/tools/deps/lib -lncursesw  '
-                 '-L/tools/deps/lib -lpanelw -lncursesw   -L/tools/deps/lib '
-                 '-ldb   -L/tools/deps/lib -lcrypto    -L/tools/deps/lib '
-                 '-llzma    -lrt   -L/tools/deps/lib -lsqlite3  -lssl '
-                 '-lcrypto      -L/tools/deps/lib -ltcl8.6 -ltk8.6 -lX11 -lxcb '
-                 '-lXau  -luuid      -ledit -lncursesw',
+ 'LOCALMODLIBS': '-lbz2         -lcrypt   -lffi -ldl  -lm  -lncursesw  '
+                 '-lpanelw -lncursesw   -ldb  -lmpdec  -lexpat  -lcrypto     '
+                 '-llzma       -lrt          -lsqlite3  -lssl -lcrypto        '
+                 '-ltcl8.6 -ltk8.6 -lX11 -lxcb -lXau  -luuid        -lm    '
+                 '-lm   -lexpat  -ledit -lncursesw        -lz',
  'MACHDEP': 'linux',
  'MACHDEP_OBJS': '',
  'MACHDESTLIB': '/install/lib/python3.10',
  'MACOSX_DEPLOYMENT_TARGET': '',
- 'MAINCC': 'clang -pthread',
+ 'MAINCC': 'musl-clang',
  'MAJOR_IN_MKDEV': 0,
- 'MAJOR_IN_SYSMACROS': 0,
+ 'MAJOR_IN_SYSMACROS': 1,
  'MAKESETUP': './Modules/makesetup',
  'MANDIR': '/install/share/man',
  'MKDIR_P': '/bin/mkdir -p',
- 'MODBUILT_NAMES': 'array  cmath  math  _contextvars  _struct  _weakref  '
-                   '_testinternalcapi  _random  _pickle  _datetime  _zoneinfo  '
-                   '_bisect  _heapq  _asyncio  _statistics  unicodedata  '
-                   'fcntl  spwd  grp  select  mmap  _csv  _socket  termios  '
-                   'resource  _posixsubprocess  audioop  _md5  _sha1  _sha256  '
-                   '_sha512  _sha3  _blake2  syslog  binascii  zlib  '
-                   '_multibytecodec  _codecs_cn  _codecs_hk  _codecs_iso2022  '
-                   '_codecs_jp  _codecs_kr  _codecs_tw  _bz2  _crypt  _ctypes  '
-                   '_ctypes_test  _curses  _curses_panel  _decimal  _dbm  '
-                   '_elementtree  _hashlib  _json  _lsprof  _lzma  '
-                   '_multiprocessing  _opcode  _posixshmem  _queue  _sqlite3  '
-                   '_ssl  _testbuffer  _testimportmultiple  _testinternalcapi  '
-                   '_testmultiphase  _tkinter  _uuid  _xxsubinterpreters  '
-                   '_xxtestfuzz  ossaudiodev  pyexpat  readline  posix  errno  '
-                   'pwd  _sre  _codecs  _weakref  _functools  _operator  '
-                   '_collections  _abc  itertools  atexit  _signal  _stat  '
-                   'time  _thread  _locale  _io  faulthandler  _tracemalloc  '
-                   '_symtable  xxsubtype',
- 'MODDISABLED_NAMES': '_gdbm  nis',
- 'MODLIBS': '-L/install/lib -lz         -lbz2  -lcrypt  -L/tools/deps/lib '
-            '-lffi -ldl  -lm  -L/tools/deps/lib -lncursesw  -L/tools/deps/lib '
-            '-lpanelw -lncursesw   -L/tools/deps/lib -ldb   -L/tools/deps/lib '
-            '-lcrypto    -L/tools/deps/lib -llzma    -lrt   -L/tools/deps/lib '
-            '-lsqlite3  -lssl -lcrypto      -L/tools/deps/lib -ltcl8.6 -ltk8.6 '
-            '-lX11 -lxcb -lXau  -luuid      -ledit -lncursesw',
+ 'MODBUILT_NAMES': '_asyncio  _bisect  _blake2  _bz2  _codecs_cn  _codecs_hk  '
+                   '_codecs_iso2022  _codecs_jp  _codecs_kr  _codecs_tw  '
+                   '_contextvars  _crypt  _csv  _ctypes  _ctypes_test  '
+                   '_curses  _curses_panel  _datetime  _dbm  _decimal  '
+                   '_elementtree  _hashlib  _heapq  _json  _lsprof  _lzma  '
+                   '_md5  _multibytecodec  _multiprocessing  _opcode  _pickle  '
+                   '_posixshmem  _posixsubprocess  _queue  _random  _sha1  '
+                   '_sha256  _sha3  _sha512  _socket  _sqlite3  _ssl  '
+                   '_statistics  _struct  _testbuffer  _testimportmultiple  '
+                   '_testinternalcapi  _testmultiphase  _tkinter  _uuid  '
+                   '_xxsubinterpreters  _xxtestfuzz  _zoneinfo  array  '
+                   'audioop  binascii  cmath  fcntl  grp  math  mmap  pyexpat  '
+                   'readline  resource  select  spwd  syslog  termios  '
+                   'unicodedata  zlib  posix  errno  pwd  _sre  _codecs  '
+                   '_weakref  _functools  _operator  _collections  _abc  '
+                   'itertools  atexit  _signal  _stat  time  _thread  _locale  '
+                   '_io  faulthandler  _tracemalloc  _symtable  xxsubtype',
+ 'MODDISABLED_NAMES': '_gdbm  _scproxy  _testcapi  nis  ossaudiodev  '
+                      'xxlimited  xxlimited_35',
+ 'MODLIBS': '-lbz2         -lcrypt   -lffi -ldl  -lm  -lncursesw  -lpanelw '
+            '-lncursesw   -ldb  -lmpdec  -lexpat  -lcrypto     -llzma       '
+            '-lrt          -lsqlite3  -lssl -lcrypto        -ltcl8.6 -ltk8.6 '
+            '-lX11 -lxcb -lXau  -luuid        -lm    -lm   -lexpat  -ledit '
+            '-lncursesw        -lz',
  'MODOBJS': 'Modules/_abc.o Modules/_asynciomodule.o Modules/_bisectmodule.o '
             'Modules/_bz2module.o Modules/_codecs_cn.o Modules/_codecs_hk.o '
             'Modules/_codecs_iso2022.o Modules/_codecs_jp.o '
@@ -649,34 +649,28 @@ build_time_vars = {'ABIFLAGS': '',
             'Modules/_tkinter.o Modules/_tracemalloc.o Modules/_uuidmodule.o '
             'Modules/_weakref.o Modules/_xxsubinterpretersmodule.o '
             'Modules/_xxtestfuzz.o Modules/_zoneinfo.o Modules/arraymodule.o '
-            'Modules/atexitmodule.o Modules/audioop.o Modules/basearith.o '
-            'Modules/binascii.o Modules/blake2b_impl.o Modules/blake2module.o '
+            'Modules/atexitmodule.o Modules/audioop.o Modules/binascii.o '
+            'Modules/blake2b_impl.o Modules/blake2module.o '
             'Modules/blake2s_impl.o Modules/bufferedio.o Modules/bytesio.o '
             'Modules/cache.o Modules/callbacks.o Modules/callproc.o '
             'Modules/cfield.o Modules/cmathmodule.o Modules/connection.o '
-            'Modules/constants.o Modules/context.o Modules/convolute.o '
-            'Modules/crt.o Modules/cursor.o Modules/difradix2.o '
-            'Modules/errnomodule.o Modules/faulthandler.o '
-            'Modules/fcntlmodule.o Modules/fileio.o Modules/fnt.o '
-            'Modules/fourstep.o Modules/fuzzer.o Modules/grpmodule.o '
-            'Modules/io.o Modules/iobase.o Modules/itertoolsmodule.o '
+            'Modules/cursor.o Modules/errnomodule.o Modules/faulthandler.o '
+            'Modules/fcntlmodule.o Modules/fileio.o Modules/fuzzer.o '
+            'Modules/grpmodule.o Modules/iobase.o Modules/itertoolsmodule.o '
             'Modules/mathmodule.o Modules/md5module.o Modules/microprotocols.o '
-            'Modules/mmapmodule.o Modules/module.o Modules/mpalloc.o '
-            'Modules/mpdecimal.o Modules/multibytecodec.o '
-            'Modules/multiprocessing.o Modules/numbertheory.o '
-            'Modules/ossaudiodev.o Modules/posixmodule.o Modules/posixshmem.o '
-            'Modules/prepare_protocol.o Modules/pwdmodule.o Modules/pyexpat.o '
-            'Modules/readline.o Modules/resource.o Modules/rotatingtree.o '
-            'Modules/row.o Modules/selectmodule.o Modules/semaphore.o '
-            'Modules/sha1module.o Modules/sha256module.o Modules/sha3module.o '
-            'Modules/sha512module.o Modules/signalmodule.o Modules/sixstep.o '
+            'Modules/mmapmodule.o Modules/module.o Modules/multibytecodec.o '
+            'Modules/multiprocessing.o Modules/posixmodule.o '
+            'Modules/posixshmem.o Modules/prepare_protocol.o '
+            'Modules/pwdmodule.o Modules/pyexpat.o Modules/readline.o '
+            'Modules/resource.o Modules/rotatingtree.o Modules/row.o '
+            'Modules/selectmodule.o Modules/semaphore.o Modules/sha1module.o '
+            'Modules/sha256module.o Modules/sha3module.o '
+            'Modules/sha512module.o Modules/signalmodule.o '
             'Modules/socketmodule.o Modules/spwdmodule.o Modules/statement.o '
             'Modules/stgdict.o Modules/stringio.o Modules/symtablemodule.o '
             'Modules/syslogmodule.o Modules/termios.o Modules/textio.o '
-            'Modules/timemodule.o Modules/tkappinit.o Modules/transpose.o '
-            'Modules/unicodedata.o Modules/util.o Modules/xmlparse.o '
-            'Modules/xmlrole.o Modules/xmltok.o Modules/xxsubtype.o '
-            'Modules/zlibmodule.o',
+            'Modules/timemodule.o Modules/tkappinit.o Modules/unicodedata.o '
+            'Modules/util.o Modules/xxsubtype.o Modules/zlibmodule.o',
  'MODULE_OBJS': '\\',
  'MULTIARCH': 'x86_64-linux-gnu',
  'MULTIARCH_CPPFLAGS': '-DMULTIARCH=\\"x86_64-linux-gnu\\"',
@@ -706,9 +700,9 @@ build_time_vars = {'ABIFLAGS': '',
  'POSIX_SEMAPHORES_NOT_ENABLED': 0,
  'PROFILE_TASK': '-m test --pgo --timeout=1200',
  'PTHREAD_KEY_T_IS_COMPATIBLE_WITH_INT': 1,
- 'PTHREAD_SYSTEM_SCHED_SUPPORTED': 1,
+ 'PTHREAD_SYSTEM_SCHED_SUPPORTED': 0,
  'PURIFY': '',
- 'PY3LIBRARY': 'libpython3.so',
+ 'PY3LIBRARY': '',
  'PYLONG_BITS_IN_DIGIT': 0,
  'PYTHON': 'python',
  'PYTHONFRAMEWORK': '',
@@ -716,81 +710,79 @@ build_time_vars = {'ABIFLAGS': '',
  'PYTHONFRAMEWORKINSTALLDIR': '',
  'PYTHONFRAMEWORKPREFIX': '',
  'PYTHONPATH': '',
- 'PYTHON_FOR_BUILD': './python -E',
+ 'PYTHON_FOR_BUILD': '_PYTHON_PROJECT_BASE=/build/Python-3.10.9 '
+                     '_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) '
+                     'PYTHONPATH=$(shell test -f pybuilddir.txt && echo '
+                     '/build/Python-3.10.9/`cat pybuilddir.txt`:)./Lib '
+                     '_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__linux_x86_64-linux-gnu '
+                     'python3.10',
  'PYTHON_FOR_REGEN': '',
  'PYTHON_HEADERS': '\\',
  'PYTHON_OBJS': '\\',
  'PY_BUILTIN_HASHLIB_HASHES': '"md5,sha1,sha256,sha512,sha3,blake2"',
- 'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare '
+ 'PY_BUILTIN_MODULE_CFLAGS': '-fno-strict-aliasing -Wsign-compare '
                              '-Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall '
                              '-fPIC -I/tools/deps/include '
                              '-I/tools/deps/include/ncursesw '
-                             '-I/tools/deps/libedit/include -flto -g -std=c99 '
-                             '-Wextra -Wno-unused-result -Wno-unused-parameter '
-                             '-Wno-missing-field-initializers '
-                             '-Wstrict-prototypes '
-                             '-Werror=implicit-function-declaration '
+                             '-I/tools/deps/libedit/include -static -flto -g '
+                             '-std=c99 -Werror=implicit-function-declaration '
                              '-fvisibility=hidden  -I./Include/internal -I. '
                              '-I./Include -fPIC -I/tools/deps/include '
                              '-I/tools/deps/include/ncursesw '
-                             '-I/tools/deps/libedit/include -fPIC '
+                             '-I/tools/deps/libedit/include -static '
                              '-DPy_BUILD_CORE_BUILTIN',
- 'PY_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG '
+ 'PY_CFLAGS': '-fno-strict-aliasing -Wsign-compare -Wunreachable-code -DNDEBUG '
               '-g -fwrapv -O3 -Wall -fPIC -I/tools/deps/include '
-              '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include',
- 'PY_CFLAGS_NODIST': '-flto -g -std=c99 -Wextra -Wno-unused-result '
-                     '-Wno-unused-parameter -Wno-missing-field-initializers '
-                     '-Wstrict-prototypes '
-                     '-Werror=implicit-function-declaration '
+              '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include '
+              '-static',
+ 'PY_CFLAGS_NODIST': '-flto -g -std=c99 -Werror=implicit-function-declaration '
                      '-fvisibility=hidden  -I./Include/internal',
  'PY_COERCE_C_LOCALE': 1,
- 'PY_CORE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
+ 'PY_CORE_CFLAGS': '-fno-strict-aliasing -Wsign-compare -Wunreachable-code '
                    '-DNDEBUG -g -fwrapv -O3 -Wall -fPIC -I/tools/deps/include '
                    '-I/tools/deps/include/ncursesw '
-                   '-I/tools/deps/libedit/include -flto -g -std=c99 -Wextra '
-                   '-Wno-unused-result -Wno-unused-parameter '
-                   '-Wno-missing-field-initializers -Wstrict-prototypes '
+                   '-I/tools/deps/libedit/include -static -flto -g -std=c99 '
                    '-Werror=implicit-function-declaration -fvisibility=hidden  '
                    '-I./Include/internal -I. -I./Include -fPIC '
                    '-I/tools/deps/include -I/tools/deps/include/ncursesw '
-                   '-I/tools/deps/libedit/include -fPIC -DPy_BUILD_CORE',
+                   '-I/tools/deps/libedit/include -static -DPy_BUILD_CORE',
  'PY_CORE_LDFLAGS': '-L/tools/deps/lib -Wl,--exclude-libs,ALL '
-                    '-L/tools/deps/libedit/lib -flto -g',
+                    '-L/tools/deps/libedit/lib -static -flto -g',
  'PY_CPPFLAGS': '-I. -I./Include -fPIC -I/tools/deps/include '
-                '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include',
- 'PY_ENABLE_SHARED': 1,
+                '-I/tools/deps/include/ncursesw -I/tools/deps/libedit/include '
+                '-static',
+ 'PY_ENABLE_SHARED': 0,
  'PY_FORMAT_SIZE_T': '"z"',
  'PY_LDFLAGS': '-L/tools/deps/lib -Wl,--exclude-libs,ALL '
-               '-L/tools/deps/libedit/lib',
+               '-L/tools/deps/libedit/lib -static',
  'PY_LDFLAGS_NODIST': '-flto -g',
  'PY_SSL_DEFAULT_CIPHERS': 1,
  'PY_SSL_DEFAULT_CIPHER_STRING': 0,
- 'PY_STDMODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
-                        '-DNDEBUG -g -fwrapv -O3 -Wall -fPIC '
-                        '-I/tools/deps/include -I/tools/deps/include/ncursesw '
-                        '-I/tools/deps/libedit/include -flto -g -std=c99 '
-                        '-Wextra -Wno-unused-result -Wno-unused-parameter '
-                        '-Wno-missing-field-initializers -Wstrict-prototypes '
-                        '-Werror=implicit-function-declaration '
+ 'PY_STDMODULE_CFLAGS': '-fno-strict-aliasing -Wsign-compare '
+                        '-Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall '
+                        '-fPIC -I/tools/deps/include '
+                        '-I/tools/deps/include/ncursesw '
+                        '-I/tools/deps/libedit/include -static -flto -g '
+                        '-std=c99 -Werror=implicit-function-declaration '
                         '-fvisibility=hidden  -I./Include/internal -I. '
                         '-I./Include -fPIC -I/tools/deps/include '
                         '-I/tools/deps/include/ncursesw '
-                        '-I/tools/deps/libedit/include -fPIC',
+                        '-I/tools/deps/libedit/include -static',
  'Py_DEBUG': 0,
- 'Py_ENABLE_SHARED': 1,
+ 'Py_ENABLE_SHARED': 0,
  'Py_HASH_ALGORITHM': 0,
  'Py_TRACE_REFS': 0,
  'QUICKTESTOPTS': '-x test_subprocess test_io test_lib2to3 \\',
  'READELF': 'readelf',
  'RESSRCDIR': 'Mac/Resources/framework',
  'RETSIGTYPE': 'void',
- 'RUNSHARED': 'LD_LIBRARY_PATH=/build/Python-3.10.8',
+ 'RUNSHARED': '',
  'SCRIPTDIR': '/install/lib',
  'SETPGRP_HAVE_ARG': 0,
  'SHELL': '/bin/sh',
- 'SHLIBS': '-lcrypt -lpthread -ldl  -lutil -lm',
+ 'SHLIBS': '-ldl  -lpthread -lm',
  'SHLIB_SUFFIX': '.so',
- 'SHM_NEEDS_LIBRT': 1,
+ 'SHM_NEEDS_LIBRT': 0,
  'SIGNED_RIGHT_SHIFT_ZERO_FILLS': 0,
  'SITEPATH': '',
  'SIZEOF_DOUBLE': 8,
@@ -826,10 +818,9 @@ build_time_vars = {'ABIFLAGS': '',
  'TCLTK_LIBS': '',
  'TESTOPTS': '',
  'TESTPATH': '',
- 'TESTPYTHON': 'LD_LIBRARY_PATH=/build/Python-3.10.8 ./python',
+ 'TESTPYTHON': './python',
  'TESTPYTHONOPTS': '',
- 'TESTRUNNER': 'LD_LIBRARY_PATH=/build/Python-3.10.8 ./python '
-               './Tools/scripts/run_tests.py',
+ 'TESTRUNNER': './python ./Tools/scripts/run_tests.py',
  'TESTSUBDIRS': 'ctypes/test \\',
  'TESTTIMEOUT': 1200,
  'TEST_MODULES': 'yes',
@@ -856,8 +847,8 @@ build_time_vars = {'ABIFLAGS': '',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 0,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/build/Python-3.10.8',
- 'abs_srcdir': '/build/Python-3.10.8',
+ 'abs_builddir': '/build/Python-3.10.9',
+ 'abs_srcdir': '/build/Python-3.10.9',
  'datarootdir': '/install/share',
  'exec_prefix': '/install',
  'prefix': '/install',
