@@ -28,6 +28,7 @@ var archMapping = map[string]string{
 }
 
 var removeLibs = []string{
+	"ctypes",
 	"distutils",
 	"ensurepip",
 	"idlelib",

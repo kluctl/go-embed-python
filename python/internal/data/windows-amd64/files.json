@@ -1,5 +1,5 @@
 {
-  "contentHash": "4abc073642938fd9c9bda65ddd08561a07c2644f15e01e8c96d0c119dc4b2788",
+  "contentHash": "f8e109a8105fbfbde7f11542de3fb922c4bc6af3608f7aa15826c8cb4d55b5af",
   "files": [
     {
       "name": "DLLs",
@@ -653,91 +653,6 @@
     {
       "name": "Lib/csv.py",
       "size": 16030,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/ctypes/__init__.py",
-      "size": 17988,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/_aix.py",
-      "size": 12575,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/_endian.py",
-      "size": 2000,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/macholib",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/ctypes/macholib/README.ctypes",
-      "size": 296,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/macholib/__init__.py",
-      "size": 154,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/macholib/dyld.py",
-      "size": 5283,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/macholib/dylib.py",
-      "size": 1828,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/macholib/fetch_macholib",
-      "size": 84,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/macholib/fetch_macholib.bat",
-      "size": 75,
-      "perm": 511
-    },
-    {
-      "name": "Lib/ctypes/macholib/framework.py",
-      "size": 2201,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/test",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "Lib/ctypes/test/__init__.py",
-      "size": 445,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/test/__main__.py",
-      "size": 68,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/util.py",
-      "size": 13879,
-      "perm": 438
-    },
-    {
-      "name": "Lib/ctypes/wintypes.py",
-      "size": 5628,
       "perm": 438
     },
     {

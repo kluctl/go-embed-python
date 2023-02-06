@@ -1,5 +1,5 @@
 {
-  "contentHash": "3aa65ecb1ed7a5c09360ae70a4baa6b9340a65eb736c3ceaa40aea64d1162143",
+  "contentHash": "6063863e6c5a6f34606401098af870c234b501b0713b4cce81a8f29fdd69d33a",
   "files": [
     {
       "name": "bin",
@@ -604,91 +604,6 @@
     {
       "name": "lib/python3.10/csv.py",
       "size": 16030,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "lib/python3.10/ctypes/__init__.py",
-      "size": 18046,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/_aix.py",
-      "size": 12575,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/_endian.py",
-      "size": 2000,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/README.ctypes",
-      "size": 296,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/__init__.py",
-      "size": 154,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/dyld.py",
-      "size": 5283,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/dylib.py",
-      "size": 1828,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/fetch_macholib",
-      "size": 84,
-      "perm": 509
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/fetch_macholib.bat",
-      "size": 75,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/macholib/framework.py",
-      "size": 2201,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/test",
-      "size": 0,
-      "perm": 2147484141
-    },
-    {
-      "name": "lib/python3.10/ctypes/test/__init__.py",
-      "size": 445,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/test/__main__.py",
-      "size": 68,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/util.py",
-      "size": 13879,
-      "perm": 436
-    },
-    {
-      "name": "lib/python3.10/ctypes/wintypes.py",
-      "size": 5628,
       "perm": 436
     },
     {
