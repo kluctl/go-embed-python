@@ -21,12 +21,6 @@ const (
 	pythonStandaloneVersion = "20230116"
 )
 
-var pythonDists = map[string]string{
-	"linux":   "unknown-linux-gnu-lto-full",
-	"darwin":  "apple-darwin-lto-full",
-	"windows": "pc-windows-msvc-shared-pgo-full",
-}
-
 var archMapping = map[string]string{
 	"amd64": "x86_64",
 	"386":   "i686",
@@ -71,32 +65,29 @@ func main() {
 	type job struct {
 		os           string
 		arch         string
+		dist         string
 		keepPatterns []glob.Glob
 	}
+
 	jobs := []job{
-		{"linux", "amd64", keepNixPatterns},
-		{"linux", "arm64", keepNixPatterns},
-		{"darwin", "amd64", keepNixPatterns},
-		{"darwin", "arm64", keepNixPatterns},
-		{"windows", "amd64", keepWinPatterns},
+		{"linux", "amd64", "unknown-linux-musl-lto-full", keepNixPatterns},
+		{"linux", "arm64", "unknown-linux-gnu-lto-full", keepNixPatterns},
+		{"darwin", "amd64", "apple-darwin-lto-full", keepNixPatterns},
+		{"darwin", "arm64", "apple-darwin-lto-full", keepNixPatterns},
+		{"windows", "amd64", "pc-windows-msvc-shared-pgo-full", keepWinPatterns},
 	}
 	for _, j := range jobs {
 		j := j
 		wg.Add(1)
 		go func() {
-			downloadAndCopy(j.os, j.arch, j.keepPatterns, targetPath)
+			downloadAndCopy(j.os, j.arch, j.dist, j.keepPatterns, targetPath)
 			wg.Done()
 		}()
 	}
 	wg.Wait()
 }
 
-func downloadAndCopy(osName string, arch string, keepPatterns []glob.Glob, targetPath string) {
-	dist, ok := pythonDists[osName]
-	if !ok {
-		log.Panicf("no dist for %s", osName)
-	}
-
+func downloadAndCopy(osName string, arch string, dist string, keepPatterns []glob.Glob, targetPath string) {
 	downloadPath := download(osName, arch, dist)
 
 	extractPath := downloadPath + ".extracted"
