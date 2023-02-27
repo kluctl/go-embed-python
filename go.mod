@@ -8,7 +8,7 @@ require (
 	github.com/klauspost/compress v1.15.15
 	github.com/rogpeppe/go-internal v1.9.0
 	github.com/sirupsen/logrus v1.9.0
-	github.com/stretchr/testify v1.7.2
+	github.com/stretchr/testify v1.8.2
 )
 
 require (
