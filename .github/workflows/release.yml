@@ -1,0 +1,81 @@
+name: release
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build-tag:
+    strategy:
+      matrix:
+        pythonStandaloneVersion:
+          - "20231002"
+        pythonVersion:
+          - "3.10.13"
+          - "3.11.6"
+          - "3.12.0"
+      fail-fast: false
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/go/pkg/mod
+            ~/.cache/go-build
+          key: ${{ runner.os }}-build-tag-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-build-tag-
+      - name: build-tag
+        run: |
+          git config --global user.email "no@mail.exists"
+          git config --global user.name "go-embed-python releaser"
+          ./hack/build-tag.sh ${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+          path: ./
+
+  tests:
+    needs:
+      - build-tag
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+          - macos-11
+          - windows-2019
+        pythonStandaloneVersion:
+          - "20231002"
+        pythonVersion:
+          - "3.10.13"
+          - "3.11.6"
+          - "3.12.0"
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/go/pkg/mod
+            ~/.cache/go-build
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-tests-
+      - uses: actions/download-artifact@v3
+        with:
+          name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+      - name: run tests
+        shell: bash
+        run: |
+          go test ./...
