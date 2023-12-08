@@ -28,12 +28,10 @@ var archMapping = map[string]string{
 }
 
 var removeLibs = []string{
-	"ctypes",
 	"distutils",
 	"ensurepip",
 	"idlelib",
 	"lib2to3",
-	"multiprocessing",
 	"pydoc_data",
 	"site-packages",
 	"sqlite3",
