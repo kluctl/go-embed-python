@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/gobwas/glob"
 	"github.com/klauspost/compress/zstd"
@@ -11,14 +12,15 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 )
 
-// versions taken from https://github.com/indygreg/python-build-standalone/releases/
-const (
-	pythonVersionBase       = "3.10"
-	pythonVersionFull       = "3.10.9"
-	pythonStandaloneVersion = "20230116"
+var (
+	pythonStandaloneVersion = flag.String("python-standalone-version", "", "specify the python-standalone version. Check https://github.com/indygreg/python-build-standalone/releases/ for available options.")
+	pythonVersion           = flag.String("python-version", "", "specify the python version.")
+
+	pythonVersionBase string
 )
 
 var archMapping = map[string]string{
@@ -57,6 +59,17 @@ var keepWinPatterns = []glob.Glob{
 var downloadLock sync.Mutex
 
 func main() {
+	flag.Parse()
+
+	if *pythonVersion == "" || *pythonStandaloneVersion == "" {
+		log.Fatal("missing flags")
+	}
+
+	log.Infof("python-standalone-version=%s", *pythonStandaloneVersion)
+	log.Infof("python-version=%s", *pythonVersion)
+
+	pythonVersionBase = strings.Join(strings.Split(*pythonVersion, ".")[0:2], ".")
+
 	targetPath := "./python/internal/data"
 
 	var wg sync.WaitGroup
@@ -135,9 +148,9 @@ func download(osName, arch, dist string) string {
 		log.Errorf("arch %s not supported", arch)
 		os.Exit(1)
 	}
-	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.tar.zst", pythonVersionFull, pythonStandaloneVersion, pythonArch, dist)
+	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.tar.zst", *pythonVersion, *pythonStandaloneVersion, pythonArch, dist)
 	downloadPath := filepath.Join(os.TempDir(), "python-download", fname)
-	downloadUrl := fmt.Sprintf("https://github.com/indygreg/python-build-standalone/releases/download/%s/%s", pythonStandaloneVersion, fname)
+	downloadUrl := fmt.Sprintf("https://github.com/indygreg/python-build-standalone/releases/download/%s/%s", *pythonStandaloneVersion, fname)
 
 	if _, err := os.Stat(downloadPath); err == nil {
 		log.Infof("skipping download of %s", downloadUrl)

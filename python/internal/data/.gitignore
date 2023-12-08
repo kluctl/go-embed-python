@@ -1,0 +1,7 @@
+# we ignore these here, but the build-tag.sh script will force-add these anyway
+darwin-amd64
+darwin-arm64
+linux-amd64
+linux-arm64
+windows-amd64
+embed_*.go
