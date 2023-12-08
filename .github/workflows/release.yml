@@ -36,7 +36,9 @@ jobs:
         run: |
           git config --global user.email "no@mail.exists"
           git config --global user.name "go-embed-python releaser"
-          ./hack/build-tag.sh ${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+          BUILD_NUM=$(./hack/next-build-num.sh ${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }})
+          ./hack/build-tag.sh ${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }} $BUILD_NUM
+          echo $BUILD_NUM > build-num
       - uses: actions/upload-artifact@v3
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
@@ -75,6 +77,10 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+      - name: checkout tag
+        shell: bash
+        run: |
+          git checkout v0.0.0-${{ matrix.pythonVersion }}-${{ matrix.pythonStandaloneVersion }}-$(cat build-num)
       - name: run tests
         shell: bash
         run: |
