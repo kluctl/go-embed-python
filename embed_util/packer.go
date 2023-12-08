@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"fmt"
 	log "github.com/sirupsen/logrus"
+	"golang.org/x/sync/errgroup"
 	"os"
 	"path/filepath"
 	"strings"
@@ -67,33 +68,29 @@ var Data, _ = fs.Sub(_data, "%s-%s")
 }
 
 func copyFiles(out string, dir string, fl *fileList) error {
-	hash := sha256.New()
+	var g errgroup.Group
+	g.SetLimit(8)
+
 	for _, fle := range fl.Files {
+		fle := fle
 		path := filepath.Join(dir, fle.Name)
-		outPath := filepath.Join(out, fle.Name)
-		err := os.MkdirAll(filepath.Dir(outPath), 0o755)
-		if err != nil {
-			return err
-		}
+
 		st, err := os.Lstat(path)
 		if err != nil {
 			return err
 		}
-		if st.Mode().Type() == os.ModeSymlink {
-			sl, err := os.Readlink(path)
-			if err != nil {
-				return err
-			}
-			_ = binary.Write(hash, binary.LittleEndian, "symlink")
-			_ = binary.Write(hash, binary.LittleEndian, sl)
-		} else if st.Mode().IsDir() {
-			err = os.MkdirAll(path, fle.Mode.Perm())
-			if err != nil {
-				return err
-			}
-			_ = binary.Write(hash, binary.LittleEndian, "dir")
-			_ = binary.Write(hash, binary.LittleEndian, fle.Name)
-		} else if st.Mode().IsRegular() {
+
+		outPath := filepath.Join(out, fle.Name)
+		err = os.MkdirAll(filepath.Dir(outPath), 0o755)
+		if err != nil {
+			return err
+		}
+
+		if !st.Mode().IsRegular() {
+			continue
+		}
+
+		g.Go(func() error {
 			data, err := os.ReadFile(path)
 			if err != nil {
 				return err
@@ -123,6 +120,46 @@ func copyFiles(out string, dir string, fl *fileList) error {
 			if err != nil {
 				return err
 			}
+			return nil
+		})
+	}
+	err := g.Wait()
+	if err != nil {
+		return err
+	}
+
+	hash := sha256.New()
+	for _, fle := range fl.Files {
+		path := filepath.Join(dir, fle.Name)
+		st, err := os.Lstat(path)
+		if err != nil {
+			return err
+		}
+		if st.Mode().Type() == os.ModeSymlink {
+			sl, err := os.Readlink(path)
+			if err != nil {
+				return err
+			}
+			_ = binary.Write(hash, binary.LittleEndian, "symlink")
+			_ = binary.Write(hash, binary.LittleEndian, sl)
+		} else if st.Mode().IsDir() {
+			err = os.MkdirAll(path, fle.Mode.Perm())
+			if err != nil {
+				return err
+			}
+			_ = binary.Write(hash, binary.LittleEndian, "dir")
+			_ = binary.Write(hash, binary.LittleEndian, fle.Name)
+		} else if st.Mode().IsRegular() {
+			outPath := filepath.Join(out, fle.Name)
+			if fle.Compressed {
+				outPath += ".gz"
+			}
+
+			data, err := os.ReadFile(outPath)
+			if err != nil {
+				return err
+			}
+
 			_ = binary.Write(hash, binary.LittleEndian, "regular")
 			_ = binary.Write(hash, binary.LittleEndian, fle.Name)
 			_ = binary.Write(hash, binary.LittleEndian, data)
