@@ -5,16 +5,20 @@ on:
     branches:
       - 'main'
 
+env:
+  PYTHON_STANDALONE_VERSIONS: |
+    - "20231002"
+  PYTHON_VERSIONS: |
+    - "3.10.13"
+    - "3.11.6"
+    - "3.12.0"
+
 jobs:
   build-tag:
     strategy:
       matrix:
-        pythonStandaloneVersion:
-          - "20231002"
-        pythonVersion:
-          - "3.10.13"
-          - "3.11.6"
-          - "3.12.0"
+        pythonStandaloneVersion: ${{ fromJSON(env.PYTHON_STANDALONE_VERSIONS) }}
+        pythonVersion: ${{ fromJSON(env.PYTHON_VERSIONS) }}
       fail-fast: false
     runs-on: ubuntu-20.04
     steps:
@@ -53,12 +57,8 @@ jobs:
           - ubuntu-20.04
           - macos-11
           - windows-2019
-        pythonStandaloneVersion:
-          - "20231002"
-        pythonVersion:
-          - "3.10.13"
-          - "3.11.6"
-          - "3.12.0"
+        pythonStandaloneVersion: ${{ fromJSON(env.PYTHON_STANDALONE_VERSIONS) }}
+        pythonVersion: ${{ fromJSON(env.PYTHON_VERSIONS) }}
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
@@ -85,3 +85,24 @@ jobs:
         shell: bash
         run: |
           go test ./... -v
+
+  release:
+    needs:
+      - tests
+    strategy:
+      matrix:
+        pythonStandaloneVersion: ${{ fromJSON(env.PYTHON_STANDALONE_VERSIONS) }}
+        pythonVersion: ${{ fromJSON(env.PYTHON_VERSIONS) }}
+      fail-fast: false
+    runs-on: ubuntu-20.04
+    if: ${{ github.event_name == 'push' && github.ref_name == "main" }}
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+      - name: update remote url
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+      - name: push tag
+        run: |
+          git push origin v0.0.0-${{ matrix.pythonVersion }}-${{ matrix.pythonStandaloneVersion }}-$(cat build-num)
