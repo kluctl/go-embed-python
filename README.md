@@ -42,11 +42,11 @@ The following operating systems and architectures are supported:
 This library uses the standalone Python distributions found at https://github.com/indygreg/python-build-standalone as
 the base.
 
-Running `go generate ./...` from the root of the project will will trigger download, extraction and cleanup of these
-distributions for all supported platforms. Cleanup means that everything is removed from the distributions that is not
-required to run the Python interpreter.
+The `./hack/build-tag.sh` script is used to invoke `python/generate` and `pip/generate`, which then downloads, extracts
+and packages all supported Python distributions. The script then also creates a tag which then can be used as a dependency
+in your project.
 
-`//go:embed` is then used to embed the extracted distributions into the compiled go binaries. The `EmbeddedPython` object
+The tagged release internally embed all Python sources and binaries via `//go:embed`. The `EmbeddedPython` object
 is then used as a helper utility to access the embedded distribution.
 
 `EmbeddedPython` is created via `NewEmbeddedPython`, which will extract the embedded distribution into a temporary folder.
@@ -54,8 +54,8 @@ Extraction is optimized in a way that it is only executed when needed (by verify
 distributions).
 
 ## Upgrading python
-The Python version and downloaded distributions are controlled via `python/internal/generate/main.go`. To upgrade
-Python, increase the version number and re-run `go generate ./...`. Commit the result to git and then create a release.
+The Python version and downloaded distributions are controlled via the `.github/workflows/release.yaml` workflow. It
+contains a matrix of supported distributions. To upgrade Python, edit this workflow and create a pull request.
 
 ## Embedding Python libraries into your applications
 This library provides utilities/helpers to allow embedding of external libraries into your own application.
