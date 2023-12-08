@@ -4,26 +4,49 @@ on:
   push:
     branches:
       - 'main'
+  pull_request:
+    branches:
+      - 'main'
 
 env:
   PYTHON_STANDALONE_VERSIONS: |
-    - "20231002"
+    [
+      "20231002"
+    ]
   PYTHON_VERSIONS: |
-    - "3.10.13"
-    - "3.11.6"
-    - "3.12.0"
+    [
+      "3.10.13",
+      "3.11.6",
+      "3.12.0"
+    ]
 
 jobs:
+  build-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      PYTHON_STANDALONE_VERSIONS: ${{ env.PYTHON_STANDALONE_VERSIONS }}
+      PYTHON_VERSIONS: ${{ env.PYTHON_VERSIONS }}
+    steps:
+      - name: noop
+        run: |
+          echo noop
+
   build-tag:
+    needs:
+      - build-matrix
     strategy:
       matrix:
-        pythonStandaloneVersion: ${{ fromJSON(env.PYTHON_STANDALONE_VERSIONS) }}
-        pythonVersion: ${{ fromJSON(env.PYTHON_VERSIONS) }}
+        pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
+        pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: checkout
+        run: |
+          # can't use actions/checkout here as transferring the shallow clone fails when using upload-/download-artifact
+          git clone https://token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY . --depth=1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -43,13 +66,19 @@ jobs:
           BUILD_NUM=$(./hack/next-build-num.sh ${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }})
           ./hack/build-tag.sh ${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }} $BUILD_NUM
           echo $BUILD_NUM > build-num
+      - name: git gc
+        run: |
+          git gc
       - uses: actions/upload-artifact@v3
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
-          path: ./
+          path: |
+            .git
+            build-num
 
   tests:
     needs:
+      - build-matrix
       - build-tag
     strategy:
       matrix:
@@ -57,8 +86,8 @@ jobs:
           - ubuntu-20.04
           - macos-11
           - windows-2019
-        pythonStandaloneVersion: ${{ fromJSON(env.PYTHON_STANDALONE_VERSIONS) }}
-        pythonVersion: ${{ fromJSON(env.PYTHON_VERSIONS) }}
+        pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
+        pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
@@ -80,6 +109,7 @@ jobs:
       - name: checkout tag
         shell: bash
         run: |
+          git reset --hard
           git checkout v0.0.0-${{ matrix.pythonVersion }}-${{ matrix.pythonStandaloneVersion }}-$(cat build-num)
       - name: run tests
         shell: bash
@@ -88,21 +118,27 @@ jobs:
 
   release:
     needs:
+      - build-matrix
       - tests
     strategy:
       matrix:
-        pythonStandaloneVersion: ${{ fromJSON(env.PYTHON_STANDALONE_VERSIONS) }}
-        pythonVersion: ${{ fromJSON(env.PYTHON_VERSIONS) }}
+        pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
+        pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
     runs-on: ubuntu-20.04
-    if: ${{ github.event_name == 'push' && github.ref_name == "main" }}
+    if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
+    permissions:
+      contents: write
+      actions: write
     steps:
       - uses: actions/download-artifact@v3
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
       - name: update remote url
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git remote set-url origin https://token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: push tag
         run: |
           git push origin v0.0.0-${{ matrix.pythonVersion }}-${{ matrix.pythonStandaloneVersion }}-$(cat build-num)
