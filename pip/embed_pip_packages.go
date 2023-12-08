@@ -13,8 +13,8 @@ import (
 
 func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetDir string) error {
 	platforms := map[string][]string{
-		"darwin-amd64":  {"macosx_11_0_x86_64"},
-		"darwin-arm64":  {"macosx_11_0_arm64"},
+		"darwin-amd64":  {"macosx_11_0_x86_64", "macosx_12_0_x86_64"},
+		"darwin-arm64":  {"macosx_11_0_arm64", "macosx_12_0_arm64"},
 		"linux-amd64":   {"musllinux_1_1_x86_64", "manylinux_2_28_x86_64", "manylinux2014_x86_64"},
 		"linux-arm64":   {"musllinux_1_2_aarch64", "manylinux_2_28_aarch64", "manylinux2014_aarch64"},
 		"windows-amd64": {"win_amd64"},
