@@ -69,7 +69,7 @@ func main() {
 	}
 
 	jobs := []job{
-		{"linux", "amd64", "unknown-linux-musl-lto-full", keepNixPatterns},
+		{"linux", "amd64", "unknown-linux-gnu-lto-full", keepNixPatterns},
 		{"linux", "arm64", "unknown-linux-gnu-lto-full", keepNixPatterns},
 		{"darwin", "amd64", "apple-darwin-lto-full", keepNixPatterns},
 		{"darwin", "arm64", "apple-darwin-lto-full", keepNixPatterns},
