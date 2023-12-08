@@ -84,4 +84,4 @@ jobs:
       - name: run tests
         shell: bash
         run: |
-          go test ./...
+          go test ./... -v
