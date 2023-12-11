@@ -23,7 +23,7 @@ func main() {
 
 	bootstrapPip(ep)
 
-	err = pip.CreateEmbeddedPipPackages2(ep, "./pip/internal/requirements.txt", "", "", "", targetDir)
+	err = pip.CreateEmbeddedPipPackages2(ep, "./pip/internal/requirements.txt", "", "", nil, targetDir)
 	if err != nil {
 		panic(err)
 	}

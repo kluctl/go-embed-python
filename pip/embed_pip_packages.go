@@ -21,25 +21,21 @@ func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetD
 	}
 
 	for goPlatform, pipPlatforms := range platforms {
-		for i, pipPlatform := range pipPlatforms {
-			s := strings.Split(goPlatform, "-")
-			goOs, goArch := s[0], s[1]
-			err := CreateEmbeddedPipPackages("requirements.txt", goOs, goArch, pipPlatform, targetDir)
-			if err != nil {
-				if i == len(pipPlatforms)-1 {
-					return err
-				}
-			}
+		s := strings.Split(goPlatform, "-")
+		goOs, goArch := s[0], s[1]
+		err := CreateEmbeddedPipPackages("requirements.txt", goOs, goArch, pipPlatforms, targetDir)
+		if err != nil {
+			return err
 		}
 	}
 	return nil
 }
 
-func CreateEmbeddedPipPackages(requirementsFile string, goOs string, goArch string, pipPlatform string, targetDir string) error {
+func CreateEmbeddedPipPackages(requirementsFile string, goOs string, goArch string, pipPlatforms []string, targetDir string) error {
 	name := fmt.Sprintf("pip-%d", rand.Uint32())
 
 	// ensure we have a stable extract path for the python distribution (otherwise shebangs won't be stable)
-	tmpDir := filepath.Join("/tmp", fmt.Sprintf("python-pip-%s-%s-%s", goOs, goArch, pipPlatform))
+	tmpDir := filepath.Join("/tmp", fmt.Sprintf("python-pip-%s-%s", goOs, goArch))
 	ep, err := python.NewEmbeddedPythonWithTmpDir(tmpDir, false)
 	if err != nil {
 		return err
@@ -54,17 +50,17 @@ func CreateEmbeddedPipPackages(requirementsFile string, goOs string, goArch stri
 
 	ep.AddPythonPath(pipLib.GetExtractedPath())
 
-	return CreateEmbeddedPipPackages2(ep, requirementsFile, goOs, goArch, pipPlatform, targetDir)
+	return CreateEmbeddedPipPackages2(ep, requirementsFile, goOs, goArch, pipPlatforms, targetDir)
 }
 
-func CreateEmbeddedPipPackages2(ep *python.EmbeddedPython, requirementsFile string, goOs string, goArch string, pipPlatform string, targetDir string) error {
+func CreateEmbeddedPipPackages2(ep *python.EmbeddedPython, requirementsFile string, goOs string, goArch string, pipPlatforms []string, targetDir string) error {
 	tmpDir, err := os.MkdirTemp("", "pip-")
 	if err != nil {
 		return err
 	}
 	defer os.RemoveAll(tmpDir)
 
-	err = pipInstall(ep, requirementsFile, pipPlatform, tmpDir)
+	err = pipInstall(ep, requirementsFile, pipPlatforms, tmpDir)
 	if err != nil {
 		return err
 	}
@@ -104,10 +100,13 @@ func CreateEmbeddedPipPackages2(ep *python.EmbeddedPython, requirementsFile stri
 	return nil
 }
 
-func pipInstall(ep *python.EmbeddedPython, requirementsFile string, platform string, targetDir string) error {
+func pipInstall(ep *python.EmbeddedPython, requirementsFile string, platforms []string, targetDir string) error {
 	args := []string{"-m", "pip", "install", "-r", requirementsFile, "-t", targetDir}
-	if platform != "" {
-		args = append(args, "--platform", platform, "--only-binary=:all:")
+	if len(platforms) != 0 {
+		for _, p := range platforms {
+			args = append(args, "--platform", p)
+		}
+		args = append(args, "--only-binary=:all:")
 	}
 
 	cmd := ep.PythonCmd(args...)
