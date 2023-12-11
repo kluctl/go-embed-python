@@ -23,7 +23,7 @@ func CreateEmbeddedPipPackagesForKnownPlatforms(requirementsFile string, targetD
 	for goPlatform, pipPlatforms := range platforms {
 		s := strings.Split(goPlatform, "-")
 		goOs, goArch := s[0], s[1]
-		err := CreateEmbeddedPipPackages("requirements.txt", goOs, goArch, pipPlatforms, targetDir)
+		err := CreateEmbeddedPipPackages(requirementsFile, goOs, goArch, pipPlatforms, targetDir)
 		if err != nil {
 			return err
 		}
