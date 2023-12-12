@@ -56,9 +56,9 @@ jobs:
           path: |
             ~/go/pkg/mod
             ~/.cache/go-build
-          key: ${{ runner.os }}-build-tag-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-build-tag-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-build-tag-
+            ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-build-tag-
       - name: build-tag
         run: |
           git config --global user.email "no@mail.exists"
@@ -100,9 +100,9 @@ jobs:
           path: |
             ~/go/pkg/mod
             ~/.cache/go-build
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-tests-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-tests-
+            ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-tests-
       - uses: actions/download-artifact@v3
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
