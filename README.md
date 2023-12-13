@@ -47,6 +47,9 @@ and a build number. For example, the release version `v0.0.0-3.11.6-20231002-2` 
 the [20231002](https://github.com/indygreg/python-build-standalone/releases/tag/20231002) version of python-standalone
 and build number 2. The release version currently always has v0.0.0 as its own version.
 
+The way versioning is handled might result in popular dependency management tools (e.g. dependabot) to not work as you
+might require it. Please watch out to not accidentally upgrade your Python version!
+
 ## How it works
 This library uses the standalone Python distributions found at https://github.com/indygreg/python-build-standalone as
 the base.
