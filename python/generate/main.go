@@ -19,8 +19,10 @@ import (
 var (
 	pythonStandaloneVersion = flag.String("python-standalone-version", "", "specify the python-standalone version. Check https://github.com/indygreg/python-build-standalone/releases/ for available options.")
 	pythonVersion           = flag.String("python-version", "", "specify the python version.")
-
-	pythonVersionBase string
+	preparePath             = flag.String("prepare-path", filepath.Join(os.TempDir(), "python-download"), "specify the path where the python executables are downloaded and prepared. automatically creates a temporary directory if unset")
+	runPrepare              = flag.Bool("prepare", true, "if set, python executables will be downloaded and prepared for packing at the configured path")
+	runPack                 = flag.Bool("pack", true, "if set, previously prepared python executables will be packed into their redistributable form")
+	pythonVersionBase       string
 )
 
 var archMapping = map[string]string{
@@ -89,15 +91,20 @@ func main() {
 		j := j
 		wg.Add(1)
 		go func() {
-			downloadAndCopy(j.os, j.arch, j.dist, j.keepPatterns, targetPath)
+			if *runPrepare {
+				downloadAndPrepare(j.os, j.arch, j.dist, j.keepPatterns, *preparePath)
+			}
+			if *runPack {
+				packPrepared(j.os, j.arch, j.dist, *preparePath, targetPath)
+			}
 			wg.Done()
 		}()
 	}
 	wg.Wait()
 }
 
-func downloadAndCopy(osName string, arch string, dist string, keepPatterns []glob.Glob, targetPath string) {
-	downloadPath := download(osName, arch, dist)
+func downloadAndPrepare(osName string, arch string, dist string, keepPatterns []glob.Glob, preparePath string) {
+	downloadPath := download(osName, arch, dist, preparePath)
 
 	extractPath := downloadPath + ".extracted"
 	err := os.RemoveAll(extractPath)
@@ -124,8 +131,12 @@ func downloadAndCopy(osName string, arch string, dist string, keepPatterns []glo
 	if err != nil {
 		panic(err)
 	}
+}
 
-	err = embed_util.CopyForEmbed(filepath.Join(targetPath, fmt.Sprintf("%s-%s", osName, arch)), installPath)
+func packPrepared(osName string, arch string, dist string, preparePath string, targetPath string) {
+	extractPath := generateDownloadPath(arch, dist, preparePath) + ".extracted"
+	installPath := filepath.Join(extractPath, "python", "install")
+	err := embed_util.CopyForEmbed(filepath.Join(targetPath, fmt.Sprintf("%s-%s", osName, arch)), installPath)
 	if err != nil {
 		panic(err)
 	}
@@ -136,17 +147,22 @@ func downloadAndCopy(osName string, arch string, dist string, keepPatterns []glo
 	}
 }
 
-func download(osName, arch, dist string) string {
-	downloadLock.Lock()
-	defer downloadLock.Unlock()
-
+func generateDownloadPath(arch string, dist string, preparePath string) string {
 	pythonArch, ok := archMapping[arch]
 	if !ok {
 		log.Errorf("arch %s not supported", arch)
 		os.Exit(1)
 	}
 	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.tar.zst", *pythonVersion, *pythonStandaloneVersion, pythonArch, dist)
-	downloadPath := filepath.Join(os.TempDir(), "python-download", fname)
+	return filepath.Join(preparePath, fname)
+}
+
+func download(osName string, arch string, dist string, preparePath string) string {
+	downloadLock.Lock()
+	defer downloadLock.Unlock()
+
+	downloadPath := generateDownloadPath(arch, dist, preparePath)
+	fname := filepath.Base(downloadPath)
 	downloadUrl := fmt.Sprintf("https://github.com/indygreg/python-build-standalone/releases/download/%s/%s", *pythonStandaloneVersion, fname)
 
 	if _, err := os.Stat(downloadPath); err == nil {
