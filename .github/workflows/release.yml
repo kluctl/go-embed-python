@@ -11,13 +11,13 @@ on:
 env:
   PYTHON_STANDALONE_VERSIONS: |
     [
-      "20240107"
+      "20240224"
     ]
   PYTHON_VERSIONS: |
     [
       "3.10.13",
-      "3.11.7",
-      "3.12.1"
+      "3.11.8",
+      "3.12.2"
     ]
 
 jobs:
