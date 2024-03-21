@@ -1,0 +1,3072 @@
+{
+  "contentHash": "62e6c8924eab2b72e1f27106f712f69089477afad11cae38e1b35b03ebd66d70",
+  "files": [
+    {
+      "name": "bin",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "bin/2to3",
+      "size": 9,
+      "perm": 134217728,
+      "symlink": "2to3-3.12"
+    },
+    {
+      "name": "bin/2to3-3.12",
+      "size": 128,
+      "perm": 509
+    },
+    {
+      "name": "bin/idle3",
+      "size": 8,
+      "perm": 134217728,
+      "symlink": "idle3.12"
+    },
+    {
+      "name": "bin/idle3.12",
+      "size": 126,
+      "perm": 509
+    },
+    {
+      "name": "bin/pip",
+      "size": 256,
+      "perm": 509
+    },
+    {
+      "name": "bin/pip3",
+      "size": 256,
+      "perm": 509
+    },
+    {
+      "name": "bin/pip3.12",
+      "size": 256,
+      "perm": 509
+    },
+    {
+      "name": "bin/pydoc3",
+      "size": 9,
+      "perm": 134217728,
+      "symlink": "pydoc3.12"
+    },
+    {
+      "name": "bin/pydoc3.12",
+      "size": 111,
+      "perm": 509
+    },
+    {
+      "name": "bin/python",
+      "size": 10,
+      "perm": 134217728,
+      "symlink": "python3.12"
+    },
+    {
+      "name": "bin/python3",
+      "size": 10,
+      "perm": 134217728,
+      "symlink": "python3.12"
+    },
+    {
+      "name": "bin/python3-config",
+      "size": 17,
+      "perm": 134217728,
+      "symlink": "python3.12-config"
+    },
+    {
+      "name": "bin/python3.12",
+      "size": 20944,
+      "perm": 509,
+      "compressed": true
+    },
+    {
+      "name": "bin/python3.12-config",
+      "size": 3079,
+      "perm": 509
+    },
+    {
+      "name": "lib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/libpython3.12.so",
+      "size": 20,
+      "perm": 134217728,
+      "symlink": "libpython3.12.so.1.0"
+    },
+    {
+      "name": "lib/libpython3.12.so.1.0",
+      "size": 120323640,
+      "perm": 509,
+      "compressed": true
+    },
+    {
+      "name": "lib/libpython3.so",
+      "size": 16800,
+      "perm": 509,
+      "compressed": true
+    },
+    {
+      "name": "lib/python3.12",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/LICENSE.txt",
+      "size": 13936,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/__future__.py",
+      "size": 5218,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/__hello__.py",
+      "size": 227,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/__phello__",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/__phello__/__init__.py",
+      "size": 97,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/__phello__/spam.py",
+      "size": 97,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_aix_support.py",
+      "size": 4021,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_collections_abc.py",
+      "size": 32082,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_compat_pickle.py",
+      "size": 8761,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_compression.py",
+      "size": 5681,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_markupbase.py",
+      "size": 14653,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_osx_support.py",
+      "size": 22023,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_py_abc.py",
+      "size": 6189,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_pydatetime.py",
+      "size": 92097,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_pydecimal.py",
+      "size": 229220,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_pyio.py",
+      "size": 93534,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_pylong.py",
+      "size": 9047,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_sitebuiltins.py",
+      "size": 3128,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_strptime.py",
+      "size": 24615,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_sysconfigdata__linux_x86_64-linux-gnu.py",
+      "size": 45364,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_threading_local.py",
+      "size": 7220,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/_weakrefset.py",
+      "size": 5893,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/abc.py",
+      "size": 6538,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/aifc.py",
+      "size": 34211,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/antigravity.py",
+      "size": 500,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/argparse.py",
+      "size": 100862,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ast.py",
+      "size": 64165,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/asyncio/__init__.py",
+      "size": 1220,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/__main__.py",
+      "size": 3343,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/base_events.py",
+      "size": 77816,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/base_futures.py",
+      "size": 1974,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/base_subprocess.py",
+      "size": 8869,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/base_tasks.py",
+      "size": 2672,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/constants.py",
+      "size": 1413,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/coroutines.py",
+      "size": 3342,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/events.py",
+      "size": 29339,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/exceptions.py",
+      "size": 1752,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/format_helpers.py",
+      "size": 2404,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/futures.py",
+      "size": 14210,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/locks.py",
+      "size": 18994,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/log.py",
+      "size": 124,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/mixins.py",
+      "size": 481,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/proactor_events.py",
+      "size": 33385,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/protocols.py",
+      "size": 6957,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/queues.py",
+      "size": 7974,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/runners.py",
+      "size": 7159,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/selector_events.py",
+      "size": 48241,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/sslproto.py",
+      "size": 31739,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/staggered.py",
+      "size": 5992,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/streams.py",
+      "size": 27619,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/subprocess.py",
+      "size": 7737,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/taskgroups.py",
+      "size": 8747,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/tasks.py",
+      "size": 37361,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/threads.py",
+      "size": 790,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/timeouts.py",
+      "size": 5321,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/transports.py",
+      "size": 10722,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/trsock.py",
+      "size": 2475,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/unix_events.py",
+      "size": 53124,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/windows_events.py",
+      "size": 32252,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/asyncio/windows_utils.py",
+      "size": 5060,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/base64.py",
+      "size": 20603,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/bdb.py",
+      "size": 32463,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/bisect.py",
+      "size": 3423,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/bz2.py",
+      "size": 11847,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/cProfile.py",
+      "size": 6556,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/calendar.py",
+      "size": 25418,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/cgi.py",
+      "size": 34449,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/cgitb.py",
+      "size": 12421,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/chunk.py",
+      "size": 5500,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/cmd.py",
+      "size": 14873,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/code.py",
+      "size": 10695,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/codecs.py",
+      "size": 36870,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/codeop.py",
+      "size": 5908,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/collections",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/collections/__init__.py",
+      "size": 52379,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/collections/abc.py",
+      "size": 119,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/colorsys.py",
+      "size": 4062,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/compileall.py",
+      "size": 20507,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/concurrent",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/concurrent/__init__.py",
+      "size": 38,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/concurrent/futures",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/concurrent/futures/__init__.py",
+      "size": 1558,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/concurrent/futures/_base.py",
+      "size": 22833,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/concurrent/futures/process.py",
+      "size": 36351,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/concurrent/futures/thread.py",
+      "size": 8884,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/Makefile",
+      "size": 165686,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/Setup",
+      "size": 11525,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/Setup.bootstrap",
+      "size": 902,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/Setup.local",
+      "size": 3387,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/Setup.stdlib",
+      "size": 6344,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/config.c",
+      "size": 8941,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/config.c.in",
+      "size": 1752,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/install-sh",
+      "size": 15358,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/makesetup",
+      "size": 9312,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/python-config.py",
+      "size": 2070,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/config-3.12-x86_64-linux-gnu/python.o",
+      "size": 3088,
+      "perm": 436,
+      "compressed": true
+    },
+    {
+      "name": "lib/python3.12/configparser.py",
+      "size": 53383,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/contextlib.py",
+      "size": 27637,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/contextvars.py",
+      "size": 129,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/copy.py",
+      "size": 8412,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/copyreg.py",
+      "size": 7614,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/crypt.py",
+      "size": 3913,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/csv.py",
+      "size": 16386,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/ctypes/__init__.py",
+      "size": 18240,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/_aix.py",
+      "size": 12505,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/_endian.py",
+      "size": 2535,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/README.ctypes",
+      "size": 296,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/__init__.py",
+      "size": 154,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/dyld.py",
+      "size": 5024,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/dylib.py",
+      "size": 960,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/fetch_macholib",
+      "size": 84,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/fetch_macholib.bat",
+      "size": 75,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/macholib/framework.py",
+      "size": 1105,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/util.py",
+      "size": 13959,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ctypes/wintypes.py",
+      "size": 5629,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/curses",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/curses/__init__.py",
+      "size": 3369,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/curses/ascii.py",
+      "size": 2543,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/curses/has_key.py",
+      "size": 5634,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/curses/panel.py",
+      "size": 87,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/curses/textpad.py",
+      "size": 7754,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/dataclasses.py",
+      "size": 61580,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/datetime.py",
+      "size": 268,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/dbm",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/dbm/__init__.py",
+      "size": 5882,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/dbm/dumb.py",
+      "size": 11594,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/dbm/gnu.py",
+      "size": 72,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/dbm/ndbm.py",
+      "size": 70,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/decimal.py",
+      "size": 320,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/difflib.py",
+      "size": 83308,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/dis.py",
+      "size": 30209,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/doctest.py",
+      "size": 106463,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/email/__init__.py",
+      "size": 1764,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/_encoded_words.py",
+      "size": 8541,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/_header_value_parser.py",
+      "size": 107244,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/_parseaddr.py",
+      "size": 17821,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/_policybase.py",
+      "size": 15073,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/architecture.rst",
+      "size": 9561,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/base64mime.py",
+      "size": 3551,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/charset.py",
+      "size": 17063,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/contentmanager.py",
+      "size": 10588,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/encoders.py",
+      "size": 1778,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/errors.py",
+      "size": 3735,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/feedparser.py",
+      "size": 22796,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/generator.py",
+      "size": 20190,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/header.py",
+      "size": 24092,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/headerregistry.py",
+      "size": 20819,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/iterators.py",
+      "size": 2129,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/message.py",
+      "size": 48091,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/email/mime/__init__.py",
+      "size": 0,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/application.py",
+      "size": 1321,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/audio.py",
+      "size": 3094,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/base.py",
+      "size": 914,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/image.py",
+      "size": 3726,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/message.py",
+      "size": 1315,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/multipart.py",
+      "size": 1619,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/nonmultipart.py",
+      "size": 689,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/mime/text.py",
+      "size": 1394,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/parser.py",
+      "size": 4975,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/policy.py",
+      "size": 10519,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/quoprimime.py",
+      "size": 9864,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/email/utils.py",
+      "size": 12292,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/encodings/__init__.py",
+      "size": 5884,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/aliases.py",
+      "size": 15677,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/ascii.py",
+      "size": 1248,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/base64_codec.py",
+      "size": 1533,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/big5.py",
+      "size": 1019,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/big5hkscs.py",
+      "size": 1039,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/bz2_codec.py",
+      "size": 2249,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/charmap.py",
+      "size": 2084,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp037.py",
+      "size": 13121,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1006.py",
+      "size": 13568,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1026.py",
+      "size": 13113,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1125.py",
+      "size": 34597,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1140.py",
+      "size": 13105,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1250.py",
+      "size": 13686,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1251.py",
+      "size": 13361,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1252.py",
+      "size": 13511,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1253.py",
+      "size": 13094,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1254.py",
+      "size": 13502,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1255.py",
+      "size": 12466,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1256.py",
+      "size": 12814,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1257.py",
+      "size": 13374,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp1258.py",
+      "size": 13364,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp273.py",
+      "size": 14132,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp424.py",
+      "size": 12055,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp437.py",
+      "size": 34564,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp500.py",
+      "size": 13121,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp720.py",
+      "size": 13686,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp737.py",
+      "size": 34681,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp775.py",
+      "size": 34476,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp850.py",
+      "size": 34105,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp852.py",
+      "size": 35002,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp855.py",
+      "size": 33850,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp856.py",
+      "size": 12423,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp857.py",
+      "size": 33908,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp858.py",
+      "size": 34015,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp860.py",
+      "size": 34681,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp861.py",
+      "size": 34633,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp862.py",
+      "size": 33370,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp863.py",
+      "size": 34252,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp864.py",
+      "size": 33663,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp865.py",
+      "size": 34618,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp866.py",
+      "size": 34396,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp869.py",
+      "size": 32965,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp874.py",
+      "size": 12595,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp875.py",
+      "size": 12854,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp932.py",
+      "size": 1023,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp949.py",
+      "size": 1023,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/cp950.py",
+      "size": 1023,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/euc_jis_2004.py",
+      "size": 1051,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/euc_jisx0213.py",
+      "size": 1051,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/euc_jp.py",
+      "size": 1027,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/euc_kr.py",
+      "size": 1027,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/gb18030.py",
+      "size": 1031,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/gb2312.py",
+      "size": 1027,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/gbk.py",
+      "size": 1015,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/hex_codec.py",
+      "size": 1508,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/hp_roman8.py",
+      "size": 13475,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/hz.py",
+      "size": 1011,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/idna.py",
+      "size": 9710,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_jp.py",
+      "size": 1053,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_jp_1.py",
+      "size": 1061,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_jp_2.py",
+      "size": 1061,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_jp_2004.py",
+      "size": 1073,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_jp_3.py",
+      "size": 1061,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_jp_ext.py",
+      "size": 1069,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso2022_kr.py",
+      "size": 1053,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_1.py",
+      "size": 13176,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_10.py",
+      "size": 13589,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_11.py",
+      "size": 12335,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_13.py",
+      "size": 13271,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_14.py",
+      "size": 13652,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_15.py",
+      "size": 13212,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_16.py",
+      "size": 13557,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_2.py",
+      "size": 13404,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_3.py",
+      "size": 13089,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_4.py",
+      "size": 13376,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_5.py",
+      "size": 13015,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_6.py",
+      "size": 10833,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_7.py",
+      "size": 12844,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_8.py",
+      "size": 11036,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/iso8859_9.py",
+      "size": 13156,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/johab.py",
+      "size": 1023,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/koi8_r.py",
+      "size": 13779,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/koi8_t.py",
+      "size": 13193,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/koi8_u.py",
+      "size": 13762,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/kz1048.py",
+      "size": 13723,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/latin_1.py",
+      "size": 1264,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_arabic.py",
+      "size": 36467,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_croatian.py",
+      "size": 13633,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_cyrillic.py",
+      "size": 13454,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_farsi.py",
+      "size": 15170,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_greek.py",
+      "size": 13721,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_iceland.py",
+      "size": 13498,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_latin2.py",
+      "size": 14118,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_roman.py",
+      "size": 13480,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_romanian.py",
+      "size": 13661,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mac_turkish.py",
+      "size": 13513,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/mbcs.py",
+      "size": 1211,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/oem.py",
+      "size": 1019,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/palmos.py",
+      "size": 13519,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/ptcp154.py",
+      "size": 14015,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/punycode.py",
+      "size": 6883,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/quopri_codec.py",
+      "size": 1525,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/raw_unicode_escape.py",
+      "size": 1332,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/rot_13.py",
+      "size": 2448,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/encodings/shift_jis.py",
+      "size": 1039,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/shift_jis_2004.py",
+      "size": 1059,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/shift_jisx0213.py",
+      "size": 1059,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/tis_620.py",
+      "size": 12300,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/undefined.py",
+      "size": 1299,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/unicode_escape.py",
+      "size": 1304,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_16.py",
+      "size": 5236,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_16_be.py",
+      "size": 1037,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_16_le.py",
+      "size": 1037,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_32.py",
+      "size": 5129,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_32_be.py",
+      "size": 930,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_32_le.py",
+      "size": 930,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_7.py",
+      "size": 946,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_8.py",
+      "size": 1005,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/utf_8_sig.py",
+      "size": 4133,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/uu_codec.py",
+      "size": 2851,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/encodings/zlib_codec.py",
+      "size": 2204,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/enum.py",
+      "size": 80591,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/filecmp.py",
+      "size": 10187,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/fileinput.py",
+      "size": 15714,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/fnmatch.py",
+      "size": 5999,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/fractions.py",
+      "size": 38067,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ftplib.py",
+      "size": 34735,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/functools.py",
+      "size": 38126,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/genericpath.py",
+      "size": 5301,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/getopt.py",
+      "size": 7488,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/getpass.py",
+      "size": 5990,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/gettext.py",
+      "size": 21320,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/glob.py",
+      "size": 8681,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/graphlib.py",
+      "size": 9656,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/gzip.py",
+      "size": 24859,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/hashlib.py",
+      "size": 9349,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/heapq.py",
+      "size": 23024,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/hmac.py",
+      "size": 7716,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/html",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/html/__init__.py",
+      "size": 4775,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/html/entities.py",
+      "size": 75512,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/html/parser.py",
+      "size": 17054,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/http",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/http/__init__.py",
+      "size": 8308,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/http/client.py",
+      "size": 57080,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/http/cookiejar.py",
+      "size": 77438,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/http/cookies.py",
+      "size": 20482,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/http/server.py",
+      "size": 48516,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/imaplib.py",
+      "size": 53688,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/imghdr.py",
+      "size": 4398,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/importlib/__init__.py",
+      "size": 4774,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/_abc.py",
+      "size": 1354,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/_bootstrap.py",
+      "size": 57056,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/_bootstrap_external.py",
+      "size": 69069,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/abc.py",
+      "size": 7612,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/machinery.py",
+      "size": 880,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/__init__.py",
+      "size": 28726,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/_adapters.py",
+      "size": 2406,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/_collections.py",
+      "size": 743,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/_functools.py",
+      "size": 2895,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/_itertools.py",
+      "size": 2068,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/_meta.py",
+      "size": 1590,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/metadata/_text.py",
+      "size": 2166,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/readers.py",
+      "size": 327,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/__init__.py",
+      "size": 506,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/_adapters.py",
+      "size": 4482,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/_common.py",
+      "size": 5459,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/_itertools.py",
+      "size": 1277,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/_legacy.py",
+      "size": 3481,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/abc.py",
+      "size": 5203,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/readers.py",
+      "size": 4303,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/resources/simple.py",
+      "size": 2576,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/simple.py",
+      "size": 354,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/importlib/util.py",
+      "size": 9610,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/inspect.py",
+      "size": 126247,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/io.py",
+      "size": 3582,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ipaddress.py",
+      "size": 75012,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/json",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/json/__init__.py",
+      "size": 14020,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/json/decoder.py",
+      "size": 12473,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/json/encoder.py",
+      "size": 16080,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/json/scanner.py",
+      "size": 2425,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/json/tool.py",
+      "size": 3339,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/keyword.py",
+      "size": 1073,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/lib-dynload",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/lib-dynload/.empty",
+      "size": 0,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/lib-dynload/_crypt.cpython-312-x86_64-linux-gnu.so",
+      "size": 26200,
+      "perm": 509,
+      "compressed": true
+    },
+    {
+      "name": "lib/python3.12/linecache.py",
+      "size": 5690,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/locale.py",
+      "size": 78558,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/logging",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/logging/__init__.py",
+      "size": 83583,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/logging/config.py",
+      "size": 41526,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/logging/handlers.py",
+      "size": 62297,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/lzma.py",
+      "size": 13277,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/mailbox.py",
+      "size": 78766,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/mailcap.py",
+      "size": 9333,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/mimetypes.py",
+      "size": 22717,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/modulefinder.py",
+      "size": 23699,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/__init__.py",
+      "size": 916,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/connection.py",
+      "size": 41369,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/context.py",
+      "size": 11673,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/dummy",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/dummy/__init__.py",
+      "size": 3061,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/dummy/connection.py",
+      "size": 1598,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/forkserver.py",
+      "size": 12134,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/heap.py",
+      "size": 11626,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/managers.py",
+      "size": 47616,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/pool.py",
+      "size": 32760,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/popen_fork.py",
+      "size": 2377,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/popen_forkserver.py",
+      "size": 2230,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/popen_spawn_posix.py",
+      "size": 2029,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/popen_spawn_win32.py",
+      "size": 4515,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/process.py",
+      "size": 12139,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/queues.py",
+      "size": 12693,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/reduction.py",
+      "size": 9512,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/resource_sharer.py",
+      "size": 5145,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/resource_tracker.py",
+      "size": 10332,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/shared_memory.py",
+      "size": 18458,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/sharedctypes.py",
+      "size": 6306,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/spawn.py",
+      "size": 9644,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/synchronize.py",
+      "size": 12285,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/multiprocessing/util.py",
+      "size": 14261,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/netrc.py",
+      "size": 6922,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/nntplib.py",
+      "size": 41087,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ntpath.py",
+      "size": 31483,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/nturl2path.py",
+      "size": 2887,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/numbers.py",
+      "size": 11467,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/opcode.py",
+      "size": 13174,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/operator.py",
+      "size": 10965,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/optparse.py",
+      "size": 60369,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/os.py",
+      "size": 39760,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pathlib.py",
+      "size": 51105,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pdb.py",
+      "size": 70062,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/pickle.py",
+      "size": 64901,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pickletools.py",
+      "size": 93862,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pipes.py",
+      "size": 8978,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pkgutil.py",
+      "size": 18281,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/platform.py",
+      "size": 43331,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/plistlib.py",
+      "size": 28342,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/poplib.py",
+      "size": 14163,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/posixpath.py",
+      "size": 17564,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pprint.py",
+      "size": 24158,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/profile.py",
+      "size": 23093,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/pstats.py",
+      "size": 29289,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pty.py",
+      "size": 6137,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/py_compile.py",
+      "size": 7837,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pyclbr.py",
+      "size": 11396,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/pydoc.py",
+      "size": 109280,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/queue.py",
+      "size": 11496,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/quopri.py",
+      "size": 7184,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/random.py",
+      "size": 34683,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/re",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/re/__init__.py",
+      "size": 16315,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/re/_casefix.py",
+      "size": 5446,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/re/_compiler.py",
+      "size": 26089,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/re/_constants.py",
+      "size": 5930,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/re/_parser.py",
+      "size": 41201,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/reprlib.py",
+      "size": 6569,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/rlcompleter.py",
+      "size": 7827,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/runpy.py",
+      "size": 12898,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sched.py",
+      "size": 6351,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/secrets.py",
+      "size": 1984,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/selectors.py",
+      "size": 19671,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/shelve.py",
+      "size": 8560,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/shlex.py",
+      "size": 13353,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/shutil.py",
+      "size": 58088,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/signal.py",
+      "size": 2495,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/site.py",
+      "size": 22823,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/smtplib.py",
+      "size": 43532,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/sndhdr.py",
+      "size": 7448,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/socket.py",
+      "size": 37411,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/socketserver.py",
+      "size": 27851,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sqlite3",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/sqlite3/__init__.py",
+      "size": 2501,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sqlite3/__main__.py",
+      "size": 3855,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sqlite3/dbapi2.py",
+      "size": 3631,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sqlite3/dump.py",
+      "size": 3471,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sre_compile.py",
+      "size": 231,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sre_constants.py",
+      "size": 232,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sre_parse.py",
+      "size": 229,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/ssl.py",
+      "size": 50822,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/stat.py",
+      "size": 5485,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/statistics.py",
+      "size": 50227,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/string.py",
+      "size": 11786,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/stringprep.py",
+      "size": 12917,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/struct.py",
+      "size": 257,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/subprocess.py",
+      "size": 88659,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sunau.py",
+      "size": 18478,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/symtable.py",
+      "size": 10753,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/sysconfig.py",
+      "size": 30999,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tabnanny.py",
+      "size": 11531,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/tarfile.py",
+      "size": 106883,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/telnetlib.py",
+      "size": 23301,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tempfile.py",
+      "size": 32236,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/textwrap.py",
+      "size": 19718,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/this.py",
+      "size": 1003,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/threading.py",
+      "size": 60123,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/timeit.py",
+      "size": 13464,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/tkinter",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/tkinter/__init__.py",
+      "size": 172514,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/__main__.py",
+      "size": 148,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/colorchooser.py",
+      "size": 2660,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/commondialog.py",
+      "size": 1289,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/constants.py",
+      "size": 1493,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/dialog.py",
+      "size": 1535,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/dnd.py",
+      "size": 11644,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/filedialog.py",
+      "size": 14939,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/font.py",
+      "size": 7000,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/messagebox.py",
+      "size": 3861,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/scrolledtext.py",
+      "size": 1816,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/simpledialog.py",
+      "size": 11753,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/tix.py",
+      "size": 77032,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tkinter/ttk.py",
+      "size": 56242,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/token.py",
+      "size": 2479,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tokenize.py",
+      "size": 19596,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tomllib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/tomllib/__init__.py",
+      "size": 308,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tomllib/_parser.py",
+      "size": 22631,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tomllib/_re.py",
+      "size": 2943,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tomllib/_types.py",
+      "size": 254,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/trace.py",
+      "size": 29182,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/traceback.py",
+      "size": 46325,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tracemalloc.py",
+      "size": 18047,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/tty.py",
+      "size": 2035,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/turtle.py",
+      "size": 146361,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/types.py",
+      "size": 10993,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/typing.py",
+      "size": 116414,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/unittest/__init__.py",
+      "size": 3487,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/__main__.py",
+      "size": 472,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/_log.py",
+      "size": 2746,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/async_case.py",
+      "size": 5465,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/case.py",
+      "size": 57531,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/loader.py",
+      "size": 21010,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/main.py",
+      "size": 11991,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/mock.py",
+      "size": 104588,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/result.py",
+      "size": 9130,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/runner.py",
+      "size": 10368,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/signals.py",
+      "size": 2403,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/suite.py",
+      "size": 13512,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/unittest/util.py",
+      "size": 5215,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/urllib",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/urllib/__init__.py",
+      "size": 0,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/urllib/error.py",
+      "size": 2415,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/urllib/parse.py",
+      "size": 44829,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/urllib/request.py",
+      "size": 103157,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/urllib/response.py",
+      "size": 2361,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/urllib/robotparser.py",
+      "size": 9424,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/uu.py",
+      "size": 7365,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/uuid.py",
+      "size": 29656,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/venv",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/venv/__init__.py",
+      "size": 24618,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/venv/__main__.py",
+      "size": 145,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/venv/scripts",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/venv/scripts/common",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/venv/scripts/common/Activate.ps1",
+      "size": 9033,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/venv/scripts/common/activate",
+      "size": 2042,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/venv/scripts/posix",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/venv/scripts/posix/activate.csh",
+      "size": 936,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/venv/scripts/posix/activate.fish",
+      "size": 2215,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/warnings.py",
+      "size": 21760,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wave.py",
+      "size": 22769,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/weakref.py",
+      "size": 21513,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/webbrowser.py",
+      "size": 23628,
+      "perm": 509
+    },
+    {
+      "name": "lib/python3.12/wsgiref",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/wsgiref/__init__.py",
+      "size": 657,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wsgiref/handlers.py",
+      "size": 21664,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wsgiref/headers.py",
+      "size": 6766,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wsgiref/simple_server.py",
+      "size": 5171,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wsgiref/types.py",
+      "size": 1717,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wsgiref/util.py",
+      "size": 5472,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/wsgiref/validate.py",
+      "size": 15036,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xdrlib.py",
+      "size": 5942,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/xml/__init__.py",
+      "size": 557,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/xml/dom/NodeFilter.py",
+      "size": 936,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/__init__.py",
+      "size": 4019,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/domreg.py",
+      "size": 3451,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/expatbuilder.py",
+      "size": 35693,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/minicompat.py",
+      "size": 3367,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/minidom.py",
+      "size": 68140,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/pulldom.py",
+      "size": 11637,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/dom/xmlbuilder.py",
+      "size": 12387,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/etree",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/xml/etree/ElementInclude.py",
+      "size": 6882,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/etree/ElementPath.py",
+      "size": 13997,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/etree/ElementTree.py",
+      "size": 73526,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/etree/__init__.py",
+      "size": 1605,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/etree/cElementTree.py",
+      "size": 82,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/parsers",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/xml/parsers/__init__.py",
+      "size": 167,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/parsers/expat.py",
+      "size": 248,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/sax",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/xml/sax/__init__.py",
+      "size": 3238,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/sax/_exceptions.py",
+      "size": 4699,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/sax/expatreader.py",
+      "size": 15550,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/sax/handler.py",
+      "size": 15617,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/sax/saxutils.py",
+      "size": 12255,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xml/sax/xmlreader.py",
+      "size": 12624,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xmlrpc",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/xmlrpc/__init__.py",
+      "size": 38,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xmlrpc/client.py",
+      "size": 49331,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/xmlrpc/server.py",
+      "size": 36822,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zipapp.py",
+      "size": 7543,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zipfile",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/zipfile/__init__.py",
+      "size": 87082,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zipfile/__main__.py",
+      "size": 58,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zipfile/_path",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/zipfile/_path/__init__.py",
+      "size": 10409,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zipfile/_path/glob.py",
+      "size": 893,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zipimport.py",
+      "size": 28132,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zoneinfo",
+      "size": 0,
+      "perm": 2147484141
+    },
+    {
+      "name": "lib/python3.12/zoneinfo/__init__.py",
+      "size": 703,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zoneinfo/_common.py",
+      "size": 5294,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zoneinfo/_tzpath.py",
+      "size": 5388,
+      "perm": 436
+    },
+    {
+      "name": "lib/python3.12/zoneinfo/_zoneinfo.py",
+      "size": 24674,
+      "perm": 436
+    }
+  ]
+}
