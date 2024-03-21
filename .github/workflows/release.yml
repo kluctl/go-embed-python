@@ -69,7 +69,7 @@ jobs:
       - name: git gc
         run: |
           git gc
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
           path: |
