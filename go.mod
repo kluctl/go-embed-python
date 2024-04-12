@@ -1,6 +1,6 @@
-module github.com/kluctl/go-embed-python
+module github.com/tryiris-ai/go-embed-python
 
-go 1.19
+go 1.21
 
 require (
 	github.com/cyphar/filepath-securejoin v0.2.4

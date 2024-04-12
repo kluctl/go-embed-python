@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/kluctl/go-embed-python/python"
 	"os"
+
+	"github.com/tryiris-ai/go-embed-python/python"
 )
 
 func main() {
