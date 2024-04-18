@@ -3,7 +3,6 @@ module github.com/kluctl/go-embed-python
 go 1.19
 
 require (
-	github.com/cyphar/filepath-securejoin v0.2.4
 	github.com/gobwas/glob v0.2.3
 	github.com/klauspost/compress v1.17.7
 	github.com/rogpeppe/go-internal v1.12.0

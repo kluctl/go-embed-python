@@ -3,7 +3,6 @@ package internal
 import (
 	"archive/tar"
 	"fmt"
-	securejoin "github.com/cyphar/filepath-securejoin"
 	"io"
 	"io/fs"
 	"os"
@@ -22,12 +21,13 @@ func ExtractTarStream(r io.Reader, targetPath string) error {
 			return fmt.Errorf("ExtractTarStream: Next() failed: %w", err)
 		}
 
-		header.Name = filepath.FromSlash(header.Name)
-
-		p, err := securejoin.SecureJoin(targetPath, header.Name)
-		if err != nil {
-			return err
+		if !validRelPath(header.Name) {
+			return fmt.Errorf("tar contained invalid name error %q", header.Name)
 		}
+
+		p := filepath.FromSlash(header.Name)
+		p = filepath.Join(targetPath, p)
+
 		err = os.MkdirAll(filepath.Dir(p), 0755)
 		if err != nil {
 			return err
@@ -65,6 +65,13 @@ func ExtractTarStream(r io.Reader, targetPath string) error {
 		}
 	}
 	return nil
+}
+
+func validRelPath(p string) bool {
+	if p == "" || strings.Contains(p, `\`) || strings.HasPrefix(p, "/") || strings.Contains(p, "../") {
+		return false
+	}
+	return true
 }
 
 func AddToTar(tw *tar.Writer, pth string, name string, filter func(h *tar.Header, size int64) (*tar.Header, error)) error {
