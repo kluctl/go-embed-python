@@ -4,7 +4,6 @@ import (
 	"archive/tar"
 	"fmt"
 	"io"
-	"io/fs"
 	"os"
 	"path/filepath"
 	"strings"
@@ -75,76 +74,4 @@ func validRelPath(p string) bool {
 		return false
 	}
 	return true
-}
-
-func AddToTar(tw *tar.Writer, pth string, name string, filter func(h *tar.Header, size int64) (*tar.Header, error)) error {
-	fi, err := os.Lstat(pth)
-	if err != nil {
-		return err
-	}
-
-	var linkName string
-	if fi.Mode().Type() == fs.ModeSymlink {
-		x, err := os.Readlink(pth)
-		if err != nil {
-			return err
-		}
-		linkName = x
-	}
-
-	h, err := tar.FileInfoHeader(fi, linkName)
-	if err != nil {
-		return err
-	}
-	h.Name = filepath.ToSlash(name)
-
-	if filter != nil {
-		s := fi.Size()
-		if fi.IsDir() {
-			s = 0
-		}
-		h, err = filter(h, s)
-		if err != nil {
-			return err
-		}
-		if h == nil {
-			return nil
-		}
-	}
-
-	err = tw.WriteHeader(h)
-	if err != nil {
-		return err
-	}
-
-	if fi.Mode().Type() == fs.ModeSymlink {
-		return nil
-	}
-
-	if fi.Mode().IsDir() {
-		des, err := os.ReadDir(pth)
-		if err != nil {
-			return err
-		}
-		for _, d := range des {
-			err = AddToTar(tw, filepath.Join(pth, d.Name()), filepath.Join(name, d.Name()), filter)
-			if err != nil {
-				return err
-			}
-		}
-		return nil
-	} else if fi.Mode().IsRegular() {
-		f, err := os.Open(pth)
-		if err != nil {
-			return err
-		}
-		defer f.Close()
-		_, err = io.Copy(tw, f)
-		if err != nil {
-			return err
-		}
-		return nil
-	} else {
-		return fmt.Errorf("unsupported file type/mode %s", fi.Mode().String())
-	}
 }
