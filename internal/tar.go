@@ -7,6 +7,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func ExtractTarStream(r io.Reader, targetPath string) error {
@@ -39,6 +40,7 @@ func ExtractTarStream(r io.Reader, targetPath string) error {
 				return fmt.Errorf("ExtractTarStream: Mkdir() failed: %w", err)
 			}
 		case tar.TypeReg:
+			_ = os.Remove(p) // we allow overwriting, which easily happens on case insensitive filesystems
 			outFile, err := os.Create(p)
 			if err != nil {
 				return fmt.Errorf("ExtractTarStream: Create() failed: %w", err)
@@ -57,6 +59,7 @@ func ExtractTarStream(r io.Reader, targetPath string) error {
 				return err
 			}
 		case tar.TypeSymlink:
+			_ = os.Remove(p) // we allow overwriting, which easily happens on case insensitive filesystems
 			if err := os.Symlink(header.Linkname, p); err != nil {
 				return fmt.Errorf("ExtractTarStream: Symlink() failed: %w", err)
 			}
