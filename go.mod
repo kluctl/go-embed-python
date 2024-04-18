@@ -4,11 +4,11 @@ go 1.19
 
 require (
 	github.com/gobwas/glob v0.2.3
-	github.com/klauspost/compress v1.17.7
+	github.com/klauspost/compress v1.17.8
 	github.com/rogpeppe/go-internal v1.12.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.9.0
-	golang.org/x/sync v0.6.0
+	golang.org/x/sync v0.7.0
 )
 
 require (
