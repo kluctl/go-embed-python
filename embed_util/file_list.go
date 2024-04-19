@@ -20,7 +20,6 @@ type fileList struct {
 type fileListEntry struct {
 	Name       string      `json:"name"`
 	Size       int64       `json:"size"`
-	ModTime    int64       `json:"modTime"`
 	Mode       fs.FileMode `json:"perm"`
 	Symlink    string      `json:"symlink,omitempty"`
 	Compressed bool        `json:"compressed,omitempty"`
@@ -49,10 +48,9 @@ func buildFileListFromDir(dir string) (*fileList, error) {
 		}
 
 		fle := fileListEntry{
-			Name:    relPath,
-			Size:    info.Size(),
-			ModTime: info.ModTime().Unix(),
-			Mode:    info.Mode(),
+			Name: relPath,
+			Size: info.Size(),
+			Mode: info.Mode(),
 		}
 
 		if info.Mode().Type() == fs.ModeSymlink {
@@ -94,17 +92,15 @@ func buildFileListFromFs(embedFs fs.FS) (*fileList, error) {
 		}
 
 		fle := fileListEntry{
-			Name:    path,
-			Size:    info.Size(),
-			ModTime: info.ModTime().Unix(),
-			Mode:    info.Mode() | 0o600,
+			Name: path,
+			Size: info.Size(),
+			Mode: info.Mode() | 0o600,
 		}
 
 		if info.Mode().Type() == fs.ModeSymlink {
 			return fmt.Errorf("symlink not supported in buildFileListFromFs")
 		} else if info.Mode().IsDir() {
 			fle.Size = 0
-			fle.ModTime = 0
 		}
 
 		fl.Files = append(fl.Files, fle)

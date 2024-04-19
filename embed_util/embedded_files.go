@@ -9,7 +9,6 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
-	"time"
 )
 
 type EmbeddedFiles struct {
@@ -129,7 +128,7 @@ func (e *EmbeddedFiles) copyEmbeddedFilesToTmp(embedFs fs.FS, fl *fileList) erro
 			if resolvedFle.Mode.Type() == existingSt.Mode().Type() {
 				if resolvedFle.Mode.IsDir() {
 					continue
-				} else if existingSt.Size() == resolvedFle.Size && existingSt.ModTime().Unix() == resolvedFle.ModTime {
+				} else if existingSt.Size() == resolvedFle.Size {
 					// unchanged
 					continue
 				}
@@ -176,12 +175,6 @@ func (e *EmbeddedFiles) copyEmbeddedFilesToTmp(embedFs fs.FS, fl *fileList) erro
 		err = os.WriteFile(path, data, resolvedFle.Mode.Perm())
 		if err != nil {
 			return err
-		}
-		if !resolvedFle.Mode.IsDir() {
-			err = os.Chtimes(path, time.Time{}, time.Unix(resolvedFle.ModTime, 0))
-			if err != nil {
-				return err
-			}
 		}
 	}
 
