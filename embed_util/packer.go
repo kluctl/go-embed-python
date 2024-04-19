@@ -27,7 +27,7 @@ func CopyForEmbed(out string, dir string) error {
 		return err
 	}
 
-	return doWriteFilesList(out, fl)
+	return doWriteFilesList(dir, out, fl)
 }
 
 func BuildAndWriteFilesList(dir string) error {
@@ -35,12 +35,12 @@ func BuildAndWriteFilesList(dir string) error {
 	if err != nil {
 		return err
 	}
-	return doWriteFilesList(dir, fl)
+	return doWriteFilesList(dir, dir, fl)
 }
 
-func doWriteFilesList(dir string, fl *fileList) error {
+func doWriteFilesList(srcDir string, outDir string, fl *fileList) error {
 	var err error
-	fl.ContentHash, err = calcContentHash(dir, fl)
+	fl.ContentHash, err = calcContentHash(srcDir, fl)
 	if err != nil {
 		return err
 	}
@@ -49,7 +49,7 @@ func doWriteFilesList(dir string, fl *fileList) error {
 		return err
 	}
 
-	err = os.WriteFile(filepath.Join(dir, "files.json"), b, 0o644)
+	err = os.WriteFile(filepath.Join(outDir, "files.json"), b, 0o644)
 	if err != nil {
 		return err
 	}
@@ -175,10 +175,6 @@ func calcContentHash(dir string, fl *fileList) (string, error) {
 			_ = binary.Write(hash, binary.LittleEndian, fle.Name)
 		} else if st.Mode().IsRegular() {
 			outPath := filepath.Join(dir, fle.Name)
-			if fle.Compressed {
-				outPath += ".gz"
-			}
-
 			data, err := os.ReadFile(outPath)
 			if err != nil {
 				return "", err
