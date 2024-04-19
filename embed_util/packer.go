@@ -27,13 +27,33 @@ func CopyForEmbed(out string, dir string) error {
 		return err
 	}
 
+	return doWriteFilesList(out, fl)
+}
+
+func BuildAndWriteFilesList(dir string) error {
+	fl, err := buildFileListFromDir(dir)
+	if err != nil {
+		return err
+	}
+	return doWriteFilesList(dir, fl)
+}
+
+func doWriteFilesList(dir string, fl *fileList) error {
+	var err error
+	fl.ContentHash, err = calcContentHash(dir, fl)
+	if err != nil {
+		return err
+	}
 	b, err := json.MarshalIndent(fl, "", "  ")
 	if err != nil {
 		return err
 	}
 
-	err = os.WriteFile(filepath.Join(out, "files.json"), b, 0o644)
-	return err
+	err = os.WriteFile(filepath.Join(dir, "files.json"), b, 0o644)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func WriteEmbedGoFile(targetDir string, goOs string, goArch string) error {
@@ -128,36 +148,40 @@ func copyFiles(out string, dir string, fl *fileList) error {
 		return err
 	}
 
+	return nil
+}
+
+func calcContentHash(dir string, fl *fileList) (string, error) {
 	hash := sha256.New()
 	for _, fle := range fl.Files {
 		path := filepath.Join(dir, fle.Name)
 		st, err := os.Lstat(path)
 		if err != nil {
-			return err
+			return "", err
 		}
 		if st.Mode().Type() == os.ModeSymlink {
 			sl, err := os.Readlink(path)
 			if err != nil {
-				return err
+				return "", err
 			}
 			_ = binary.Write(hash, binary.LittleEndian, "symlink")
 			_ = binary.Write(hash, binary.LittleEndian, sl)
 		} else if st.Mode().IsDir() {
 			err = os.MkdirAll(path, fle.Mode.Perm())
 			if err != nil {
-				return err
+				return "", err
 			}
 			_ = binary.Write(hash, binary.LittleEndian, "dir")
 			_ = binary.Write(hash, binary.LittleEndian, fle.Name)
 		} else if st.Mode().IsRegular() {
-			outPath := filepath.Join(out, fle.Name)
+			outPath := filepath.Join(dir, fle.Name)
 			if fle.Compressed {
 				outPath += ".gz"
 			}
 
 			data, err := os.ReadFile(outPath)
 			if err != nil {
-				return err
+				return "", err
 			}
 
 			_ = binary.Write(hash, binary.LittleEndian, "regular")
@@ -165,6 +189,5 @@ func copyFiles(out string, dir string, fl *fileList) error {
 			_ = binary.Write(hash, binary.LittleEndian, data)
 		}
 	}
-	fl.ContentHash = hex.EncodeToString(hash.Sum(nil))
-	return nil
+	return hex.EncodeToString(hash.Sum(nil)), nil
 }
