@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/gobwas/glob v0.2.3
-	github.com/klauspost/compress v1.17.8
+	github.com/klauspost/compress v1.17.9
 	github.com/rogpeppe/go-internal v1.12.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.9.0
