@@ -11,7 +11,10 @@ func main() {
 		panic(err)
 	}
 
-	cmd := ep.PythonCmd("-c", "print('hello')")
+	cmd, err := ep.PythonCmd("-c", "print('hello')")
+	if err != nil {
+		panic(err)
+	}
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err = cmd.Run()

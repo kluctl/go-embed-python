@@ -11,13 +11,13 @@ on:
 env:
   PYTHON_STANDALONE_VERSIONS: |
     [
-      "20240224"
+      "20240415"
     ]
   PYTHON_VERSIONS: |
     [
-      "3.10.13",
-      "3.11.8",
-      "3.12.2"
+      "3.10.14",
+      "3.11.9",
+      "3.12.3"
     ]
 
 jobs:
@@ -39,14 +39,24 @@ jobs:
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - name: checkout
+      - name: clone
         run: |
           # can't use actions/checkout here as transferring the shallow clone fails when using upload-/download-artifact
-          git clone https://token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY . --depth=1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git clone https://github.com/$GITHUB_REPOSITORY . --depth=1
+      - name: checkout PR
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo fetching pull/${{ github.ref_name }}
+          git fetch origin pull/${{ github.ref_name }}:pr --depth=1
+          git checkout pr
+      - name: checkout branch
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          echo fetching ${{ github.ref_name }}
+          git fetch origin ${{ github.ref_name }} --depth=1
+          git checkout ${{ github.ref_name }}
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
@@ -83,8 +93,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-20.04
-          - macos-11
+          - ubuntu-22.04
+          - macos-12
           - windows-2019
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
@@ -125,7 +135,7 @@ jobs:
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
     permissions:
       contents: write

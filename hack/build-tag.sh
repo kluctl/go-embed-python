@@ -35,7 +35,7 @@ go run ./pip/generate
 TAG=v0.0.0-$PYTHON_VERSION-$PYTHON_STANDALONE_VERSION-$BUILD_NUM
 
 echo "checking out temporary branch"
-git checkout $(git rev-parse HEAD)
+git checkout --detach
 git add -f python/internal/data
 git add -f pip/internal/data
 git commit -m "added python $PYTHON_VERSION from python-standalone $PYTHON_STANDALONE_VERSION"
