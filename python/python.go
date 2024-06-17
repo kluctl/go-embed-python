@@ -9,21 +9,29 @@ import (
 	"strings"
 )
 
-type Python struct {
+type Python interface {
+	GetExeName() string
+	GetExePath() (string, error)
+	AddPythonPath(p string)
+	PythonCmd(args ...string) (*exec.Cmd, error)
+	PythonCmd2(args []string) (*exec.Cmd, error)
+}
+
+type python struct {
 	pythonHome string
 	pythonPath []string
 }
 
-type PythonOpt func(o *Python)
+type PythonOpt func(o *python)
 
 func WithPythonHome(home string) PythonOpt {
-	return func(o *Python) {
+	return func(o *python) {
 		o.pythonHome = home
 	}
 }
 
-func NewPython(opts ...PythonOpt) *Python {
-	ep := &Python{}
+func NewPython(opts ...PythonOpt) Python {
+	ep := &python{}
 
 	for _, o := range opts {
 		o(ep)
@@ -32,7 +40,7 @@ func NewPython(opts ...PythonOpt) *Python {
 	return ep
 }
 
-func (ep *Python) GetExeName() string {
+func (ep *python) GetExeName() string {
 	suffix := ""
 	if runtime.GOOS == "windows" {
 		suffix = ".exe"
@@ -42,7 +50,7 @@ func (ep *Python) GetExeName() string {
 	return "python" + suffix
 }
 
-func (ep *Python) GetExePath() (string, error) {
+func (ep *python) GetExePath() (string, error) {
 	if ep.pythonHome == "" {
 		p, err := exec.LookPath(ep.GetExeName())
 		if err != nil {
@@ -63,15 +71,15 @@ func (ep *Python) GetExePath() (string, error) {
 	}
 }
 
-func (ep *Python) AddPythonPath(p string) {
+func (ep *python) AddPythonPath(p string) {
 	ep.pythonPath = append(ep.pythonPath, p)
 }
 
-func (ep *Python) PythonCmd(args ...string) (*exec.Cmd, error) {
+func (ep *python) PythonCmd(args ...string) (*exec.Cmd, error) {
 	return ep.PythonCmd2(args)
 }
 
-func (ep *Python) PythonCmd2(args []string) (*exec.Cmd, error) {
+func (ep *python) PythonCmd2(args []string) (*exec.Cmd, error) {
 	exePath, err := ep.GetExePath()
 	if err != nil {
 		return nil, err
