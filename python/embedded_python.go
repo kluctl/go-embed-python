@@ -8,7 +8,7 @@ import (
 
 type EmbeddedPython struct {
 	e *embed_util.EmbeddedFiles
-	*Python
+	Python
 }
 
 // NewEmbeddedPython creates a new EmbeddedPython instance. The embedded source code and python binaries are
