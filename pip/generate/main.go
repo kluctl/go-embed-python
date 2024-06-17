@@ -33,10 +33,13 @@ func bootstrapPip(ep *python.EmbeddedPython) {
 	getPip := downloadGetPip()
 	defer os.Remove(getPip)
 
-	cmd := ep.PythonCmd(getPip)
+	cmd, err := ep.PythonCmd(getPip)
+	if err != nil {
+		panic(err)
+	}
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	err := cmd.Run()
+	err = cmd.Run()
 	if err != nil {
 		panic(err)
 	}

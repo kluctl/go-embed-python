@@ -21,7 +21,7 @@ func NewEmbeddedPython(name string) (*EmbeddedPython, error) {
 	}
 	return &EmbeddedPython{
 		e:      e,
-		Python: NewPython(e.GetExtractedPath()),
+		Python: NewPython(WithPythonHome(e.GetExtractedPath())),
 	}, nil
 }
 
@@ -32,7 +32,7 @@ func NewEmbeddedPythonWithTmpDir(tmpDir string, withHashInDir bool) (*EmbeddedPy
 	}
 	return &EmbeddedPython{
 		e:      e,
-		Python: NewPython(e.GetExtractedPath()),
+		Python: NewPython(WithPythonHome(e.GetExtractedPath())),
 	}, nil
 }
 

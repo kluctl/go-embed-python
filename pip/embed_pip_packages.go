@@ -109,10 +109,13 @@ func pipInstall(ep *python.EmbeddedPython, requirementsFile string, platforms []
 		args = append(args, "--only-binary=:all:")
 	}
 
-	cmd := ep.PythonCmd(args...)
+	cmd, err := ep.PythonCmd(args...)
+	if err != nil {
+		return err
+	}
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	err := cmd.Run()
+	err = cmd.Run()
 	if err != nil {
 		return err
 	}
