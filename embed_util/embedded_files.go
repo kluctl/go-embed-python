@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"fmt"
-	"github.com/rogpeppe/go-internal/lockedfile"
+	"github.com/gofrs/flock"
 	"io"
 	"io/fs"
 	"os"
@@ -63,7 +63,8 @@ func (e *EmbeddedFiles) extract(embedFs fs.FS, withHashInDir bool) error {
 		return err
 	}
 
-	lock, err := lockedfile.Create(e.extractedPath + ".lock")
+	lock := flock.New(e.extractedPath + ".lock")
+	err = lock.Lock()
 	if err != nil {
 		return err
 	}
