@@ -135,6 +135,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+      - name: rename .git back
+        run: |
+          mv git-dir .git
       - name: update remote url
         run: |
           git remote set-url origin https://token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
