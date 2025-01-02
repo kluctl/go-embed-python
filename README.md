@@ -45,16 +45,16 @@ The following operating systems and architectures are supported:
 Releases in this library are handled a bit different from what one might be used to. This library does currently not
 follow a versioning schema comparable to sematic versioning. This might however change in the future.
 
-Right now, every tagged release is compromised of the Python interpreter version, the [python-standalone](https://github.com/indygreg/python-build-standalone)
-and a build number. For example, the release version `v0.0.0-3.11.6-20231002-2` belongs to Python version 3.11.6, 
-the [20231002](https://github.com/indygreg/python-build-standalone/releases/tag/20231002) version of python-standalone
+Right now, every tagged release is compromised of the Python interpreter version, the [python-standalone](https://github.com/astral-sh/python-build-standalone)
+and a build number. For example, the release version `v0.0.0-3.11.6-20241219-2` belongs to Python version 3.11.6, 
+the [20241219](https://github.com/astral-sh/python-build-standalone/releases/tag/20241219) version of python-standalone
 and build number 2. The release version currently always has v0.0.0 as its own version.
 
 The way versioning is handled might result in popular dependency management tools (e.g. dependabot) to not work as you
 might require it. Please watch out to not accidentally upgrade your Python version!
 
 ## How it works
-This library uses the standalone Python distributions found at https://github.com/indygreg/python-build-standalone as
+This library uses the standalone Python distributions found at https://github.com/astral-sh/python-build-standalone as
 the base.
 
 The `./hack/build-tag.sh` script is used to invoke `python/generate` and `pip/generate`, which then downloads, extracts
