@@ -11,13 +11,14 @@ on:
 env:
   PYTHON_STANDALONE_VERSIONS: |
     [
-      "20240415"
+      "20241219"
     ]
   PYTHON_VERSIONS: |
     [
-      "3.10.14",
-      "3.11.9",
-      "3.12.3"
+      "3.10.16",
+      "3.11.11",
+      "3.12.8",
+      "3.13.1",
     ]
 
 jobs:
@@ -61,14 +62,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.19
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/go/pkg/mod
-            ~/.cache/go-build
-          key: ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-build-tag-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-build-tag-
       - name: build-tag
         run: |
           git config --global user.email "no@mail.exists"
@@ -79,11 +72,14 @@ jobs:
       - name: git gc
         run: |
           git gc
+      - name: rename .git
+        run: |
+          mv .git git-dir
       - uses: actions/upload-artifact@v4
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
           path: |
-            .git
+            git-dir
             build-num
 
   tests:
@@ -94,8 +90,8 @@ jobs:
       matrix:
         os:
           - ubuntu-22.04
-          - macos-12
-          - windows-2019
+          - macos-13
+          - windows-2022
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
@@ -105,17 +101,12 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.19
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/go/pkg/mod
-            ~/.cache/go-build
-          key: ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-tests-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.pythonStandaloneVersion }}-${{ matrix.pythonVersion }}-tests-
       - uses: actions/download-artifact@v4
         with:
           name: workdir-${{ matrix.pythonStandaloneVersion }} ${{ matrix.pythonVersion }}
+      - name: rename .git back
+        run: |
+          mv git-dir .git
       - name: checkout tag
         shell: bash
         run: |

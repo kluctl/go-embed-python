@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	pythonStandaloneVersion = flag.String("python-standalone-version", "", "specify the python-standalone version. Check https://github.com/indygreg/python-build-standalone/releases/ for available options.")
+	pythonStandaloneVersion = flag.String("python-standalone-version", "", "specify the python-standalone version. Check https://github.com/astral-sh/python-build-standalone/releases/ for available options.")
 	pythonVersion           = flag.String("python-version", "", "specify the python version.")
 	preparePath             = flag.String("prepare-path", filepath.Join(os.TempDir(), "python-download"), "specify the path where the python executables are downloaded and prepared. automatically creates a temporary directory if unset")
 	runPrepare              = flag.Bool("prepare", true, "if set, python executables will be downloaded and prepared for packing at the configured path")
@@ -173,7 +173,7 @@ func download(osName string, arch string, dist string) string {
 
 	downloadPath := generateDownloadPath(arch, dist)
 	fname := filepath.Base(downloadPath)
-	downloadUrl := fmt.Sprintf("https://github.com/indygreg/python-build-standalone/releases/download/%s/%s", *pythonStandaloneVersion, fname)
+	downloadUrl := fmt.Sprintf("https://github.com/astral-sh/python-build-standalone/releases/download/%s/%s", *pythonStandaloneVersion, fname)
 
 	if _, err := os.Stat(downloadPath); err == nil {
 		log.Infof("skipping download of %s", downloadUrl)
