@@ -69,7 +69,7 @@ Extraction is optimized in a way that it is only executed when needed (by verify
 distributions).
 
 ## Upgrading python
-The Python version and downloaded distributions are controlled via the `.github/workflows/release.yaml` workflow. It
+The Python version and downloaded distributions are controlled via the `.github/workflows/release.yml` workflow. It
 contains a matrix of supported distributions. To upgrade Python, edit this workflow and create a pull request.
 
 ## Embedding Python libraries into your applications
