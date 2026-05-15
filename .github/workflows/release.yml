@@ -21,7 +21,7 @@ env:
 
 jobs:
   build-matrix:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       PYTHON_STANDALONE_VERSIONS: ${{ env.PYTHON_STANDALONE_VERSIONS }}
       PYTHON_VERSIONS: ${{ env.PYTHON_VERSIONS }}
@@ -38,7 +38,7 @@ jobs:
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: clone
         run: |
@@ -87,8 +87,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-22.04
-          - macos-13
+          - ubuntu-24.04
+          - macos-15
           - windows-2022
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
@@ -124,7 +124,7 @@ jobs:
         pythonStandaloneVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_STANDALONE_VERSIONS) }}
         pythonVersion: ${{ fromJSON(needs.build-matrix.outputs.PYTHON_VERSIONS) }}
       fail-fast: false
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
     permissions:
       contents: write
