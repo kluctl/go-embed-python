@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/kluctl/go-embed-python/python"
 	"os"
+
+	"github.com/kluctl/go-embed-python/python"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 	}
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
+
 	err = cmd.Run()
 	if err != nil {
 		panic(err)
