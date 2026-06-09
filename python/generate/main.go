@@ -81,21 +81,22 @@ func main() {
 		dist         string
 		ext          string
 		keepPatterns []glob.Glob
+		strip        bool
 	}
 
 	jobs := []job{
-		{"linux", "amd64", "unknown-linux-gnu-pgo+lto-full", "tar.zst", keepNixPatterns},
-		{"linux", "arm64", "unknown-linux-gnu-pgo+lto-full", "tar.zst", keepNixPatterns},
-		{"darwin", "amd64", "apple-darwin-pgo+lto-full", "tar.zst", keepNixPatterns},
-		{"darwin", "arm64", "apple-darwin-pgo+lto-full", "tar.zst", keepNixPatterns},
-		{"windows", "amd64", "pc-windows-msvc-pgo-full", "tar.zst", keepWinPatterns},
+		{"linux", "amd64", "unknown-linux-gnu-pgo+lto-full", "tar.zst", keepNixPatterns, true},
+		{"linux", "arm64", "unknown-linux-gnu-pgo+lto-full", "tar.zst", keepNixPatterns, true},
+		{"darwin", "amd64", "apple-darwin-pgo+lto-full", "tar.zst", keepNixPatterns, false},
+		{"darwin", "arm64", "apple-darwin-pgo+lto-full", "tar.zst", keepNixPatterns, false},
+		{"windows", "amd64", "pc-windows-msvc-pgo-full", "tar.zst", keepWinPatterns, false},
 	}
 	for _, j := range jobs {
 		j := j
 		wg.Add(1)
 		go func() {
 			if *runPrepare {
-				downloadAndPrepare(j.os, j.arch, j.dist, j.ext, j.keepPatterns)
+				downloadAndPrepare(j.os, j.arch, j.dist, j.ext, j.keepPatterns, j.strip)
 			}
 			if *runPack {
 				packPrepared(j.os, j.arch, j.dist, j.ext, targetPath)
@@ -114,7 +115,7 @@ func calcInstallPath(extractPath string, dist string) string {
 	return installPath
 }
 
-func downloadAndPrepare(osName string, arch string, dist string, ext string, keepPatterns []glob.Glob) {
+func downloadAndPrepare(osName string, arch string, dist string, ext string, keepPatterns []glob.Glob, strip bool) {
 	downloadPath := download(osName, arch, dist, ext)
 
 	extractPath := downloadPath + ".extracted"
@@ -145,6 +146,13 @@ func downloadAndPrepare(osName string, arch string, dist string, ext string, kee
 	err = internal.CleanupPythonDir(installPath, keepPatterns)
 	if err != nil {
 		panic(err)
+	}
+
+	if strip {
+		err = internal.StripBinaries(installPath, arch)
+		if err != nil {
+			panic(err)
+		}
 	}
 }
 
