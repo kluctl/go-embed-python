@@ -11,7 +11,7 @@ on:
 env:
   PYTHON_STANDALONE_VERSIONS: |
     [
-      "20260510"
+      "20260602"
     ]
   PYTHON_VERSIONS: |
     [
