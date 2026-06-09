@@ -11,7 +11,7 @@ on:
 env:
   PYTHON_STANDALONE_VERSIONS: |
     [
-      "20260510"
+      "20260602"
     ]
   PYTHON_VERSIONS: |
     [
@@ -40,6 +40,8 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-24.04
     steps:
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v4
       - name: clone
         run: |
           # can't use actions/checkout here as transferring the shallow clone fails when using upload-/download-artifact
@@ -59,7 +61,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.26
+          go-version-file: go.mod
       - name: build-tag
         run: |
           git config --global user.email "no@mail.exists"
@@ -109,7 +111,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.26
+          go-version-file: go.mod
       - name: run tests
         shell: bash
         run: |

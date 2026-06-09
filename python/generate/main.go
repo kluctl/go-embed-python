@@ -1,6 +1,7 @@
 package main
 
 import (
+	"compress/gzip"
 	"flag"
 	"fmt"
 	"io"
@@ -78,25 +79,27 @@ func main() {
 		os           string
 		arch         string
 		dist         string
+		ext          string
 		keepPatterns []glob.Glob
+		strip        bool
 	}
 
 	jobs := []job{
-		{"linux", "amd64", "unknown-linux-gnu-pgo+lto-full", keepNixPatterns},
-		{"linux", "arm64", "unknown-linux-gnu-pgo+lto-full", keepNixPatterns},
-		{"darwin", "amd64", "apple-darwin-pgo+lto-full", keepNixPatterns},
-		{"darwin", "arm64", "apple-darwin-pgo+lto-full", keepNixPatterns},
-		{"windows", "amd64", "pc-windows-msvc-pgo-full", keepWinPatterns},
+		{"linux", "amd64", "unknown-linux-gnu-pgo+lto-full", "tar.zst", keepNixPatterns, true},
+		{"linux", "arm64", "unknown-linux-gnu-pgo+lto-full", "tar.zst", keepNixPatterns, true},
+		{"darwin", "amd64", "apple-darwin-pgo+lto-full", "tar.zst", keepNixPatterns, false},
+		{"darwin", "arm64", "apple-darwin-pgo+lto-full", "tar.zst", keepNixPatterns, false},
+		{"windows", "amd64", "pc-windows-msvc-pgo-full", "tar.zst", keepWinPatterns, false},
 	}
 	for _, j := range jobs {
 		j := j
 		wg.Add(1)
 		go func() {
 			if *runPrepare {
-				downloadAndPrepare(j.os, j.arch, j.dist, j.keepPatterns)
+				downloadAndPrepare(j.os, j.arch, j.dist, j.ext, j.keepPatterns, j.strip)
 			}
 			if *runPack {
-				packPrepared(j.os, j.arch, j.dist, targetPath)
+				packPrepared(j.os, j.arch, j.dist, j.ext, targetPath)
 			}
 			wg.Done()
 		}()
@@ -104,8 +107,16 @@ func main() {
 	wg.Wait()
 }
 
-func downloadAndPrepare(osName string, arch string, dist string, keepPatterns []glob.Glob) {
-	downloadPath := download(osName, arch, dist)
+func calcInstallPath(extractPath string, dist string) string {
+	installPath := filepath.Join(extractPath, "python")
+	if !strings.Contains(dist, "install_only") {
+		installPath = filepath.Join(installPath, "install")
+	}
+	return installPath
+}
+
+func downloadAndPrepare(osName string, arch string, dist string, ext string, keepPatterns []glob.Glob, strip bool) {
+	downloadPath := download(osName, arch, dist, ext)
 
 	extractPath := downloadPath + ".extracted"
 	err := os.RemoveAll(extractPath)
@@ -113,9 +124,13 @@ func downloadAndPrepare(osName string, arch string, dist string, keepPatterns []
 		log.Panic(err)
 	}
 
-	extract(downloadPath, extractPath)
+	_, err = extract(downloadPath, extractPath, ext)
+	if err != nil {
+		log.Errorf("extract failed: %v", err)
+		os.Exit(1)
+	}
 
-	installPath := filepath.Join(extractPath, "python", "install")
+	installPath := calcInstallPath(extractPath, dist)
 
 	var libPath string
 	if osName == "windows" {
@@ -132,11 +147,18 @@ func downloadAndPrepare(osName string, arch string, dist string, keepPatterns []
 	if err != nil {
 		panic(err)
 	}
+
+	if strip {
+		err = internal.StripBinaries(installPath, arch)
+		if err != nil {
+			panic(err)
+		}
+	}
 }
 
-func packPrepared(osName string, arch string, dist string, targetPath string) {
-	extractPath := generateDownloadPath(arch, dist) + ".extracted"
-	installPath := filepath.Join(extractPath, "python", "install")
+func packPrepared(osName string, arch string, dist string, ext string, targetPath string) {
+	extractPath := generateDownloadPath(arch, dist, ext) + ".extracted"
+	installPath := calcInstallPath(extractPath, dist)
 	err := embed_util.CopyForEmbed(filepath.Join(targetPath, fmt.Sprintf("%s-%s", osName, arch)), installPath)
 	if err != nil {
 		panic(err)
@@ -158,21 +180,21 @@ func packPrepared(osName string, arch string, dist string, targetPath string) {
 	}
 }
 
-func generateDownloadPath(arch string, dist string) string {
+func generateDownloadPath(arch string, dist string, ext string) string {
 	pythonArch, ok := archMapping[arch]
 	if !ok {
 		log.Errorf("arch %s not supported", arch)
 		os.Exit(1)
 	}
-	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.tar.zst", *pythonVersion, *pythonStandaloneVersion, pythonArch, dist)
+	fname := fmt.Sprintf("cpython-%s+%s-%s-%s.%s", *pythonVersion, *pythonStandaloneVersion, pythonArch, dist, ext)
 	return filepath.Join(*preparePath, fname)
 }
 
-func download(osName string, arch string, dist string) string {
+func download(osName string, arch string, dist string, ext string) string {
 	downloadLock.Lock()
 	defer downloadLock.Unlock()
 
-	downloadPath := generateDownloadPath(arch, dist)
+	downloadPath := generateDownloadPath(arch, dist, ext)
 	fname := filepath.Base(downloadPath)
 	downloadUrl := fmt.Sprintf("https://github.com/astral-sh/python-build-standalone/releases/download/%s/%s", *pythonStandaloneVersion, fname)
 
@@ -211,27 +233,38 @@ func download(osName string, arch string, dist string) string {
 	return downloadPath
 }
 
-func extract(archivePath string, targetPath string) string {
+func extract(archivePath string, targetPath string, ext string) (string, error) {
 	f, err := os.Open(archivePath)
 	if err != nil {
-		log.Errorf("opening file failed: %v", err)
-		os.Exit(1)
+		return "", err
 	}
 	defer f.Close()
 
-	z, err := zstd.NewReader(f)
-	if err != nil {
-		log.Errorf("decompression failed: %v", err)
-		os.Exit(1)
+	var dc io.Reader
+	if ext == "tar.gz" {
+		gz, err := gzip.NewReader(f)
+		if err != nil {
+			return "", err
+		}
+		defer gz.Close()
+		dc = gz
+	} else if ext == "tar.zst" {
+		z, err := zstd.NewReader(f)
+		if err != nil {
+			return "", err
+		}
+		defer z.Close()
+		dc = z
+	} else {
+		return "", fmt.Errorf("unknown extension: %s", ext)
 	}
-	defer z.Close()
 
 	log.Infof("decompressing %s", archivePath)
-	err = internal.ExtractTarStream(z, targetPath)
+	err = internal.ExtractTarStream(dc, targetPath)
 	if err != nil {
 		log.Errorf("decompression failed: %v", err)
 		os.Exit(1)
 	}
 
-	return targetPath
+	return targetPath, nil
 }
