@@ -40,6 +40,8 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-24.04
     steps:
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v4
       - name: clone
         run: |
           # can't use actions/checkout here as transferring the shallow clone fails when using upload-/download-artifact
