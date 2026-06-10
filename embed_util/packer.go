@@ -8,11 +8,12 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	log "github.com/sirupsen/logrus"
-	"golang.org/x/sync/errgroup"
 	"os"
 	"path/filepath"
 	"strings"
+
+	log "github.com/sirupsen/logrus"
+	"golang.org/x/sync/errgroup"
 )
 
 func CopyForEmbed(out string, dir string) error {
@@ -144,6 +145,12 @@ func copyFiles(out string, dir string, fl *fileList) error {
 		})
 	}
 	err := g.Wait()
+	if err != nil {
+		return err
+	}
+
+	// ensure that the embedded files do not suffer from auto-conversion on windows
+	err = os.WriteFile(filepath.Join(out, ".gitattributes"), []byte("** binary\n"), 0644)
 	if err != nil {
 		return err
 	}
