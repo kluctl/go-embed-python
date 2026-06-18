@@ -48,7 +48,7 @@ func buildFileListFromDir(dir string) (*fileList, error) {
 		}
 
 		fle := fileListEntry{
-			Name: relPath,
+			Name: filepath.ToSlash(relPath), // Fix for Windows, for an fs.FS, you should open files with forward slashes
 			Size: info.Size(),
 			Mode: info.Mode(),
 		}
@@ -92,7 +92,7 @@ func buildFileListFromFs(embedFs fs.FS) (*fileList, error) {
 		}
 
 		fle := fileListEntry{
-			Name: path,
+			Name: filepath.ToSlash(path), // Fix for Windows, for an fs.FS, you should open files with forward slashes
 			Size: info.Size(),
 			Mode: info.Mode() | 0o600,
 		}
