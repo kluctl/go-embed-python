@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-var DefaultPythonRemovePatterns = []glob.Glob{
+var DefaultPythonRemovePatterns = []*glob.Pattern{
 	glob.MustCompile("__pycache__"),
 	glob.MustCompile("**/__pycache__"),
 	glob.MustCompile("**.a"),
@@ -17,7 +17,7 @@ var DefaultPythonRemovePatterns = []glob.Glob{
 	glob.MustCompile("**/*.dist-info"),
 }
 
-func CleanupPythonDir(dir string, keepPatterns []glob.Glob) error {
+func CleanupPythonDir(dir string, keepPatterns []*glob.Pattern) error {
 	var removes []string
 	err := filepath.Walk(dir, func(path string, info fs.FileInfo, err error) error {
 		relPath, err := filepath.Rel(dir, path)

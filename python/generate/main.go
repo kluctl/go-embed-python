@@ -44,13 +44,13 @@ var removeLibs = []string{
 	"bin", // not really a library, but erroneously installed by jsonpath_ng
 }
 
-var keepNixPatterns = []glob.Glob{
+var keepNixPatterns = []*glob.Pattern{
 	glob.MustCompile("bin/**"),
 	glob.MustCompile("lib/*.so*"),
 	glob.MustCompile("lib/*.dylib"),
 	glob.MustCompile("lib/python3.*/**"),
 }
-var keepWinPatterns = []glob.Glob{
+var keepWinPatterns = []*glob.Pattern{
 	glob.MustCompile("Lib/**"),
 	glob.MustCompile("DLLs/**"),
 	glob.MustCompile("*.dll"),
@@ -80,7 +80,7 @@ func main() {
 		arch         string
 		dist         string
 		ext          string
-		keepPatterns []glob.Glob
+		keepPatterns []*glob.Pattern
 		strip        bool
 	}
 
@@ -115,7 +115,7 @@ func calcInstallPath(extractPath string, dist string) string {
 	return installPath
 }
 
-func downloadAndPrepare(osName string, arch string, dist string, ext string, keepPatterns []glob.Glob, strip bool) {
+func downloadAndPrepare(osName string, arch string, dist string, ext string, keepPatterns []*glob.Pattern, strip bool) {
 	downloadPath := download(osName, arch, dist, ext)
 
 	extractPath := downloadPath + ".extracted"
