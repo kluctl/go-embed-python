@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "base_prefix": "../..",
+  "base_interpreter": "./bin/python3.15",
+  "platform": "",
+  "language": {
+    "version": "3.15",
+    "version_info": {
+      "major": 3,
+      "minor": 15,
+      "micro": 2,
+      "releaselevel": "final",
+      "serial": 0
+    }
+  },
+  "implementation": {
+    "name": "cpython",
+    "cache_tag": "cpython-315",
+    "version": {
+      "major": 3,
+      "minor": 15,
+      "micro": 2,
+      "releaselevel": "final",
+      "serial": 0
+    },
+    "hexversion": 51315440,
+    "_multiarch": "darwin",
+    "supports_isolated_interpreters": true
+  },
+  "abi": {
+    "flags": [],
+    "extension_suffix": ".cpython-315-darwin.so",
+    "stable_abi_suffix": ".abi3-darwin.so"
+  },
+  "suffixes": {
+    "source": [
+      ".py"
+    ],
+    "bytecode": [
+      ".pyc"
+    ],
+    "extensions": [
+      ".cpython-315-darwin.so",
+      ".abi3-darwin.so",
+      ".abi3.so",
+      ".abi3t-darwin.so",
+      ".abi3t.so",
+      ".so"
+    ]
+  },
+  "libpython": {
+    "dynamic": "./lib/libpython3.15.dylib",
+    "link_extensions": false,
+    "static": "./lib/python3.15/config-3.15-darwin/libpython3.15.a"
+  },
+  "c_api": {
+    "headers": "./include/python3.15",
+    "pkgconfig_path": "./lib/pkgconfig"
+  }
+}
