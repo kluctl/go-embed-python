@@ -152,8 +152,10 @@ func (e *EmbeddedFiles) copyEmbeddedFilesToTmp(embedFs fs.FS, fl *fileList) erro
 
 		var data []byte
 
+		fleName := filepath.ToSlash(resolvedFle.Name)
+
 		if resolvedFle.Compressed {
-			data, err = fs.ReadFile(embedFs, resolvedFle.Name+".gz")
+			data, err = fs.ReadFile(embedFs, fleName+".gz")
 			if err != nil {
 				return err
 			}
@@ -167,7 +169,7 @@ func (e *EmbeddedFiles) copyEmbeddedFilesToTmp(embedFs fs.FS, fl *fileList) erro
 				return err
 			}
 		} else {
-			data, err = fs.ReadFile(embedFs, resolvedFle.Name)
+			data, err = fs.ReadFile(embedFs, fleName)
 			if err != nil {
 				return err
 			}
